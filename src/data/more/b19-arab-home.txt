@@ -1,0 +1,525 @@
+@ Chicken Shawarma Sandwich (Arabic Bread) | Lebanese | lunch,dinner | 4 | 40 | 15 | wrap |
+= Thin Arabic bread rolled around shawarma chicken, toum, fries and pickles.
+- 600 g chicken thighs
+- 2 tbsp shawarma spice
+- 2 tbsp vinegar
+- 2 tbsp yogurt
+- 4 arabic breads
+- 4 tbsp toum (garlic sauce)
+- 80 g pickles
+- 150 g oven fries
+* Marinate chicken with spice, vinegar and yogurt 30 minutes.
+* Pan-fry 12 minutes and slice thin.
+* Spread bread with toum, add chicken, fries and pickles, roll and toast 1 minute.
+
+@ Falafel Sandwich | Lebanese | lunch | 4 | 10 | 20 | pita | vegan
+= Falafel in pita with tahini, tomato, parsley and turnip pickles.
+- 16 falafel
+- 4 pita breads
+- 4 tbsp tahini sauce
+- 2 tomatoes
+- 1 handful parsley
+- 80 g pickled turnips
+* Bake falafel at 200°C for 20 minutes.
+* Split pitas and fill with falafel, salad, pickles and tahini.
+
+@ Foul Medames Saudi-Style | Saudi | breakfast | 4 | 5 | 15 | beans | vegan, gluten-free
+= Mashed fava beans with cumin, chili, tomato and olive oil.
+- 2 cans fava beans (400 g each)
+- 1 onion, chopped
+- 1 tomato, chopped
+- 1 green chili
+- 1 tsp ground cumin
+- 1 lemon
+- 3 tbsp olive oil
+* Fry onion, tomato and chili in oil.
+* Add beans and cumin and mash; cook 8 minutes.
+* Finish with lemon. Serve with tamees bread.
+
+@ Tamees Bread | Afghan | breakfast,dinner | 4 | 90 | 12 | flatbread | vegan
+= Large bubbly flatbreads popular across Saudi Arabia.
+- 500 g flour
+- 7 g yeast
+- 1 tsp sugar
+- 350 ml warm water
+- 1 tbsp sesame seeds
+- 1 tsp nigella seeds
+* Make a soft dough and rise 1 hour.
+* Divide into 4, stretch into large rounds and dimple.
+* Sprinkle seeds and bake at 250°C for 10 minutes.
+
+@ Sambousek Cheese | Lebanese | snack | 20 | 30 | 18 | pie | vegetarian
+= Crescent pastries filled with cheese and parsley.
+- 400 g pizza dough
+- 200 g feta
+- 100 g mozzarella
+- 1 handful parsley
+- 1 egg
+* Mix cheeses and parsley.
+* Cut dough into circles, fill and fold into crescents.
+* Brush with egg and bake at 200°C for 18 minutes.
+
+@ Sambousek Meat | Lebanese | snack | 20 | 30 | 18 | pie |
+= Crescent pastries filled with spiced mince and pine nuts.
+- 400 g pizza dough
+- 300 g beef mince
+- 1 onion
+- 30 g pine nuts
+- 1 tsp seven spice
+- 1 egg
+* Brown mince with onion, pine nuts and spice; cool.
+* Cut dough into circles, fill and fold.
+* Brush with egg and bake at 200°C for 18 minutes.
+
+@ Lebanese Chicken Wraps with Fries (Kids) | Lebanese | lunch | 4 | 10 | 20 | wrap |
+= Mild chicken, fries and garlic sauce wraps kids love.
+- 400 g chicken breast
+- 1 tsp paprika
+- 4 tortillas
+- 3 tbsp garlic sauce
+- 150 g oven fries
+- 1 tbsp ketchup
+* Season chicken with paprika and grill 12 minutes; slice.
+* Bake fries.
+* Fill tortillas with chicken, fries, garlic sauce and ketchup.
+
+@ Kofta Kebab Rolls | Lebanese | dinner | 4 | 15 | 12 | skewer | high-protein
+= Grilled kofta in flatbread with parsley-onion salad and tahini.
+- 500 g beef mince
+- 1 onion, grated
+- 1 bunch parsley
+- 1 tsp seven spice
+- 4 flatbreads
+- 1 red onion, sliced
+- 1 tsp sumac
+- 4 tbsp tahini sauce
+* Mix mince, onion, half the parsley and spice; shape on skewers.
+* Grill 10 minutes.
+* Toss red onion with sumac and parsley; wrap kofta in bread with salad and tahini.
+
+@ Lebanese Rice Pudding (Riz bi Haleeb) | Lebanese | dessert | 6 | 5 | 40 | pudding | vegetarian, gluten-free
+= Creamy rice pudding with orange blossom and pistachios.
+- 100 g short-grain rice
+- 1 l milk
+- 100 g sugar
+- 1 tbsp orange blossom water
+- 20 g pistachios
+* Simmer rice in 300 ml water 10 minutes.
+* Add milk and cook 25 minutes, stirring.
+* Add sugar and orange blossom water; chill and top with pistachios.
+
+@ Ka'ak Bread with Za'atar | Palestinian | breakfast,snack | 6 | 90 | 20 | bread | vegan
+= Sesame bread rings served with za'atar and eggs.
+- 500 g flour
+- 7 g yeast
+- 1 tbsp sugar
+- 300 ml warm water
+- 3 tbsp olive oil
+- 80 g sesame seeds
+* Make a dough and rise 1 hour.
+* Shape oval rings, brush with water and coat in sesame.
+* Rise 20 minutes and bake at 220°C for 20 minutes.
+
+@ Mutabbal Kousa (Zucchini Dip) | Levantine | snack | 6 | 10 | 15 | cucumber | vegetarian, gluten-free
+= Roasted zucchini mashed with tahini and yogurt.
+- 3 zucchini
+- 3 tbsp tahini
+- 3 tbsp yogurt
+- 1 garlic clove
+- 1 lemon
+* Roast zucchini at 220°C for 15 minutes; chop finely.
+* Mix with tahini, yogurt, garlic and lemon.
+
+@ Saudi Kabsa with Lamb | Saudi | dinner | 6 | 20 | 100 | rice |
+= Kabsa made with tender lamb and dried lime.
+- 1 kg lamb, in pieces
+- 2 onions
+- 3 tomatoes
+- 2 tbsp kabsa spice
+- 2 dried limes (loomi)
+- 500 g basmati rice
+- 40 g almonds
+* Brown lamb and onions with spice; add tomatoes, loomi and water and simmer 75 minutes.
+* Add rice to 900 ml broth and cook 20 minutes.
+* Serve with lamb and toasted almonds.
+
+@ Gulf Chicken Soup with Vermicelli | Emirati | lunch,dinner | 4 | 10 | 25 | soup | dairy-free
+= Turmeric-yellow broth with chicken and vermicelli.
+- 400 g chicken breast
+- 1 onion
+- 1 tsp turmeric
+- 1 tsp baharat
+- 60 g vermicelli
+- 1.3 l chicken stock
+- 1 lemon
+* Simmer chicken, onion and spices in stock 18 minutes; shred chicken.
+* Add vermicelli for 5 minutes.
+* Finish with lemon.
+
+@ Harees with Lamb | Emirati | dinner | 6 | 10 | 180 | pot |
+= Ramadan favourite: wheat and lamb slow-cooked and beaten smooth.
+- 400 g whole wheat grains, soaked
+- 600 g lamb, cubed
+- 2 l water
+- 1 cinnamon stick
+- 3 tbsp ghee
+* Simmer wheat and lamb with cinnamon 3 hours, stirring.
+* Remove bones and beat until smooth.
+* Serve with ghee.
+
+@ Emirati Shrimp Biryani | Emirati | dinner | 4 | 20 | 35 | shrimp | pescatarian
+= Prawns in spiced masala layered with saffron rice.
+- 500 g prawns
+- 2 onions
+- 2 tomatoes
+- 2 tbsp biryani masala
+- 100 g yogurt
+- 350 g basmati rice
+- 1 pinch saffron
+- 3 tbsp ghee
+* Fry onions in ghee; add tomatoes, masala, yogurt and prawns 5 minutes.
+* Par-boil rice 6 minutes and layer over.
+* Add saffron and cook covered on low 20 minutes.
+
+@ Dates & Cheese Platter | Emirati | snack | 6 | 10 | 0 | cheese | vegetarian, gluten-free, no-cook
+= Medjool dates with white cheese, walnuts and Arabic coffee.
+- 18 dates
+- 200 g feta
+- 60 g walnuts
+- 1 cucumber
+* Arrange dates, cheese, walnuts and cucumber on a board.
+* Serve with gahwa.
+
+@ Iraqi Bamia with Lamb | Iraqi | dinner | 4 | 15 | 60 | pot | gluten-free, dairy-free
+= Okra and lamb in a tangy tomato sauce with garlic.
+- 500 g lamb, cubed
+- 400 g okra
+- 1 onion
+- 6 garlic cloves
+- 3 tbsp tomato paste
+- 1 lemon
+- 800 ml water
+* Brown lamb and onion; add paste and water and simmer 40 minutes.
+* Add okra and garlic and cook 20 minutes.
+* Finish with lemon.
+
+@ Iraqi Timman Bagilla (Dill & Fava Rice) | Iraqi | dinner | 4 | 10 | 25 | rice | vegetarian, gluten-free
+= Rice with broad beans and plenty of dill.
+- 300 g basmati rice
+- 200 g broad beans
+- 1 bunch dill
+- 2 tbsp butter
+- 600 ml water
+* Melt butter, add rice, beans and water.
+* Cook 15 minutes, fold in dill and steam 10 minutes.
+
+@ Yemeni Saltah | Yemeni | dinner | 4 | 15 | 30 | pot |
+= Bubbling meat stew topped with frothy fenugreek.
+- 400 g lamb mince
+- 1 onion
+- 2 tomatoes
+- 1 tsp hawaij spice
+- 2 potatoes
+- 2 tbsp fenugreek, soaked
+- 600 ml lamb stock
+* Brown lamb and onion with hawaij; add tomatoes, potatoes and stock and simmer 20 minutes.
+* Whip soaked fenugreek with a little water until frothy.
+* Spoon over the bubbling stew. Serve with bread.
+
+@ Yemeni Zhug | Yemeni | snack | 6 | 10 | 0 | chili | vegan, gluten-free, no-cook
+= Fiery green chili and coriander relish.
+- 1 bunch coriander
+- 4 green chilies
+- 3 garlic cloves
+- 1 tsp ground cumin
+- 1 lemon
+- 4 tbsp olive oil
+* Pick the coriander leaves and roughly chop the chilies.
+* Blend everything into a coarse paste. Keeps 1 week chilled.
+
+@ Palestinian Maftoul with Chicken | Palestinian | dinner | 5 | 15 | 50 | pot |
+= Hand-rolled couscous with chicken, chickpeas and onions in caraway broth.
+- 800 g chicken pieces
+- 300 g maftoul (pearl couscous)
+- 1 can chickpeas (400 g)
+- 300 g pearl onions
+- 1 tsp caraway
+- 1 tsp allspice
+- 1.4 l water
+* Simmer chicken in water with spices 35 minutes.
+* Steam or boil maftoul in some broth 12 minutes.
+* Brown onions and add chickpeas; serve all with broth.
+
+@ Lebanese Lentil & Rice Soup (Shorbet Adas wa Riz) | Lebanese | lunch | 4 | 10 | 30 | soup | vegan, gluten-free
+= Brown lentils and rice in a cumin broth with crispy onions.
+- 150 g brown lentils
+- 60 g rice
+- 2 onions
+- 1 tsp ground cumin
+- 1.4 l water
+- 3 tbsp olive oil
+- 1 lemon
+* Simmer lentils 15 minutes; add rice and cumin for 15 minutes.
+* Fry onions until crisp.
+* Serve topped with onions and lemon.
+
+@ Lebanese Spinach Stew (Sabanekh) | Lebanese | dinner | 4 | 10 | 30 | greens | gluten-free
+= Spinach and beef stew with coriander and lemon, over rice.
+- 300 g beef, cubed
+- 500 g spinach
+- 1 onion
+- 3 garlic cloves
+- 1 bunch coriander
+- 2 lemons
+- 3 tbsp olive oil
+* Brown beef and onion; add water and simmer 20 minutes.
+* Fry garlic and coriander; add with spinach to the pot.
+* Cook 8 minutes and add lemon.
+
+@ Lebanese Pea Stew (Bazella) | Lebanese | dinner | 4 | 10 | 35 | peas | gluten-free
+= Peas, carrots and beef in tomato, served with vermicelli rice.
+- 300 g beef, cubed
+- 400 g peas
+- 2 carrots
+- 1 onion
+- 3 tbsp tomato paste
+- 1 tsp seven spice
+- 600 ml water
+* Brown beef and onion; add paste, spice and water and simmer 20 minutes.
+* Add carrots and peas and cook 15 minutes.
+
+@ Mloukhieh Leaves with Lamb | Lebanese | dinner | 4 | 20 | 60 | greens |
+= Whole jute leaves stewed with lamb, garlic and coriander.
+- 500 g lamb, cubed
+- 300 g dried molokhia leaves
+- 8 garlic cloves
+- 1 bunch coriander
+- 2 lemons
+- 1.5 l water
+* Simmer lamb 40 minutes.
+* Soak leaves; fry garlic and coriander.
+* Add leaves and garlic mix to the lamb and cook 20 minutes; add lemon.
+
+@ Freekeh Salad with Pomegranate | Levantine | lunch | 4 | 10 | 25 | salad | vegan
+= Smoky freekeh tossed with herbs, pomegranate and nuts.
+- 200 g freekeh
+- 1 handful parsley
+- 1 handful mint
+- 3 tbsp pomegranate seeds
+- 40 g almonds
+- 2 tbsp pomegranate molasses
+- 3 tbsp olive oil
+* Simmer freekeh 25 minutes and cool.
+* Toss with herbs, pomegranate, almonds, molasses and oil.
+
+@ Za'atar Roasted Potatoes | Lebanese | snack,dinner | 4 | 5 | 35 | potato | vegan, gluten-free
+= Crispy potatoes with za'atar and lemon.
+- 800 g potatoes
+- 2 tbsp za'atar
+- 3 tbsp olive oil
+- 1 lemon
+* Toss potatoes with oil and za'atar.
+* Roast at 220°C for 35 minutes; add lemon.
+
+@ Lebanese Garlic Chicken (Djej bil Toum) | Lebanese | dinner | 4 | 10 | 35 | drumstick | gluten-free, dairy-free
+= Chicken baked with garlic, lemon and coriander.
+- 8 chicken thighs
+- 6 garlic cloves
+- 2 lemons
+- 1 bunch coriander
+- 3 tbsp olive oil
+* Mix garlic, lemon, coriander and oil.
+* Coat chicken and bake at 210°C for 35 minutes.
+
+@ Ouzi Rice with Chicken | Levantine | dinner | 5 | 15 | 45 | rice |
+= Spiced rice with peas, mince and roast chicken.
+- 1 kg chicken pieces
+- 200 g beef mince
+- 350 g basmati rice
+- 150 g peas
+- 1 tsp seven spice
+- 750 ml chicken stock
+- 40 g mixed nuts
+* Roast chicken with spice at 210°C for 40 minutes.
+* Brown mince, add rice, peas and stock; cook 18 minutes.
+* Serve rice topped with chicken and nuts.
+
+@ Shish Barak-Style Yogurt Pasta | Fusion | dinner | 4 | 10 | 15 | pasta |
+= A weeknight shortcut: tortellini in warm garlic-mint yogurt.
+- 400 g meat tortellini
+- 500 g yogurt
+- 1 tbsp cornflour
+- 2 garlic cloves
+- 1 tsp dried mint
+- 2 tbsp butter
+* Cook tortellini.
+* Heat yogurt with cornflour gently until it simmers.
+* Add pasta; top with garlic-mint butter.
+
+@ Chicken Mandi Rice (Quick) | Yemeni | dinner | 4 | 10 | 40 | rice |
+= A faster mandi with spiced thighs and smoky rice.
+- 800 g chicken thighs
+- 1 tbsp hawaij spice
+- 1 onion
+- 300 g basmati rice
+- 600 ml chicken stock
+- 1 cinnamon stick
+- 30 g raisins
+* Roast spiced chicken at 210°C for 35 minutes.
+* Fry onion, add rice, stock and cinnamon; cook 18 minutes.
+* Serve chicken on rice with raisins.
+
+@ Labneh Toast with Honey & Walnuts | Lebanese | breakfast | 2 | 5 | 2 | bread | vegetarian, quick
+= Sweet-savoury toast with labneh, honey and walnuts.
+- 2 slices sourdough bread
+- 100 g labneh
+- 1 tbsp honey
+- 20 g walnuts
+* Toast bread and spread with labneh.
+* Drizzle honey and scatter walnuts.
+
+@ Chicken Kabsa Bowl (Meal-Prep) | Saudi | lunch | 4 | 15 | 35 | rice | meal-prep
+= Kabsa rice and chicken portioned with daqoos.
+- 600 g chicken thighs
+- 1 tbsp kabsa spice
+- 1 onion
+- 300 g basmati rice
+- 600 ml chicken stock
+- 4 tbsp daqoos sauce
+* Brown chicken and onion with spice.
+* Add rice and stock, cover and cook 20 minutes.
+* Divide with sauce.
+
+@ Gulf Prawn Masala | Emirati | dinner | 4 | 10 | 15 | shrimp | pescatarian, gluten-free
+= Prawns in a spicy tomato masala with loomi.
+- 500 g prawns
+- 1 onion
+- 2 tomatoes
+- 2 garlic cloves
+- 1 tsp baharat
+- 1 tsp ground dried lime
+- 2 tbsp vegetable oil
+* Fry onion and garlic, add tomatoes and spices 5 minutes.
+* Add prawns and cook 4 minutes.
+
+@ Balaleet French Toast | Fusion | breakfast | 2 | 5 | 10 | bread | vegetarian
+= French toast with saffron and cardamom, a nod to balaleet.
+- 4 slices brioche
+- 2 eggs
+- 150 ml milk
+- 1 pinch saffron
+- ½ tsp ground cardamom
+- 1 tbsp butter
+- 2 tbsp date syrup
+* Whisk eggs, milk, saffron and cardamom.
+* Dip bread and fry in butter 2 minutes per side.
+* Drizzle with date syrup.
+
+@ Jordanian Chicken Shishbarak Bake | Jordanian | dinner | 4 | 15 | 40 | casserole |
+= Chicken and potatoes baked with yogurt, garlic and mint.
+- 700 g chicken thighs
+- 3 potatoes
+- 400 g yogurt
+- 2 garlic cloves
+- 1 tsp dried mint
+- 1 tsp seven spice
+* Roast spiced chicken and potatoes at 210°C for 25 minutes.
+* Pour over yogurt mixed with garlic and mint.
+* Bake 15 minutes more.
+
+@ Syrian Shawarma Bowl with Garlic Potatoes | Syrian | dinner | 4 | 20 | 30 | bowl |
+= Shawarma chicken with crispy garlic potatoes and pickles.
+- 600 g chicken thighs
+- 2 tbsp shawarma spice
+- 600 g potatoes
+- 4 garlic cloves
+- 4 tbsp garlic sauce
+- 80 g pickles
+* Roast cubed potatoes at 220°C for 30 minutes; toss with crushed garlic.
+* Pan-fry spiced chicken 12 minutes and slice.
+* Serve with garlic sauce and pickles.
+
+@ Lebanese Seven-Spice Rice with Lamb Mince (Hashweh) | Lebanese | dinner | 4 | 10 | 25 | rice |
+= Cinnamon-spiced rice with lamb and toasted nuts.
+- 300 g lamb mince
+- 300 g basmati rice
+- 1 tsp seven spice
+- 1 tsp ground cinnamon
+- 600 ml chicken stock
+- 50 g mixed nuts
+- 2 tbsp butter
+* Brown lamb with spices in butter.
+* Add rice and stock, cover and cook 18 minutes.
+* Top with toasted nuts.
+
+@ Halloumi & Za'atar Breakfast Wrap | Lebanese | breakfast | 2 | 5 | 5 | wrap | vegetarian, quick
+= Grilled halloumi, tomato and za'atar rolled in thin bread.
+- 150 g halloumi
+- 2 tortillas
+- 1 tomato
+- 1 tsp za'atar
+- 1 handful mint
+* Grill halloumi 2 minutes per side.
+* Fill tortillas with halloumi, tomato, mint and za'atar.
+
+@ Kuwaiti Mutabbaq Samak | Kuwaiti | dinner | 4 | 15 | 40 | fish | pescatarian
+= Fried fish layered over rice cooked in spiced fish stock.
+- 600 g white fish fillets
+- 1 tsp turmeric
+- 1 tbsp baharat
+- 2 onions
+- 350 g basmati rice
+- 700 ml fish stock
+- 3 tbsp vegetable oil
+* Rub fish with turmeric and half the baharat; fry 3 minutes per side.
+* Fry onions until golden; add rice, remaining spice and stock.
+* Cook 18 minutes; serve fish on top.
+
+@ Saudi Haneeth-Style Chicken | Saudi | dinner | 4 | 10 | 60 | drumstick | gluten-free
+= Slow-roasted chicken over spiced rice.
+- 1.2 kg chicken pieces
+- 2 tsp baharat
+- 1 tsp turmeric
+- 350 g basmati rice
+- 700 ml chicken stock
+- 2 tbsp ghee
+* Rub chicken with spices and ghee; roast covered at 170°C for 50 minutes.
+* Cook rice in stock 18 minutes.
+* Uncover chicken and roast 10 minutes; serve on rice.
+
+@ Emirati Fried Rice with Eggs (Muhammar-Style) | Emirati | dinner | 4 | 5 | 25 | rice | vegetarian, gluten-free
+= Sweet date-syrup rice with saffron and cardamom, served with fish or eggs.
+- 300 g basmati rice
+- 4 tbsp date syrup
+- 1 pinch saffron
+- ½ tsp ground cardamom
+- 2 tbsp ghee
+- 600 ml water
+* Cook rice in water 12 minutes and drain.
+* Return with ghee, date syrup, saffron and cardamom.
+* Cover and steam on low 12 minutes.
+
+@ Lebanese Tuna Salad with Rice | Lebanese | lunch | 4 | 10 | 0 | salad | pescatarian, no-cook
+= Tuna, rice, corn, tomato and lemon-olive oil.
+- 2 cans tuna (160 g each)
+- 300 g cooked rice
+- 150 g sweetcorn
+- 2 tomatoes
+- 1 handful parsley
+- 2 lemons
+- 3 tbsp olive oil
+* Combine everything.
+* Season and chill.
+
+@ Arabic Lentil Burgers | Middle Eastern | dinner | 4 | 15 | 15 | burger | vegan
+= Spiced lentil and bulgur patties with tahini.
+- 200 g red lentils, cooked
+- 100 g bulgur, soaked
+- 1 onion
+- 1 tsp ground cumin
+- 1 handful parsley
+- 4 burger buns
+- 4 tbsp tahini sauce
+* Mix lentils, bulgur, onion, cumin and parsley; shape patties.
+* Pan-fry 4 minutes per side.
+* Serve in buns with tahini and salad.
