@@ -63,13 +63,13 @@ router (`openrouter/free`), which picks a free model automatically (including on
 
 **New in this version**
 - 🍳 **My kitchen** — pick your appliances (hob, oven, air fryer, kettle, microwave, blender…). Recipes and plans only use what you have; oven recipes switch to the air fryer with temperature/time tips.
-- 💰 **Grocery cost & weekly budget** — estimated UAE prices for every recipe, meal plan and grocery item; set a weekly budget and Plan my week stays under it. Set your own prices on any item.
+- **Grocery cost & weekly budget** in **AED, USD or LBP** (switch in Me → Weekly budget) — estimated UAE prices for every recipe, meal plan and grocery item; set a weekly budget and Plan my week stays under it. Set your own prices on any item. Prices are stored in AED and converted (USD 3.6725 AED; LBP 89,500 per USD).
 - 📸 **Real photos** — the 100 starter recipes get real food photos from Wikipedia / Wikimedia Commons (credited), cached for offline. "Find a real photo" for your own recipes.
 - ↻ **Regenerate** — the whole week, one day, or a single meal, with suggestions to swap in.
 - A cleaner, photo-first design with a floating tab bar.
 
 **Recipes**
-- 100 starter recipes (Lebanese, Mediterranean, Asian, Mexican, Indian, breakfasts, snacks)
+- **1,000+ starter recipes** across 60+ cuisines — Lebanese, Emirati & Gulf, Levantine, Egyptian, Iraqi, Persian, Turkish, Greek, Moroccan, Italian, Indian, Chinese, Japanese, Korean, Thai, Mexican, American, British, European and African — plus breakfasts, meal-prep, quick dinners, snacks, drinks and desserts. 100 ship in the app; the rest install in the background on first open (and work offline)
 - Write your own, or **dictate** them with the mic button
 - **Paste a recipe** from any website, caption or note — it's split into ingredients & steps offline
 - Edit any recipe; starter recipes can be **remixed** and restored to the original anytime
@@ -174,7 +174,7 @@ Either way, **Me → Back up** exports a file you can keep, and **Me → Restore
 
 | What | Where |
 |---|---|
-| Starter recipes | `src/data/seedRecipes.ts` |
+| Starter recipes | `src/data/seedRecipes*.ts` (bundled) and `src/data/more/*.txt` (background batches — check with `npx tsx scripts/check-recipes.ts`) |
 | Nutrition database (per 100 g) | `src/data/nutritionDb.ts` |
 | Ingredient prices (AED/kg) | `src/data/prices.ts` |
 | Photo sources per recipe | `src/lib/photos.ts` |
