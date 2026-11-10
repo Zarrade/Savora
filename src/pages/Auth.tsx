@@ -14,6 +14,8 @@ function friendly(e: unknown): string {
   if (m.includes('invalid login')) return 'Email or password is incorrect.';
   if (m.includes('not confirmed')) return 'Please confirm your email first — check your inbox for the link.';
   if (m.includes('already registered') || m.includes('already been registered')) return 'An account with this email already exists. Sign in instead.';
+  if (m.includes('not authorized') || m.includes('email_address_not_authorized') || m.includes('error sending'))
+    return 'We couldn’t send the email to this address yet — email sign-up is still being set up. Please try again later.';
   if (m.includes('rate limit') || m.includes('too many')) return 'Too many emails sent recently. Please wait a little and try again.';
   if (m.includes('password') && m.includes('characters')) return 'Password must be at least 6 characters.';
   if (m.includes('signups not allowed') || m.includes('user not found')) return 'No account found for this email.';
