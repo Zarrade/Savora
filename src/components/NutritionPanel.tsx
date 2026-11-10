@@ -2,7 +2,7 @@ import type { Nutrition, Settings } from '../types';
 import { RI } from '../data/nutritionDb';
 import { addCustomFoods, trafficLight, type NutritionResult } from '../lib/ingredients';
 import { useState } from 'react';
-import { aiToast, useAIConfig } from './AI';
+import { aiToast, useAIReady } from './AI';
 import { estimateNutrition } from '../lib/ai/features';
 import { toast } from './ui';
 
@@ -146,9 +146,9 @@ export function NutritionPanel({ result, settings, servingsLabel }: { result: Nu
 }
 
 function EstimateMissing({ names }: { names: string[] }) {
-  const cfg = useAIConfig();
+  const aiReady = useAIReady();
   const [busy, setBusy] = useState(false);
-  if (!cfg.key) return null;
+  if (!aiReady) return null;
   const run = async () => {
     setBusy(true);
     try {

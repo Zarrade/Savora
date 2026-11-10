@@ -1,5 +1,7 @@
 # Savora — Recipes, Meal Planner & AI Kitchen
 
+**Live app: https://zarrade.github.io/Savora/**
+
 A recipe box, weekly meal planner, nutrition tracker and grocery list for Android, iPhone and desktop browsers,
 with **personal accounts that sync across devices** and an **optional AI assistant powered by [OpenRouter](https://openrouter.ai)**.
 It installs like a normal app and keeps working **offline**: your data lives on the device and syncs to your account whenever you're online.
@@ -20,8 +22,8 @@ Savora is the next version of the earlier "Mise" app.
 Project: `egwfaymxvrlphznceyfj`. In the Supabase dashboard:
 
 1. **Authentication → URL Configuration**
-   - **Site URL:** `https://zarrade.github.io/savora/`
-   - **Redirect URLs:** add `https://zarrade.github.io/savora/**` and `http://localhost:5173/**`
+   - **Site URL:** `https://zarrade.github.io/Savora/`
+   - **Redirect URLs:** add `https://zarrade.github.io/Savora/**` and `http://localhost:5173/**`
 
    Without this, confirmation, magic-link and password-reset emails send people to `localhost`.
 2. **Emails.** Supabase's built-in email sender is for testing only. It sends a handful of emails per hour and **only to members of your Supabase team**. To let anyone sign up, either:
@@ -32,7 +34,16 @@ The database schema (table `user_records`, RLS policies, `push_records` and `del
 
 ## AI features (all optional)
 
-Connect once in **Me → AI assistant** (sign in with OpenRouter, or paste an API key). Pick any model from OpenRouter's catalogue.
+**Free for everyone with a Savora account.** AI requests go through a Supabase Edge Function (`supabase/functions/ai`)
+that holds the app's OpenRouter key on the server and always uses OpenRouter's free-models router (`openrouter/free`),
+which picks a free model automatically — including one that can read photos when you send an image. Each user gets
+20 AI requests a day (`SAVORA_AI_DAILY_LIMIT` secret to change it). Guests, or anyone who wants a specific model and no daily cap,
+can add their own OpenRouter key in **Me → Savora AI**.
+
+> **Free-tier limits:** OpenRouter's free models allow about 20 requests/minute and **50 requests/day for the whole account**
+> (shared by all Savora users), or 1,000/day once the account has bought $10 of credits — still free models only.
+> Free model providers may log prompts. The OpenRouter key lives only in Supabase's Edge Function secrets — it is never put in
+> the app or GitHub (anything in the static site is public), so the copy in GitHub secrets isn't used.
 
 - 📋 **Smart import** — paste messy text or a recipe link; the AI returns a clean recipe (ingredients, steps, times, tags). Falls back to the offline parser.
 - 🧊 **What can I make?** — list what's in your kitchen; get 3 full recipe ideas that respect your allergies, diet and appliances, plus what you'd still need to buy.
@@ -126,7 +137,7 @@ git init            # skip if the folder is already a git repo
 git add .
 git commit -m "Savora"
 git branch -M main
-git remote add origin https://github.com/<your-username>/savora.git
+git remote add origin https://github.com/Zarrade/Savora.git
 git push -u origin main
 ```
 
@@ -136,7 +147,7 @@ Then on GitHub:
 2. Under **Build and deployment → Source**, choose **GitHub Actions**
 3. The included workflow (`.github/workflows/deploy.yml`) builds and deploys on every push to `main`.
    Watch it under the **Actions** tab (≈1 minute).
-4. Your app will be live at `https://<your-username>.github.io/savora/`
+4. Your app will be live at `https://zarrade.github.io/Savora/`
 
 > **Public or private repo?** GitHub Pages is free for **public** repos. Your recipes are *not* in the
 > repo (they live on your phone), so a public repo exposes only the app code. If you want a private repo,

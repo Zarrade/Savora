@@ -5,6 +5,8 @@ import { AIError } from '../lib/ai/client';
 import type { AIRecipeDraft } from '../lib/ai/json';
 import { IMPORT_KEY } from '../pages/RecipeEditor';
 import { toast } from './ui';
+import { useAuth } from './Account';
+import { showSignIn } from '../lib/account';
 import { Icon } from './Icon';
 
 let snap = loadAIConfig();
@@ -18,6 +20,13 @@ export function useAIConfig(): AIConfig {
   );
 }
 
+/** AI works with the user's own OpenRouter key, or — when signed in — Savora's free AI. */
+export function useAIReady(): boolean {
+  const cfg = useAIConfig();
+  const auth = useAuth();
+  return !!cfg.key || auth.status === 'signedIn';
+}
+
 export function aiErrorMessage(e: unknown): string {
   if (e instanceof AIError) return e.message;
   return (e as Error)?.message || 'Something went wrong.';
@@ -27,18 +36,19 @@ export function aiToast(e: unknown) {
   toast(aiErrorMessage(e));
 }
 
-/** Shown in place of an AI feature when no key is set. */
+/** Shown in place of an AI feature for guests without their own key. */
 export function NeedKey({ what }: { what: string }) {
   return (
     <div className="card-flat need-key">
       <div className="row gap">
-        <span style={{ fontSize: 26 }}>✨</span>
+        <span className="need-key-ico"><Icon name="sparkles" size={22} /></span>
         <div className="grow">
-          <b>{what} uses AI</b>
-          <small className="muted" style={{ display: 'block' }}>Connect your OpenRouter account once. Everything else in Savora keeps working offline.</small>
+          <b>{what} uses Savora AI</b>
+          <small className="muted" style={{ display: 'block' }}>Free for everyone with a Savora account. Everything else keeps working without one.</small>
         </div>
       </div>
-      <Link to="/settings#ai" className="btn btn-primary block" style={{ marginTop: 10 }}><Icon name="sparkles" size={16} /> Connect OpenRouter</Link>
+      <button className="btn btn-primary block" style={{ marginTop: 10 }} onClick={showSignIn}>Sign in for free AI</button>
+      <Link to="/settings#ai" className="btn btn-ghost block" style={{ marginTop: 8 }}>Or use your own OpenRouter key</Link>
     </div>
   );
 }

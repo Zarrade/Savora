@@ -11,7 +11,7 @@ import { SLOTS, type PlanEntry, type PlanOptions, type Recipe, type Slot } from 
 import { addDays, capitalize, DAY_LONG, DAY_SHORT, fmtRange, mondayIndex, parseIso, today, weekDays, weekStartOf } from '../lib/util';
 import { addNutrition, EMPTY_NUTRITION, recipeNutrition } from '../lib/ingredients';
 import { applyRecipe, eligibleRecipes, generatePlan, regenerateEntry, repairLeftovers, slotMatches, suggestRecipes, type GenerateOptions } from '../lib/planner';
-import { aiToast, useAIConfig } from '../components/AI';
+import { aiToast, useAIReady } from '../components/AI';
 import { rankSwapCandidates } from '../lib/ai/features';
 import { groceriesFromPlan, mergeInto } from '../lib/grocery';
 import { fmtMoney, planCost, recipeCost } from '../lib/pricing';
@@ -268,7 +268,7 @@ function EntrySheet({ entry, recipe, week, recipes, onClose, onBrowse, onPick, o
   const settings = useSettings();
   const live = useLiveQuery(() => db.plan.get(entry.id), [entry.id]) ?? entry;
   const [seed, setSeed] = useState(0);
-  const aiCfg = useAIConfig();
+  const aiReady = useAIReady();
   const [aiAsk, setAiAsk] = useState('');
   const [aiBusy, setAiBusy] = useState(false);
   const [aiPicks, setAiPicks] = useState<{ r: Recipe; reason: string }[] | null>(null);
@@ -331,7 +331,7 @@ function EntrySheet({ entry, recipe, week, recipes, onClose, onBrowse, onPick, o
           ))}
         </div>
       ) : <p className="muted small">No other recipes fit your kitchen and preferences for this meal.</p>}
-      {aiCfg.key && (
+      {aiReady && (
         <>
           <form className="row gap" style={{ marginTop: 8 }} onSubmit={e => { e.preventDefault(); askAI(); }}>
             <input className="grow" value={aiAsk} onChange={e => setAiAsk(e.target.value)} placeholder="✨ Ask: something light and spicy…" />

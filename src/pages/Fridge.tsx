@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { PageHeader, Chip, toast } from '../components/ui';
 import { Icon } from '../components/Icon';
-import { NeedKey, aiToast, useAIConfig, useOpenDraft } from '../components/AI';
+import { NeedKey, aiToast, useAIReady, useOpenDraft } from '../components/AI';
 import { useSettings } from '../hooks';
 import { whatCanIMake, type PantrySuggestion } from '../lib/ai/features';
 import { fmtMinutes } from '../lib/util';
@@ -10,7 +10,7 @@ const QUICK = ['chicken', 'eggs', 'rice', 'pasta', 'tomatoes', 'onions', 'potato
 const MOODS = ['Quick (under 30 min)', 'Light & healthy', 'Comfort food', 'High protein', 'One pan'];
 
 export default function Fridge() {
-  const cfg = useAIConfig();
+  const aiReady = useAIReady();
   const settings = useSettings();
   const openDraft = useOpenDraft();
   const [items, setItems] = useState<string[]>([]);
@@ -44,7 +44,7 @@ export default function Fridge() {
       <PageHeader title="What can I make?" back />
       <p className="muted">List what you have. Savora suggests meals that fit your kitchen, diet and allergies{settings.allergies.length ? ` (no ${settings.allergies.join(', ')})` : ''}.</p>
 
-      {!cfg.key && <NeedKey what="“What can I make?”" />}
+      {!aiReady && <NeedKey what="“What can I make?”" />}
 
       <div className="chip-row wrap">
         {QUICK.map(q => <Chip key={q} small active={items.includes(q)} onClick={() => toggleQuick(q)}>{q}</Chip>)}
@@ -65,7 +65,7 @@ export default function Fridge() {
         {MOODS.map(m => <Chip key={m} small active={mood === m} onClick={() => setMood(mood === m ? '' : m)}>{m}</Chip>)}
       </div>
 
-      <button className="btn btn-primary block btn-lg" disabled={busy || !cfg.key} onClick={go}>
+      <button className="btn btn-primary block btn-lg" disabled={busy || !aiReady} onClick={go}>
         <Icon name="sparkles" size={18} /> {busy ? 'Thinking…' : 'Find meals'}
       </button>
       {busy && <button className="btn btn-ghost block" onClick={() => abort.current?.abort()}>Cancel</button>}

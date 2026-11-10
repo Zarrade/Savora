@@ -11,7 +11,7 @@ import { findTimers } from '../lib/importText';
 import { fmtIngredient } from '../lib/ingredients';
 import { cleanName } from '../lib/grocery';
 import type { Recipe } from '../types';
-import { NeedKey, aiToast, useAIConfig } from '../components/AI';
+import { NeedKey, aiToast, useAIReady } from '../components/AI';
 import { cookAssistant, type CookTurn } from '../lib/ai/features';
 
 interface Timer { id: number; label: string; total: number; endsAt: number; pausedLeft: number | null; done: boolean }
@@ -69,7 +69,7 @@ function Cook({ recipe }: { recipe: Recipe }) {
   const [rating, setRating] = useState(0);
   const [review, setReview] = useState('');
   const [gathered, setGathered] = useState<Set<string>>(new Set());
-  const cfg = useAIConfig();
+  const aiReady = useAIReady();
   const [askOpen, setAskOpen] = useState(false);
   const [turns, setTurns] = useState<CookTurn[]>([]);
   const [question, setQuestion] = useState('');
@@ -264,13 +264,13 @@ function Cook({ recipe }: { recipe: Recipe }) {
       )}
 
       <Sheet open={askOpen} onClose={() => { askAbort.current?.abort(); setAskOpen(false); }} title="Ask the cook" tall
-        footer={cfg.key ? (
+        footer={aiReady ? (
           <form className="row gap" onSubmit={e => { e.preventDefault(); ask(question); }}>
             <input className="grow" value={question} onChange={e => setQuestion(e.target.value)} placeholder="e.g. no buttermilk — what instead?" />
             <button className="btn btn-primary" disabled={thinking || !question.trim()}>Ask</button>
           </form>
         ) : undefined}>
-        {!cfg.key ? <NeedKey what="The cooking assistant" /> : (
+        {!aiReady ? <NeedKey what="The cooking assistant" /> : (
           <>
             {turns.length === 0 && (
               <div className="chip-row wrap">

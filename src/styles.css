@@ -819,3 +819,12 @@ code { background: var(--surface-2); padding: 1px 6px; border-radius: 6px; font-
 /* ---------- AI bits */
 .need-key { border: 1px dashed var(--surface-3); background: var(--surface); }
 .ai-user { background: var(--ink); color: var(--ink-text); }
+
+.ai-included { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 16px; background: var(--accent-soft); color: var(--accent-text); margin: 10px 0; }
+.ai-included b { display: block; color: var(--text); }
+.ai-included small { display: block; color: var(--text-2); }
+.ai-included.off { background: var(--surface-2); }
+.ai-included-ico, .need-key-ico { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: var(--surface); color: var(--accent-text); flex-shrink: 0; }
+.ai-advanced { margin-top: 6px; }
+.ai-advanced summary { cursor: pointer; font-weight: 700; padding: 8px 0; }
+.ai-advanced summary small { font-weight: 550; }

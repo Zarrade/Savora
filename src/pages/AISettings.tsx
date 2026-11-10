@@ -6,11 +6,14 @@ import { startOpenRouterLogin } from '../lib/ai/oauth';
 import { customFoodCount } from '../lib/ingredients';
 import { Icon } from '../components/Icon';
 import { toast } from '../components/ui';
+import { useAuth } from '../components/Account';
+import { showSignIn } from '../lib/account';
 
 const SUGGESTED = ['openai/gpt-4o-mini', 'google/gemini-2.5-flash', 'anthropic/claude-sonnet-4.5', 'meta-llama/llama-3.3-70b-instruct'];
 
 export function AISettings() {
   const cfg = useAIConfig();
+  const signedIn = useAuth().status === 'signedIn';
   const [pasted, setPasted] = useState('');
   const [busy, setBusy] = useState(false);
   const [models, setModels] = useState<ModelInfo[] | null>(null);
@@ -45,29 +48,43 @@ export function AISettings() {
 
   return (
     <section className="card" id="ai">
-      <h2>AI assistant <span className="tag">optional</span></h2>
+      <h2>Savora AI</h2>
       <p className="muted small" style={{ marginTop: -4 }}>
-        Powers smart import, “What can I make?”, the cooking helper, photo-to-recipe and smarter swaps through <b>OpenRouter</b>.
-        Your key stays on this phone (never in backups). Text or photos you send for an AI action go to OpenRouter and the model you pick — nothing is sent otherwise.
+        Powers smart import, “What can I make?”, the cooking helper, photo-to-recipe and smarter swaps.
+        Text or photos are sent to the AI only when you tap an AI button.
       </p>
 
+      {!cfg.key && (
+        <div className={`ai-included ${signedIn ? '' : 'off'}`}>
+          <span className="ai-included-ico"><Icon name="sparkles" size={20} /></span>
+          <div className="grow">
+            <b>{signedIn ? 'Free AI is on' : 'Free AI for account holders'}</b>
+            <small>{signedIn
+              ? 'Free models, picked automatically by OpenRouter. Up to 20 AI requests a day.'
+              : 'Sign in to use Savora AI for free — no key needed.'}</small>
+          </div>
+          {!signedIn && <button className="btn btn-primary btn-sm" onClick={showSignIn}>Sign in</button>}
+        </div>
+      )}
+
       {!cfg.key ? (
-        <>
-          <button className="btn btn-primary block btn-lg" onClick={() => startOpenRouterLogin()}><Icon name="sparkles" size={18} /> Connect OpenRouter</button>
+        <details className="ai-advanced" open={!signedIn}>
+          <summary>Use your own OpenRouter key <small className="muted">(optional · choose any model, no daily limit)</small></summary>
+          <button className="btn btn-soft block" style={{ marginTop: 10 }} onClick={() => startOpenRouterLogin()}><Icon name="sparkles" size={18} /> Connect OpenRouter</button>
           <div className="section-label">Or paste a key</div>
           <div className="row gap">
             <input className="grow" type="password" autoComplete="off" placeholder="sk-or-v1-…" value={pasted} onChange={e => setPasted(e.target.value)} />
             <button className="btn btn-soft" disabled={!pasted || busy} onClick={savePasted}>Save</button>
           </div>
-          <small className="faint">Create one at openrouter.ai/keys. Tip: set a spend limit on the key.</small>
-        </>
+          <small className="faint">Create one at openrouter.ai/keys. It stays on this device, never synced. Tip: set a spend limit on the key.</small>
+        </details>
       ) : (
         <>
           <div className="row between field-row">
             <span style={{ fontWeight: 650 }}>Connected <small className="muted">· …{cfg.key.slice(-4)}</small></span>
             <span className="row gap-sm">
               <button className="btn btn-soft btn-sm" disabled={busy} onClick={() => test()}>Test</button>
-              <button className="btn btn-soft btn-sm" onClick={() => { saveAIConfig({ key: '' }); setStatus(''); toast('Disconnected'); }}>Disconnect</button>
+              <button className="btn btn-soft btn-sm" onClick={() => { saveAIConfig({ key: '' }); setStatus(''); toast(signedIn ? 'Back to free Savora AI' : 'Disconnected'); }}>Disconnect</button>
             </span>
           </div>
           {status && <small className="muted">{status}</small>}

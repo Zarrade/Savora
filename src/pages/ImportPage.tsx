@@ -5,7 +5,7 @@ import { Icon } from '../components/Icon';
 import { parseRecipeText, type ImportedRecipe } from '../lib/importText';
 import { fmtIngredient } from '../lib/ingredients';
 import { IMPORT_KEY } from './RecipeEditor';
-import { NeedKey, aiErrorMessage, useAIConfig } from '../components/AI';
+import { NeedKey, aiErrorMessage, useAIReady } from '../components/AI';
 import { useSettings } from '../hooks';
 import { fetchPageText, importRecipeAI } from '../lib/ai/features';
 
@@ -13,7 +13,7 @@ const VIDEO_HOSTS = /(youtube\.com|youtu\.be|tiktok\.com|instagram\.com|facebook
 
 export default function ImportPage() {
   const nav = useNavigate();
-  const cfg = useAIConfig();
+  const aiReady = useAIReady();
   const settings = useSettings();
   const [aiBusy, setAiBusy] = useState(false);
   const [url, setUrl] = useState('');
@@ -60,7 +60,7 @@ export default function ImportPage() {
     <div className="page">
       <PageHeader title="Paste a recipe" back />
       <p className="muted">Copy a recipe from a website, a video caption, a note or a message and paste it here. Savora sorts it into ingredients and steps — offline by default, or with AI for messy text.</p>
-      {!cfg.key && <NeedKey what="Smart import" />}
+      {!aiReady && <NeedKey what="Smart import" />}
       <input value={url} onChange={e => setUrl(e.target.value)} placeholder="Recipe link (optional, AI)" inputMode="url" autoCapitalize="off" />
 
       <div className="textarea-wrap">
@@ -95,7 +95,7 @@ export default function ImportPage() {
         </div>
       )}
 
-      <button className="btn btn-primary block btn-lg" disabled={(!text.trim() && !url.trim()) || !cfg.key || aiBusy} onClick={smart}>
+      <button className="btn btn-primary block btn-lg" disabled={(!text.trim() && !url.trim()) || !aiReady || aiBusy} onClick={smart}>
         <Icon name="sparkles" size={18} /> {aiBusy ? 'Reading recipe…' : 'Smart import with AI'}
       </button>
       <button className="btn btn-soft block" disabled={!parsed} onClick={proceed}>

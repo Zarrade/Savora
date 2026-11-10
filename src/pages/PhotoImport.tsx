@@ -1,12 +1,12 @@
 import { useRef, useState } from 'react';
 import { PageHeader } from '../components/ui';
 import { Icon } from '../components/Icon';
-import { NeedKey, aiToast, useAIConfig, useOpenDraft } from '../components/AI';
+import { NeedKey, aiToast, useAIReady, useOpenDraft } from '../components/AI';
 import { useSettings } from '../hooks';
 import { imageToDataUrl, photoToRecipe } from '../lib/ai/features';
 
 export default function PhotoImport() {
-  const cfg = useAIConfig();
+  const aiReady = useAIReady();
   const settings = useSettings();
   const openDraft = useOpenDraft();
   const [img, setImg] = useState<string | null>(null);
@@ -35,7 +35,7 @@ export default function PhotoImport() {
     <div className="page">
       <PageHeader title="Recipe from a photo" back />
       <p className="muted">Snap a cookbook page, a handwritten card, a screenshot — or just a dish — and Savora writes the recipe.</p>
-      {!cfg.key && <NeedKey what="Photo to recipe" />}
+      {!aiReady && <NeedKey what="Photo to recipe" />}
 
       {img ? (
         <div className="card-flat center">
@@ -52,11 +52,11 @@ export default function PhotoImport() {
       <input ref={gal} type="file" accept="image/*" hidden onChange={e => { pick(e.target.files?.[0]); e.target.value = ''; }} />
 
       <input value={hint} onChange={e => setHint(e.target.value)} placeholder="Anything to add? e.g. “make it vegetarian”" />
-      <button className="btn btn-primary block btn-lg" disabled={!img || busy || !cfg.key} onClick={go}>
+      <button className="btn btn-primary block btn-lg" disabled={!img || busy || !aiReady} onClick={go}>
         <Icon name="sparkles" size={18} /> {busy ? 'Reading photo…' : 'Make recipe'}
       </button>
       {busy && <button className="btn btn-ghost block" onClick={() => abort.current?.abort()}>Cancel</button>}
-      <p className="fineprint">The photo is sent to OpenRouter and the vision model chosen in Settings → AI. Double-check quantities before cooking.</p>
+      <p className="fineprint">The photo is sent to the AI only when you tap Make recipe. Double-check quantities before cooking.</p>
     </div>
   );
 }
