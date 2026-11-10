@@ -10,7 +10,8 @@ import { AISLES, FOODS } from '../data/nutritionDb';
 import { aisleFor, matchFood, parseIngredientLine, toGrams, unitLabel, UNIT_OPTIONS } from '../lib/ingredients';
 import { fmtGrocery, itemKey, mergeInto } from '../lib/grocery';
 import { fmtMoney, groceryItemCost } from '../lib/pricing';
-import { aisleEmoji, foodEmoji } from '../lib/emoji';
+import { aisleIcon, foodIcon } from '../lib/foodIcons';
+import { SIcon } from '../components/SavoraIcons';
 import type { GroceryItem, Recipe } from '../types';
 
 const SUGGESTIONS = Array.from(new Set(FOODS.map(f => f.k[0]))).sort();
@@ -65,10 +66,10 @@ export default function Groceries() {
 
   const share = async () => {
     setMoreOpen(false);
-    const lines: string[] = ['🛒 Grocery list', ''];
+    const lines: string[] = ['Grocery list', ''];
     for (const [aisle, list] of grouped) {
       lines.push(aisle.toUpperCase());
-      list.forEach(i => lines.push(`☐ ${[fmtGrocery(i), i.name].filter(Boolean).join(' ')}`));
+      list.forEach(i => lines.push(`- ${[fmtGrocery(i), i.name].filter(Boolean).join(' ')}`));
       lines.push('');
     }
     if (toBuy > 0) lines.push(`Estimated: ${fmtMoney(toBuy, settings.currency, 0)}`);
@@ -126,14 +127,14 @@ export default function Groceries() {
           {matches.map(m => {
             const p = parseIngredientLine(text);
             const withQty = [p.qty ?? '', p.unit, m].filter(Boolean).join(' ');
-            return <button key={m} className="chip chip-sm" onClick={() => add(withQty)}>{foodEmoji(m)} {m}</button>;
+            return <button key={m} className="chip chip-sm" onClick={() => add(withQty)}><SIcon name={foodIcon(m)} size={16} /> {m}</button>;
           })}
         </div>
       )}
 
       <div className="quick-row">
-        <button className="quick-btn" onClick={() => nav('/plan')}><span>📅</span> From meal plan</button>
-        <button className="quick-btn" onClick={() => setPickRecipe(true)}><span>📖</span> From a recipe</button>
+        <button className="quick-btn" onClick={() => nav('/plan')}><SIcon name="calendar" size={20} /> From meal plan</button>
+        <button className="quick-btn" onClick={() => setPickRecipe(true)}><SIcon name="book" size={20} /> From a recipe</button>
       </div>
 
       {!items.length ? (
@@ -142,15 +143,15 @@ export default function Groceries() {
         <>
           {grouped.map(([aisle, list]) => (
             <section key={aisle} className="aisle">
-              <div className="aisle-head">{aisleEmoji(aisle)} {aisle}<span className="count">{list.length}</span><span className="grow" /><span style={{ textTransform: 'none', letterSpacing: 0 }}>{fmtMoney(sum(list), settings.currency, 0)}</span></div>
+              <div className="aisle-head"><SIcon name={aisleIcon(aisle)} size={18} /> {aisle}<span className="count">{list.length}</span><span className="grow" /><span style={{ textTransform: 'none', letterSpacing: 0 }}>{fmtMoney(sum(list), settings.currency, 0)}</span></div>
               {list.map(i => <Item key={i.id} item={i} currency={settings.currency} overrides={ov} onToggle={() => toggle(i)} onEdit={() => setEdit(i)} />)}
             </section>
           ))}
-          {!todo.length && <p className="muted center pad">All done! 🎉</p>}
+          {!todo.length && <p className="muted center pad">All done — everything’s in the cart.</p>}
           {done.length > 0 && (
             <section className="aisle">
               <button className="aisle-head" onClick={() => setShowDone(!showDone)}>
-                ✅ In cart <span className="count">{done.length}</span>
+                <SIcon name="check" size={18} /> In cart <span className="count">{done.length}</span>
                 <Icon name="chevronDown" size={16} style={{ transform: showDone ? 'rotate(180deg)' : undefined, marginLeft: 'auto' }} />
               </button>
               {showDone && done.map(i => <Item key={i.id} item={i} currency={settings.currency} overrides={ov} onToggle={() => toggle(i)} onEdit={() => setEdit(i)} />)}
@@ -185,7 +186,7 @@ function Item({ item, currency, overrides, onToggle, onEdit }: { item: GroceryIt
       <button className={`g-check ${item.checked ? 'on' : ''}`} onClick={onToggle} aria-label={item.checked ? `Untick ${item.name}` : `Tick ${item.name}`}>
         <Icon name="check" size={15} />
       </button>
-      <span className="g-emoji" aria-hidden="true">{foodEmoji(item.name)}</span>
+      <span className="g-emoji" aria-hidden="true"><SIcon name={foodIcon(item.name)} size={22} /></span>
       <button className="g-body" onClick={onEdit}>
         <span className="g-name">{item.name}</span>
         {item.fromRecipes.length > 0 && <small className="truncate">{item.fromRecipes.join(', ')}</small>}

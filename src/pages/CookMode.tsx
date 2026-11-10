@@ -4,7 +4,8 @@ import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '../db';
 import { updateRecipe, useSettings } from '../hooks';
 import { airFryerTip, usingInstead } from '../lib/kitchen';
-import { foodEmoji } from '../lib/emoji';
+import { foodIcon } from '../lib/foodIcons';
+import { SIcon } from '../components/SavoraIcons';
 import { Icon } from '../components/Icon';
 import { Sheet, Stars, toast } from '../components/ui';
 import { findTimers } from '../lib/importText';
@@ -111,7 +112,7 @@ function Cook({ recipe }: { recipe: Recipe }) {
         if (!t.done && t.pausedLeft === null && now >= t.endsAt) {
           beep();
           navigator.vibrate?.([300, 150, 300, 150, 300]);
-          toast(`⏰ ${t.label} is done`);
+          toast(`Timer done: ${t.label}`);
           return { ...t, done: true };
         }
         return t;
@@ -213,7 +214,7 @@ function Cook({ recipe }: { recipe: Recipe }) {
       <div className="cook-body">
         {done ? (
           <div className="cook-done">
-            <div className="cook-done-emoji">🎉</div>
+            <div className="cook-done-emoji"><SIcon name="party" size={64} /></div>
             <h2>Done? Enjoy!</h2>
             <p className="muted">How did it turn out?</p>
             <Stars value={rating} onChange={setRating} size={38} />
@@ -227,7 +228,7 @@ function Cook({ recipe }: { recipe: Recipe }) {
             <ul className="ing-list big">
               {recipe.ingredients.map(i => (
                 <li key={i.id} className={gathered.has(i.id) ? 'done' : ''} onClick={() => setGathered(s => { const n = new Set(s); n.has(i.id) ? n.delete(i.id) : n.add(i.id); return n; })}>
-                  <span className="ing-emoji">{foodEmoji(i.name)}</span>
+                  <span className="ing-emoji"><SIcon name={foodIcon(i.name)} size={22} /></span>
                   <span className="ing-text">{fmtIngredient(i, scale)}{i.note && <small className="muted">, {i.note}</small>}</span>
                   <span className={`tick ${gathered.has(i.id) ? 'on' : ''}`}><Icon name="check" size={14} /></span>
                 </li>
@@ -238,7 +239,7 @@ function Cook({ recipe }: { recipe: Recipe }) {
           <div className="cook-step" key={idx}>
             <div className="cook-kicker">Step {idx + 1}</div>
             <p className="cook-text">{steps[idx]}</p>
-            {useAirFryer && airFryerTip(steps[idx]) && <div className="af-tip">🌀 {airFryerTip(steps[idx])}</div>}
+            {useAirFryer && airFryerTip(steps[idx]) && <div className="af-tip"><SIcon name="airfryer" size={18} /> {airFryerTip(steps[idx])}</div>}
             {findTimers(steps[idx]).map((t, i) => (
               <button key={i} className="btn btn-soft timer-btn" onClick={() => startTimer(`Step ${idx + 1} · ${t.label}`, t.seconds)}>
                 <Icon name="timer" size={18} /> Start {t.label} timer
@@ -288,7 +289,7 @@ function Cook({ recipe }: { recipe: Recipe }) {
 
       <Sheet open={ingOpen} onClose={() => setIngOpen(false)} title={`Ingredients · ${servings} servings`}>
         <ul className="ing-list">
-          {recipe.ingredients.map(i => <li key={i.id}><span className="ing-emoji">{foodEmoji(i.name)}</span><span className="ing-text">{fmtIngredient(i, scale)}{i.note && <small className="muted">, {i.note}</small>}</span></li>)}
+          {recipe.ingredients.map(i => <li key={i.id}><span className="ing-emoji"><SIcon name={foodIcon(i.name)} size={22} /></span><span className="ing-text">{fmtIngredient(i, scale)}{i.note && <small className="muted">, {i.note}</small>}</span></li>)}
         </ul>
       </Sheet>
     </div>

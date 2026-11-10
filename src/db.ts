@@ -145,9 +145,9 @@ export async function ensureSeeded(): Promise<void> {
       if ((await db.recipes.count()) === 0) {
         await db.recipes.bulkPut(ALL_SEEDS.map((r, i) => seedToRecipe(r, now - i)));
         await db.collections.bulkPut([
-          { id: 'col-weeknight', name: 'Weeknight', emoji: '⚡', createdAt: now },
-          { id: 'col-mealprep', name: 'Meal prep', emoji: '📦', createdAt: now + 1 },
-          { id: 'col-guests', name: 'For guests', emoji: '🎉', createdAt: now + 2 }
+          { id: 'col-weeknight', name: 'Weeknight', emoji: 'bolt', createdAt: now },
+          { id: 'col-mealprep', name: 'Meal prep', emoji: 'box', createdAt: now + 1 },
+          { id: 'col-guests', name: 'For guests', emoji: 'party', createdAt: now + 2 }
         ]);
       }
       return;

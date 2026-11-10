@@ -4,18 +4,18 @@ export type Equip =
   | 'hob' | 'oven' | 'airfryer' | 'microwave' | 'kettle' | 'blender'
   | 'processor' | 'grill' | 'toaster' | 'slowcooker' | 'ricecooker';
 
-export const EQUIPMENT: { id: Equip; label: string; emoji: string }[] = [
-  { id: 'hob', label: 'Hob / stove', emoji: '🍳' },
-  { id: 'oven', label: 'Oven', emoji: '♨️' },
-  { id: 'airfryer', label: 'Air fryer', emoji: '🌀' },
-  { id: 'microwave', label: 'Microwave', emoji: '⚡' },
-  { id: 'kettle', label: 'Kettle', emoji: '🫖' },
-  { id: 'blender', label: 'Blender', emoji: '🥤' },
-  { id: 'processor', label: 'Food processor', emoji: '⚙️' },
-  { id: 'grill', label: 'Grill / BBQ', emoji: '🔥' },
-  { id: 'toaster', label: 'Toaster', emoji: '🍞' },
-  { id: 'slowcooker', label: 'Slow cooker', emoji: '🍲' },
-  { id: 'ricecooker', label: 'Rice cooker', emoji: '🍚' }
+export const EQUIPMENT: { id: Equip; label: string; icon: string }[] = [
+  { id: 'hob', label: 'Hob / stove', icon: 'hob' },
+  { id: 'oven', label: 'Oven', icon: 'oven' },
+  { id: 'airfryer', label: 'Air fryer', icon: 'airfryer' },
+  { id: 'microwave', label: 'Microwave', icon: 'microwave' },
+  { id: 'kettle', label: 'Kettle', icon: 'kettle' },
+  { id: 'blender', label: 'Blender', icon: 'blender' },
+  { id: 'processor', label: 'Food processor', icon: 'processor' },
+  { id: 'grill', label: 'Grill / BBQ', icon: 'grill' },
+  { id: 'toaster', label: 'Toaster', icon: 'toaster' },
+  { id: 'slowcooker', label: 'Slow cooker', icon: 'slowcooker' },
+  { id: 'ricecooker', label: 'Rice cooker', icon: 'ricecooker' }
 ];
 export const EQUIP_MAP = Object.fromEntries(EQUIPMENT.map(e => [e.id, e])) as Record<Equip, (typeof EQUIPMENT)[number]>;
 

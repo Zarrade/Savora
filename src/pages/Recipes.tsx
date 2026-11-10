@@ -9,6 +9,8 @@ import { recipeConflicts, recipeDiets, recipeNutrition } from '../lib/ingredient
 import { missingEquipment } from '../lib/kitchen';
 import { recipeCost } from '../lib/pricing';
 import { capitalize } from '../lib/util';
+import { SIcon } from '../components/SavoraIcons';
+import { legacyIcon } from '../lib/foodIcons';
 
 type Sort = 'recent' | 'az' | 'quick' | 'cheap' | 'kcal' | 'protein' | 'rating' | 'cooked';
 const SORTS: [Sort, string][] = [['recent', 'Recently updated'], ['az', 'A–Z'], ['quick', 'Quickest'], ['cheap', 'Cheapest'], ['kcal', 'Fewest calories'], ['protein', 'Most protein'], ['rating', 'Top rated'], ['cooked', 'Most cooked']];
@@ -78,7 +80,7 @@ export default function Recipes() {
 
   return (
     <div className="page">
-      <PageHeader title={colName ? `${colName.emoji} ${colName.name}` : 'Recipes'} back={col ? '/recipes' : undefined}
+      <PageHeader title={colName ? colName.name : 'Recipes'} back={col ? '/recipes' : undefined}
         right={<button className="icon-btn" aria-label="New recipe" onClick={() => nav('/new')}><Icon name="plus" /></button>} />
 
       <div className="row gap">
@@ -95,10 +97,10 @@ export default function Recipes() {
 
       {!col && (
         <div className="chip-row scroll">
-          <Chip active={fav} onClick={() => setFav(!fav)}>♥ Favourites</Chip>
-          <Chip active={myKitchen} onClick={() => setMyKitchen(!myKitchen)}>🍳 My kitchen</Chip>
-          <Chip active={maxCost === 6} onClick={() => setMaxCost(maxCost === 6 ? null : 6)}>💰 Budget</Chip>
-          {collections.map(c => <Chip key={c.id} onClick={() => setParams({ col: c.id })}>{c.emoji} {c.name}</Chip>)}
+          <Chip active={fav} onClick={() => setFav(!fav)}><SIcon name="heart" size={16} /> Favourites</Chip>
+          <Chip active={myKitchen} onClick={() => setMyKitchen(!myKitchen)}><SIcon name="hob" size={16} /> My kitchen</Chip>
+          <Chip active={maxCost === 6} onClick={() => setMaxCost(maxCost === 6 ? null : 6)}><SIcon name="wallet" size={16} /> Budget</Chip>
+          {collections.map(c => <Chip key={c.id} onClick={() => setParams({ col: c.id })}><SIcon name={legacyIcon(c.emoji) ?? 'folder'} size={16} /> {c.name}</Chip>)}
           {MEAL_TYPES.map(m => <Chip key={m} active={meal.includes(m)} onClick={() => toggle(meal, m, setMeal)}>{capitalize(m)}</Chip>)}
         </div>
       )}
@@ -126,7 +128,7 @@ export default function Recipes() {
         <div className="chip-row wrap">{[null, 15, 20, 30, 45, 60].map(t => <Chip key={String(t)} active={maxTime === t} onClick={() => setMaxTime(t)}>{t ? `≤ ${t} min` : 'Any'}</Chip>)}</div>
         <div className="section-label">Cost per serving</div>
         <div className="chip-row wrap">{[null, 4, 6, 10].map(c => <Chip key={String(c)} active={maxCost === c} onClick={() => setMaxCost(c)}>{c ? `≤ ${settings.currency} ${c}` : 'Any'}</Chip>)}</div>
-        <div className="chip-row" style={{ marginTop: 12 }}><Chip active={myKitchen} onClick={() => setMyKitchen(!myKitchen)}>🍳 Only what my kitchen can make</Chip></div>
+        <div className="chip-row" style={{ marginTop: 12 }}><Chip active={myKitchen} onClick={() => setMyKitchen(!myKitchen)}><SIcon name="hob" size={16} /> Only what my kitchen can make</Chip></div>
         <div className="section-label">Cuisine</div>
         <div className="chip-row wrap">{allCuisines.map(c => <Chip key={c} active={cuisines.includes(c)} onClick={() => toggle(cuisines, c, setCuisines)}>{c}</Chip>)}</div>
         <div className="section-label">Diet</div>

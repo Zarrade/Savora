@@ -15,6 +15,7 @@ import { aiToast, useAIReady } from '../components/AI';
 import { rankSwapCandidates } from '../lib/ai/features';
 import { groceriesFromPlan, mergeInto } from '../lib/grocery';
 import { fmtMoney, planCost, recipeCost } from '../lib/pricing';
+import { SIcon } from '../components/SavoraIcons';
 
 /** Write a generated set of entries for some dates, then fix leftover links across the week. */
 async function saveGenerated(weekStart: string, before: PlanEntry[], out: PlanEntry[], dates: string[], slots: Slot[]) {
@@ -109,7 +110,7 @@ export default function Planner() {
     setBusy('week');
     const { entries: out, warnings, cost } = generatePlan(recipes, settings, entries, baseOpts(genDates, false));
     await saveGenerated(weekStart, entries, out, genDates, settings.planSlots);
-    toast(warnings[0] ?? `New week ready ✨${budget ? ` · about ${fmtMoney(cost, settings.currency, 0)}` : ''}`);
+    toast(warnings[0] ?? `New week ready${budget ? ` · about ${fmtMoney(cost, settings.currency, 0)}` : ''}`);
     setBusy(null);
   };
 
@@ -153,14 +154,14 @@ export default function Planner() {
 
       <div className="summary-row">
         <Link to={budget ? '/groceries' : '/settings#budget'} className="summary-card">
-          <span className="label">💰 Est. cost</span>
+          <span className="label"><SIcon name="wallet" size={14} /> Est. cost</span>
           <span className="big">{fmtMoney(weekCost, settings.currency, 0)}{budget > 0 && <small> / {budget}</small>}</span>
           {budget > 0
             ? <div className={`bar ${weekCost > budget ? 'over' : ''}`}><span style={{ width: `${Math.min(100, (weekCost / budget) * 100)}%` }} /></div>
             : <small className="faint" style={{ fontWeight: 650 }}>Set a weekly budget →</small>}
         </Link>
         <div className="summary-card">
-          <span className="label">🔥 Daily average</span>
+          <span className="label"><SIcon name="flame" size={14} /> Daily average</span>
           <span className="big">{Math.round(avgKcal)}<small> / {settings.kcal} kcal</small></span>
           <small className="faint" style={{ fontWeight: 650 }}>{Math.round(avgProtein)} g protein · {plannedDays.length} day{plannedDays.length === 1 ? '' : 's'}</small>
         </div>
@@ -209,7 +210,7 @@ export default function Planner() {
                   return (
                     <div key={e.id} className={`meal-row ${e.leftover ? 'is-leftover' : ''}`}>
                       <button className="meal-row-main" onClick={() => setActive(e)}>
-                        {r ? <Cover recipe={r} className="cover-sm" /> : <div className="cover cover-sm cover-emoji"><span>🍴</span></div>}
+                        {r ? <Cover recipe={r} className="cover-sm" /> : <div className="cover cover-sm cover-emoji"><SIcon name="plate" size={26} className="cover-icon" /></div>}
                         <span className="meal-row-body">
                           <span className="meal-row-title">{r?.title ?? e.customText ?? 'Removed recipe'}</span>
                           <span className="meal-row-meta">
@@ -334,7 +335,7 @@ function EntrySheet({ entry, recipe, week, recipes, onClose, onBrowse, onPick, o
       {aiReady && (
         <>
           <form className="row gap" style={{ marginTop: 8 }} onSubmit={e => { e.preventDefault(); askAI(); }}>
-            <input className="grow" value={aiAsk} onChange={e => setAiAsk(e.target.value)} placeholder="✨ Ask: something light and spicy…" />
+            <input className="grow" value={aiAsk} onChange={e => setAiAsk(e.target.value)} placeholder="Ask AI: something light and spicy…" />
             <button className="btn btn-soft" disabled={aiBusy || !aiAsk.trim()}>{aiBusy ? '…' : 'Ask'}</button>
           </form>
           {aiPicks && (
@@ -397,7 +398,7 @@ function GenerateSheet({ onClose, days, weekStart, entries, recipes, onDone }: {
     await saveGenerated(weekStart, entries, out, target, slots);
     await saveSettings({ cookingDays, planSlots: slots, planOptions: opts, householdServings: servings });
     if (warnings.length) setResult({ warnings, cost });
-    else { toast(`Your week is planned ✨${settings.weeklyBudget ? ` · about ${fmtMoney(cost, settings.currency, 0)}` : ''}`); onDone(); }
+    else { toast(`Your week is planned${settings.weeklyBudget ? ` · about ${fmtMoney(cost, settings.currency, 0)}` : ''}`); onDone(); }
   };
 
   return (
@@ -491,7 +492,7 @@ function SendSheet({ onClose, entries, weekStart, map }: { onClose: () => void; 
           <b>{fmtMoney(cost, settings.currency, 0)}</b>
           {settings.weeklyBudget > 0 && <span className="faint small"> of {fmtMoney(settings.weeklyBudget, settings.currency, 0)} budget</span>}
         </div>
-        <span style={{ fontSize: 28 }}>🛒</span>
+        <span className="cost-ico"><SIcon name="cart" size={26} /></span>
       </div>
       <p className="muted small" style={{ marginTop: 12 }}>
         {chosen.filter(e => !e.leftover).length} meals → {preview.length} ingredients, combined and scaled to your servings. Leftover meals and pantry staples ({settings.pantry.join(', ') || 'none'}) are skipped. Sending again replaces this week’s unticked items.

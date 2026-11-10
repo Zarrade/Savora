@@ -13,6 +13,10 @@ import { ALLERGY_OPTIONS } from './Onboarding';
 import { AISettings } from './AISettings';
 import { AccountCard } from '../components/AccountCard';
 import { useAuth } from '../components/Account';
+import { SIcon } from '../components/SavoraIcons';
+import { legacyIcon } from '../lib/foodIcons';
+
+const COLLECTION_ICONS = ['folder', 'bolt', 'box', 'party', 'star', 'heart', 'calendar', 'flame', 'sun', 'moon', 'wallet', 'clock', 'herb'];
 
 const ACTIVITY: [number, string][] = [[1.2, 'Sedentary'], [1.375, 'Light (1–3 days/wk)'], [1.55, 'Moderate (3–5 days/wk)'], [1.725, 'Very active (6–7 days/wk)'], [1.9, 'Athlete (2× a day)']];
 
@@ -104,13 +108,13 @@ export default function SettingsPage() {
       <AccountCard />
 
       <section className="card" id="kitchen">
-        <h2>🍳 My kitchen</h2>
+        <h2 className="h-ico"><SIcon name="hob" size={24} /> My kitchen</h2>
         <p className="muted small" style={{ marginTop: -4, marginBottom: 12 }}>Savora only plans and suggests recipes you can make with what you have. With an air fryer, many oven recipes still work — you’ll get conversion tips.</p>
         <KitchenPicker value={s.equipment} onChange={v => saveSettings({ equipment: v })} />
       </section>
 
       <section className="card" id="budget">
-        <h2>💰 Weekly budget</h2>
+        <h2 className="h-ico"><SIcon name="wallet" size={24} /> Weekly budget</h2>
         <p className="muted small" style={{ marginTop: -4, marginBottom: 12 }}>Plan my week aims to keep the week’s meals under this. Leave empty to turn it off.</p>
         <div className="input-with-btn">
           <div className="prefix-input grow"><span>{s.currency}</span>
@@ -196,7 +200,7 @@ export default function SettingsPage() {
       </section>
 
       <section className="card" id="photos">
-        <h2>📸 Recipe photos</h2>
+        <h2 className="h-ico"><SIcon name="camera" size={24} /> Recipe photos</h2>
         <p className="muted small" style={{ marginTop: -4, marginBottom: 12 }}>Real food photos come from Wikipedia / Wikimedia Commons (free licences, credited on each recipe). {counts.photos} recipes have online photos; they’re stored on your phone after the first view.</p>
         <div className="menu">
           <button onClick={() => refreshPhotos(false)} disabled={!!photoBusy}><Icon name="image" /> {photoBusy && photoBusy.includes('/') ? `Finding photos… ${photoBusy}` : 'Find missing photos'}</button>
@@ -209,7 +213,10 @@ export default function SettingsPage() {
         <h2>Collections</h2>
         {collections.map(c => (
           <div key={c.id} className="row between list-row">
-            <input className="emoji-input" value={c.emoji} maxLength={4} aria-label="Emoji" onChange={e => db.collections.update(c.id, { emoji: e.target.value })} />
+            <button className="icon-btn boxed col-ico" aria-label={`Change icon for ${c.name}`} title="Tap to change icon"
+              onClick={() => { const cur = legacyIcon(c.emoji) ?? 'folder'; db.collections.update(c.id, { emoji: COLLECTION_ICONS[(COLLECTION_ICONS.indexOf(cur) + 1) % COLLECTION_ICONS.length] }); }}>
+              <SIcon name={legacyIcon(c.emoji) ?? 'folder'} size={20} />
+            </button>
             <input className="grow plain-input" value={c.name} aria-label="Collection name" onChange={e => db.collections.update(c.id, { name: e.target.value })} />
             <button className="icon-btn sm" aria-label={`Delete ${c.name}`} onClick={async () => {
               if (!(await confirm(`Delete the “${c.name}” collection? Recipes are kept.`, 'Delete'))) return;
@@ -221,7 +228,7 @@ export default function SettingsPage() {
         ))}
         <div className="input-with-btn">
           <input placeholder="New collection" value={colName} onChange={e => setColName(e.target.value)} />
-          <button className="btn btn-primary" disabled={!colName.trim()} onClick={async () => { await db.collections.put({ id: uid(), name: colName.trim(), emoji: '📁', createdAt: Date.now() }); setColName(''); }}>Add</button>
+          <button className="btn btn-primary" disabled={!colName.trim()} onClick={async () => { await db.collections.put({ id: uid(), name: colName.trim(), emoji: 'folder', createdAt: Date.now() }); setColName(''); }}>Add</button>
         </div>
       </section>
 

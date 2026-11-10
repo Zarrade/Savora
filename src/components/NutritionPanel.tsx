@@ -157,5 +157,5 @@ function EstimateMissing({ names }: { names: string[] }) {
       toast(`Added ${Object.keys(found).length} food${Object.keys(found).length === 1 ? '' : 's'} to your nutrition database`);
     } catch (e) { aiToast(e); } finally { setBusy(false); }
   };
-  return <button className="btn btn-soft btn-sm" disabled={busy} onClick={run}>{busy ? 'Estimating…' : '✨ Estimate missing with AI'}</button>;
+  return <button className="btn btn-soft btn-sm" disabled={busy} onClick={run}>{busy ? 'Estimating…' : 'Estimate missing with AI'}</button>;
 }

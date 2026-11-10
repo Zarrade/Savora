@@ -137,7 +137,7 @@ export default function App() {
   useEffect(() => {
     if (!ready) return;
     finishOpenRouterLogin().then(r => {
-      if (r === 'connected') { toast('OpenRouter connected ✨'); location.hash = '#/settings#ai'; }
+      if (r === 'connected') { toast('OpenRouter connected'); location.hash = '#/settings#ai'; }
       else if (r === 'failed') { toast('Couldn’t finish connecting. Paste a key in Settings → AI instead.'); location.hash = '#/settings#ai'; }
     });
   }, [ready]);

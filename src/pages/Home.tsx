@@ -13,6 +13,7 @@ import { today, capitalize, addDays, weekStartOf, DAY_SHORT, mondayIndex, parseI
 import { recipeNutrition } from '../lib/ingredients';
 import { eligibleRecipes } from '../lib/planner';
 import { fmtMoney, planCost, recipeCost } from '../lib/pricing';
+import { SIcon } from '../components/SavoraIcons';
 
 function greeting() {
   const h = new Date().getHours();
@@ -253,8 +254,8 @@ export function DecideSheet({ open, onClose, recipes }: { open: boolean; onClose
         {cuisines.map(c => <Chip key={c} active={cuisine === c} onClick={() => setCuisine(c)}>{c}</Chip>)}
       </div>
       <div className="chip-row wrap" style={{ marginTop: 12 }}>
-        <Chip active={favOnly} onClick={() => setFavOnly(!favOnly)}>♥ Favourites</Chip>
-        <Chip active={cheap} onClick={() => setCheap(!cheap)}>💰 Under {fmtMoney(6, settings.currency, 0)}/serving</Chip>
+        <Chip active={favOnly} onClick={() => setFavOnly(!favOnly)}><SIcon name="heart" size={16} /> Favourites</Chip>
+        <Chip active={cheap} onClick={() => setCheap(!cheap)}><SIcon name="wallet" size={16} /> Under {fmtMoney(6, settings.currency, 0)}/serving</Chip>
       </div>
       <p className="fineprint">Only recipes you can make with your kitchen and preferences.</p>
 
@@ -271,7 +272,7 @@ export function DecideSheet({ open, onClose, recipes }: { open: boolean; onClose
           </div>
         ) : (
           <button className="btn btn-primary block btn-lg" onClick={roll} disabled={!pool.length}>
-            🎲 {pool.length ? `Pick from ${pool.length} recipe${pool.length === 1 ? '' : 's'}` : 'No matches — loosen filters'}
+            <SIcon name="sparkle" size={18} /> {pool.length ? `Pick from ${pool.length} recipe${pool.length === 1 ? '' : 's'}` : 'No matches — loosen filters'}
           </button>
         )}
       </div>

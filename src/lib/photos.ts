@@ -242,6 +242,6 @@ export async function autoResolvePhotos(getVersion: () => Promise<number | undef
   try {
     const n = await resolveStarterPhotos(false);
     await setVersion(PHOTO_VERSION);
-    if (n) notify?.(`Added ${n} recipe photos 📸`);
+    if (n) notify?.(`Added ${n} recipe photos`);
   } catch { /* try again next launch */ } finally { running = false; }
 }

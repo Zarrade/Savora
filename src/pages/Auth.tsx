@@ -2,6 +2,7 @@ import { useEffect, useState, type FormEvent } from 'react';
 import { LogoMark } from '../components/Logo';
 import { Icon } from '../components/Icon';
 import { toast } from '../components/ui';
+import { SIcon } from '../components/SavoraIcons';
 import {
   continueAsGuest, sendMagicLink, sendPasswordReset, signIn, signUp, takeAuthNotice, updatePassword
 } from '../lib/account';
@@ -79,7 +80,7 @@ export default function AuthPage({ recovery = false }: { recovery?: boolean }) {
           </ul>
         </div>
         <div className="auth-brand-plates">
-          <span>🥘</span><span>🥗</span><span>🍜</span><span>🫓</span><span>🍋</span>
+          {['casserole', 'salad', 'noodles', 'flatbread', 'lemon'].map(n => <span key={n}><SIcon name={n} size={38} /></span>)}
         </div>
       </aside>
 

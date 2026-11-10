@@ -10,7 +10,8 @@ import { AddToGrocerySheet, AddToPlanSheet } from '../components/Sheets';
 import { Chip, Empty, Sheet, Stars, Stepper, toast, useConfirm } from '../components/ui';
 import { fmtIngredient, fmtQty, recipeConflicts, recipeDiets, recipeNutrition, unitLabel } from '../lib/ingredients';
 import { capitalize, fmtMinutes, uid } from '../lib/util';
-import { foodEmoji } from '../lib/emoji';
+import { foodIcon, legacyIcon } from '../lib/foodIcons';
+import { SIcon } from '../components/SavoraIcons';
 import { EQUIP_MAP, missingEquipment, recipeEquipment, usingInstead, airFryerTip } from '../lib/kitchen';
 import { fmtMoney, recipeCost } from '../lib/pricing';
 import { ALL_SEEDS } from '../data/seeds';
@@ -109,7 +110,7 @@ function Detail({ recipe }: { recipe: Recipe }) {
           </div>
         </div>
         {recipe.image && recipe.imageCredit && (
-          <a className="photo-credit" href={recipe.imageCredit.page} target="_blank" rel="noreferrer">📷 {recipe.imageCredit.label}</a>
+          <a className="photo-credit" href={recipe.imageCredit.page} target="_blank" rel="noreferrer"><SIcon name="camera" size={12} /> {recipe.imageCredit.label}</a>
         )}
       </div>
 
@@ -127,10 +128,10 @@ function Detail({ recipe }: { recipe: Recipe }) {
         </div>
 
         <div className="meta-pills">
-          <span className="meta-pill">⏱ {fmtMinutes(totalTime(recipe))}</span>
-          <span className="meta-pill">🔥 {Math.round(nutrition.perServing.kcal)} <small>kcal</small></span>
-          <span className="meta-pill">💪 {Math.round(nutrition.perServing.protein)}g <small>protein</small></span>
-          {cost.perServing > 0 && <span className="meta-pill">💰 {fmtMoney(cost.perServing * 1, settings.currency)} <small>/ serving</small></span>}
+          <span className="meta-pill"><SIcon name="clock" size={16} /> {fmtMinutes(totalTime(recipe))}</span>
+          <span className="meta-pill"><SIcon name="flame" size={16} /> {Math.round(nutrition.perServing.kcal)} <small>kcal</small></span>
+          <span className="meta-pill"><SIcon name="muscle" size={16} /> {Math.round(nutrition.perServing.protein)}g <small>protein</small></span>
+          {cost.perServing > 0 && <span className="meta-pill"><SIcon name="wallet" size={16} /> {fmtMoney(cost.perServing * 1, settings.currency)} <small>/ serving</small></span>}
         </div>
 
         {equipment.length > 0 && (
@@ -141,7 +142,7 @@ function Detail({ recipe }: { recipe: Recipe }) {
               const miss = missing.includes(e);
               return (
                 <span key={e} className={`equip-chip ${miss ? 'missing' : sw ? 'swap' : ''}`}>
-                  {sw ? `${EQUIP_MAP[sw.use].emoji} ${EQUIP_MAP[sw.use].label} instead of ${EQUIP_MAP[e].label.toLowerCase()}` : `${EQUIP_MAP[e].emoji} ${EQUIP_MAP[e].label}`}
+                  <SIcon name={EQUIP_MAP[sw ? sw.use : e].icon} size={15} /> {sw ? `${EQUIP_MAP[sw.use].label} instead of ${EQUIP_MAP[e].label.toLowerCase()}` : EQUIP_MAP[e].label}
                 </span>
               );
             })}
@@ -183,7 +184,7 @@ function Detail({ recipe }: { recipe: Recipe }) {
                     const amount = [fmtQty(q), unitLabel(i.unit, q)].filter(Boolean).join(' ');
                     return (
                       <li key={i.id} className={checked.has(i.id) ? 'done' : ''} onClick={() => toggleCheck(i.id)}>
-                        <span className="ing-emoji">{foodEmoji(i.name)}</span>
+                        <span className="ing-emoji"><SIcon name={foodIcon(i.name)} size={20} /></span>
                         <span className="ing-text">
                           {amount && <b>{amount} </b>}{i.name}
                           {i.note && <small className="faint">, {i.note}</small>}
@@ -203,7 +204,7 @@ function Detail({ recipe }: { recipe: Recipe }) {
                   <b>{fmtMoney(cost.perServing * servings, settings.currency)}</b>
                   <span className="faint small"> · {fmtMoney(cost.perServing, settings.currency)} each</span>
                 </div>
-                <span style={{ fontSize: 28 }}>💰</span>
+                <span className="cost-ico"><SIcon name="wallet" size={26} /></span>
               </div>
             )}
             {cost.unknown.length > 0 && <p className="fineprint">No price for: {cost.unknown.join(', ')}.</p>}
@@ -220,7 +221,7 @@ function Detail({ recipe }: { recipe: Recipe }) {
                   <li key={i}>
                     <div className="step-kicker">Step {i + 1}</div>
                     <p>{s}</p>
-                    {tip && <div className="af-tip">🌀 {tip}</div>}
+                    {tip && <div className="af-tip"><SIcon name="airfryer" size={16} /> {tip}</div>}
                   </li>
                 );
               })}
@@ -314,14 +315,14 @@ export function CollectionsSheet({ open, onClose, recipe }: { open: boolean; onC
   const create = async () => {
     if (!name.trim()) return;
     const id = uid();
-    await db.collections.put({ id, name: name.trim(), emoji: '📁', createdAt: Date.now() });
+    await db.collections.put({ id, name: name.trim(), emoji: 'folder', createdAt: Date.now() });
     await updateRecipe(recipe.id, { collections: [...recipe.collections, id] });
     setName('');
   };
   return (
     <Sheet open={open} onClose={onClose} title="Collections">
       <div className="chip-row wrap">
-        {collections.map(c => <Chip key={c.id} active={recipe.collections.includes(c.id)} onClick={() => toggle(c.id)}>{c.emoji} {c.name}</Chip>)}
+        {collections.map(c => <Chip key={c.id} active={recipe.collections.includes(c.id)} onClick={() => toggle(c.id)}><SIcon name={legacyIcon(c.emoji) ?? 'folder'} size={16} /> {c.name}</Chip>)}
       </div>
       <div className="input-with-btn" style={{ marginTop: 14 }}>
         <input placeholder="New collection name" value={name} onChange={e => setName(e.target.value)} onKeyDown={e => e.key === 'Enter' && create()} />

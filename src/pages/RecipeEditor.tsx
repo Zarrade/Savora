@@ -11,15 +11,17 @@ import { fileToDataUrl } from '../lib/image';
 import type { ImportedRecipe } from '../lib/importText';
 import { EQUIPMENT, inferEquipment } from '../lib/kitchen';
 import { PhotoSearch } from '../components/PhotoSearch';
+import { SIcon } from '../components/SavoraIcons';
+import { recipeIcon } from '../lib/foodIcons';
 
-const EMOJIS = ['🍽️', '🥗', '🍲', '🍝', '🍛', '🍜', '🥘', '🍗', '🥩', '🐟', '🍤', '🥚', '🍳', '🥞', '🥣', '🌮', '🌯', '🥙', '🍔', '🍕', '🥪', '🫓', '🧆', '🍚', '🍱', '🥦', '🥕', '🍆', '🥑', '🍓', '🍌', '🍰', '🍪', '🧁', '🥤', '🍵'];
+const COVER_ICONS = ['plate', 'pan', 'bowl', 'soup', 'pot', 'casserole', 'curry', 'rice', 'noodles', 'pasta', 'salad', 'wrap', 'taco', 'pita', 'burger', 'sandwich', 'skewer', 'falafel', 'bento', 'pancakes', 'flatbread', 'pie', 'cupcake', 'pudding', 'cookie', 'chocolate', 'egg', 'fish', 'shrimp', 'drumstick', 'steak', 'tofu', 'beans', 'cheese', 'bread', 'greens', 'avocado', 'eggplant', 'pumpkin', 'mushroom', 'berries', 'drink', 'coffee'];
 
 export const IMPORT_KEY = 'savora-import-draft';
 
 function blankRecipe(): Recipe {
   const now = Date.now();
   return {
-    id: uid(), title: '', description: '', emoji: '🍽️', servings: 2, prepMin: 10, cookMin: 20, cuisine: '',
+    id: uid(), title: '', description: '', emoji: 'plate', servings: 2, prepMin: 10, cookMin: 20, cuisine: '',
     mealTypes: ['dinner'], tags: [], ingredients: [], steps: [''], notes: '', favorite: false, collections: [],
     reviews: [], cookedCount: 0, createdAt: now, updatedAt: now
   };
@@ -140,17 +142,17 @@ export default function RecipeEditor() {
       {r.builtIn && <div className="alert alert-info"><Icon name="sparkles" size={18} /> Editing a starter recipe — your version replaces it, and you can restore the original anytime.</div>}
 
       <div className="photo-picker">
-        {r.image ? <img src={r.image} alt="" /> : <button className="emoji-big" onClick={() => setEmojiOpen(!emojiOpen)} aria-label="Choose emoji">{r.emoji || '🍽️'}</button>}
+        {r.image ? <img src={r.image} alt="" /> : <button className="emoji-big" onClick={() => setEmojiOpen(!emojiOpen)} aria-label="Choose cover icon"><SIcon name={recipeIcon(r)} size={52} /></button>}
         <div className="photo-actions">
           <button className="btn btn-soft btn-sm" onClick={() => fileRef.current?.click()}><Icon name="camera" size={16} /> {r.image ? 'Your photo' : 'Add your photo'}</button>
           <button className="btn btn-soft btn-sm" onClick={() => setPhotoOpen(true)}><Icon name="image" size={16} /> Find a real photo</button>
           {r.image ? <button className="btn btn-ghost btn-sm" onClick={() => set({ image: undefined, imageCredit: undefined, photoAuto: false })}>Remove photo</button>
-            : <button className="btn btn-ghost btn-sm" onClick={() => setEmojiOpen(!emojiOpen)}>Change emoji</button>}
+            : <button className="btn btn-ghost btn-sm" onClick={() => setEmojiOpen(!emojiOpen)}>Change icon</button>}
         </div>
         <input ref={fileRef} type="file" accept="image/*" hidden onChange={e => onPhoto(e.target.files?.[0])} />
       </div>
       {emojiOpen && !r.image && (
-        <div className="emoji-grid">{EMOJIS.map(e => <button key={e} onClick={() => { set({ emoji: e }); setEmojiOpen(false); }}>{e}</button>)}</div>
+        <div className="emoji-grid icon-grid">{COVER_ICONS.map(e => <button key={e} aria-label={e} className={recipeIcon(r) === e ? 'on' : ''} onClick={() => { set({ emoji: e }); setEmojiOpen(false); }}><SIcon name={e} size={26} /></button>)}</div>
       )}
 
       <label className="field"><span>Name</span><input value={r.title} onChange={e => set({ title: e.target.value })} placeholder="e.g. Grandma’s stuffed vine leaves" /></label>
@@ -271,7 +273,7 @@ export default function RecipeEditor() {
           {EQUIPMENT.map(e => {
             const cur = r.equipment ?? inferEquipment({ id: `draft:${r.steps.join('|')}`, steps: r.steps, updatedAt: 0 });
             const on = cur.includes(e.id);
-            return <Chip key={e.id} small active={on} onClick={() => set({ equipment: on ? cur.filter(x => x !== e.id) : [...cur, e.id] })}>{e.emoji} {e.label}</Chip>;
+            return <Chip key={e.id} small active={on} onClick={() => set({ equipment: on ? cur.filter(x => x !== e.id) : [...cur, e.id] })}><SIcon name={e.icon} size={16} /> {e.label}</Chip>;
           })}
         </div>
       </div>

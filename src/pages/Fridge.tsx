@@ -5,6 +5,7 @@ import { NeedKey, aiToast, useAIReady, useOpenDraft } from '../components/AI';
 import { useSettings } from '../hooks';
 import { whatCanIMake, type PantrySuggestion } from '../lib/ai/features';
 import { fmtMinutes } from '../lib/util';
+import { SIcon } from '../components/SavoraIcons';
 
 const QUICK = ['chicken', 'eggs', 'rice', 'pasta', 'tomatoes', 'onions', 'potatoes', 'yoghurt', 'spinach', 'chickpeas', 'cheese', 'tuna'];
 const MOODS = ['Quick (under 30 min)', 'Light & healthy', 'Comfort food', 'High protein', 'One pan'];
@@ -56,7 +57,7 @@ export default function Fridge() {
       </div>
       {items.filter(i => !QUICK.includes(i)).length > 0 && (
         <div className="chip-row wrap">
-          {items.filter(i => !QUICK.includes(i)).map(i => <Chip key={i} small active onClick={() => setItems(cur => cur.filter(x => x !== i))}>{i} ✕</Chip>)}
+          {items.filter(i => !QUICK.includes(i)).map(i => <Chip key={i} small active onClick={() => setItems(cur => cur.filter(x => x !== i))}>{i} <Icon name="close" size={12} /></Chip>)}
         </div>
       )}
 
@@ -76,7 +77,7 @@ export default function Fridge() {
           <p className="muted small">{s.draft.cuisine ? `${s.draft.cuisine} · ` : ''}{fmtMinutes(s.draft.prepMin + s.draft.cookMin)} · serves {s.draft.servings}</p>
           {s.why && <p>{s.why}</p>}
           {s.uses.length > 0 && <p className="small"><b>Uses:</b> {s.uses.join(', ')}</p>}
-          {s.missing.length > 0 ? <p className="small"><b>You’d also need:</b> {s.missing.join(', ')}</p> : <p className="small">✅ Nothing else to buy</p>}
+          {s.missing.length > 0 ? <p className="small"><b>You’d also need:</b> {s.missing.join(', ')}</p> : <p className="small row gap-sm"><SIcon name="check" size={16} /> Nothing else to buy</p>}
           <div className="row gap">
             <button className="btn btn-primary grow" onClick={() => openDraft(s.draft)}>Review & save</button>
           </div>

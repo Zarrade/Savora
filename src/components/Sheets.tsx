@@ -10,6 +10,7 @@ import { addDays, fmtDay, today, weekStartOf, capitalize } from '../lib/util';
 import { fmtQty, unitLabel, recipeConflicts, UNIT_OPTIONS } from '../lib/ingredients';
 import { groceriesFromIngredients, isPantry, mergeInto } from '../lib/grocery';
 import { slotMatches } from '../lib/planner';
+import { SIcon } from './SavoraIcons';
 
 /* ------------------------------------------------------- Recipe picker */
 
@@ -37,7 +38,7 @@ export function RecipePicker({ open, onClose, recipes, slot, onPick, title = 'Ch
       </div>
       <div className="chip-row">
         {slot && <Chip active={onlySlot} onClick={() => setOnlySlot(!onlySlot)}>{capitalize(slot)} only</Chip>}
-        <Chip active={favs} onClick={() => setFavs(!favs)}>♥ Favourites</Chip>
+        <Chip active={favs} onClick={() => setFavs(!favs)}><SIcon name="heart" size={16} /> Favourites</Chip>
       </div>
       <div className="list">
         {list.map(r => {

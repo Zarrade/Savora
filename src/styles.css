@@ -828,3 +828,34 @@ code { background: var(--surface-2); padding: 1px 6px; border-radius: 6px; font-
 .ai-advanced { margin-top: 6px; }
 .ai-advanced summary { cursor: pointer; font-weight: 700; padding: 8px 0; }
 .ai-advanced summary small { font-weight: 550; }
+
+/* ---------- Savora icon set (replaces emoji) */
+.si { flex-shrink: 0; vertical-align: -0.18em; }
+.si .d { fill: currentColor; fill-opacity: .16; }
+.si .s { fill: currentColor; stroke: none; }
+.cover-emoji { color: hsl(var(--hue, 150) 45% 30%); }
+:root[data-theme='dark'] .cover-emoji { color: hsl(var(--hue, 150) 55% 78%); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme='light']) .cover-emoji { color: hsl(var(--hue, 150) 55% 78%); } }
+.cover-icon { width: 38%; height: auto; max-width: 110px; }
+.cover-sm .cover-icon, .cover-xs .cover-icon { width: 55%; }
+.ing-emoji, .g-emoji { color: var(--accent-text); }
+.equip-tile span { display: flex; color: var(--brand-text); }
+.equip-tile.on span { color: inherit; }
+.equip-chip, .meta-pill, .card-pill, .quick-btn, .aisle-head, .summary-card .label, .chip, .tag { gap: 6px; }
+.meta-pill .si { color: var(--accent-text); }
+.card-pill .si { color: inherit; }
+.af-tip .si { margin-top: 1px; }
+.emoji-big { color: var(--brand-text); }
+.icon-grid { grid-template-columns: repeat(auto-fill, minmax(46px, 1fr)); }
+.icon-grid button { display: flex; align-items: center; justify-content: center; color: var(--text-2); }
+.icon-grid button.on { background: var(--brand-soft); color: var(--brand-text); }
+.cook-done-emoji { color: var(--accent); display: flex; justify-content: center; }
+.cost-ico { width: 46px; height: 46px; border-radius: 14px; display: flex; align-items: center; justify-content: center; background: var(--surface); color: var(--accent-text); }
+.h-ico { display: flex; align-items: center; gap: 10px; }
+.h-ico .si { color: var(--brand-text); }
+.col-ico { color: var(--brand-text); }
+.quick-btn .si { color: var(--brand-text); }
+.auth-brand-plates span { color: #FDF6E6; }
+.recipe-card-meta .si { color: #E3A23B; }
+.recipe-card-meta .si .d { fill-opacity: .9; }
+.summary-card .label { display: inline-flex; align-items: center; }
