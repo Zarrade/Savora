@@ -11,8 +11,11 @@ import { fmtMoney, recipeCost } from '../lib/pricing';
 import { capitalize } from '../lib/util';
 import { SIcon } from '../components/SavoraIcons';
 import { legacyIcon } from '../lib/foodIcons';
+import { CuisinePicker } from '../components/CuisinePicker';
 
 type Sort = 'recent' | 'az' | 'quick' | 'cheap' | 'kcal' | 'protein' | 'rating' | 'cooked';
+const PAGE_SIZE = 24; // fills 2, 3, 4 or 6 columns evenly
+const PAGE_KEY = 'savora-recipes-page';
 const SORTS: [Sort, string][] = [['recent', 'Recently updated'], ['az', 'A–Z'], ['quick', 'Quickest'], ['cheap', 'Cheapest'], ['kcal', 'Fewest calories'], ['protein', 'Most protein'], ['rating', 'Top rated'], ['cooked', 'Most cooked']];
 
 export default function Recipes() {
@@ -36,7 +39,6 @@ export default function Recipes() {
   const [sort, setSort] = useState<Sort>('recent');
   const col = params.get('col');
 
-  const allCuisines = useMemo(() => Array.from(new Set((recipes ?? []).map(r => r.cuisine))).sort(), [recipes]);
   const exclusions = useMemo(() => [...settings.allergies, ...settings.avoid], [settings.allergies, settings.avoid]);
 
   const list = useMemo(() => {
@@ -78,6 +80,22 @@ export default function Recipes() {
   const clearAll = () => { setMeal([]); setDiets([]); setCuisines([]); setMaxTime(null); setWithIng([]); setWithoutIng([]); setHideConflicts(false); setMyKitchen(false); setMaxCost(null); setFav(false); setParams({}); };
   const colName = col ? collections.find(c => c.id === col) : undefined;
 
+  // Pagination: remembered for this tab while the filters stay the same (so Back from a recipe returns to the same page)
+  const filterKey = JSON.stringify([col, q, meal, diets, cuisines, maxTime, withIng, withoutIng, fav, hideConflicts, myKitchen, maxCost, sort]);
+  const [pageState, setPageState] = useState<{ key: string; page: number }>(() => {
+    try { const s = JSON.parse(sessionStorage.getItem(PAGE_KEY) ?? 'null'); if (s?.key === filterKey) return s; } catch { /* ignore */ }
+    return { key: filterKey, page: 1 };
+  });
+  const pageCount = Math.max(1, Math.ceil(list.length / PAGE_SIZE));
+  const page = pageState.key === filterKey ? Math.min(pageState.page, pageCount) : 1;
+  const shown = list.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
+  const goPage = (n: number) => {
+    const next = { key: filterKey, page: Math.max(1, Math.min(pageCount, n)) };
+    setPageState(next);
+    try { sessionStorage.setItem(PAGE_KEY, JSON.stringify(next)); } catch { /* ignore */ }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className="page">
       <PageHeader title={colName ? colName.name : 'Recipes'} back={col ? '/recipes' : undefined}
@@ -106,7 +124,7 @@ export default function Recipes() {
       )}
 
       <div className="row between list-meta">
-        <span className="muted">{list.length} recipe{list.length === 1 ? '' : 's'}{activeCount ? <> · <button className="link" onClick={clearAll}>clear filters</button></> : null}</span>
+        <span className="muted">{list.length > PAGE_SIZE ? `${(page - 1) * PAGE_SIZE + 1}–${Math.min(page * PAGE_SIZE, list.length)} of ` : ''}{list.length} recipe{list.length === 1 ? '' : 's'}{activeCount ? <> · <button className="link" onClick={clearAll}>clear filters</button></> : null}</span>
         <select className="select-inline" value={sort} onChange={e => setSort(e.target.value as Sort)} aria-label="Sort">
           {SORTS.map(([k, l]) => <option key={k} value={k}>{l}</option>)}
         </select>
@@ -115,9 +133,12 @@ export default function Recipes() {
       {recipes && list.length === 0 ? (
         <Empty icon="search" title="No recipes found">Try fewer filters, or <button className="link" onClick={() => nav('/new')}>add a recipe</button>.</Empty>
       ) : (
-        <div className="grid">
-          {list.map(r => <RecipeCard key={r.id} recipe={r} />)}
-        </div>
+        <>
+          <div className="grid">
+            {shown.map(r => <RecipeCard key={r.id} recipe={r} />)}
+          </div>
+          <Pager page={page} count={pageCount} onPage={goPage} />
+        </>
       )}
 
       <Sheet open={showFilters} onClose={() => setShowFilters(false)} title="Filters" tall
@@ -130,7 +151,7 @@ export default function Recipes() {
         <div className="chip-row wrap">{[null, 4, 6, 10].map(c => <Chip key={String(c)} active={maxCost === c} onClick={() => setMaxCost(c)}>{c ? `≤ ${fmtMoney(c, settings.currency, 0)}` : 'Any'}</Chip>)}</div>
         <div className="chip-row" style={{ marginTop: 12 }}><Chip active={myKitchen} onClick={() => setMyKitchen(!myKitchen)}><SIcon name="hob" size={16} /> Only what my kitchen can make</Chip></div>
         <div className="section-label">Cuisine</div>
-        <div className="chip-row wrap">{allCuisines.map(c => <Chip key={c} active={cuisines.includes(c)} onClick={() => toggle(cuisines, c, setCuisines)}>{c}</Chip>)}</div>
+        <CuisinePicker recipes={recipes ?? []} selected={cuisines} onPick={c => toggle(cuisines, c, setCuisines)} />
         <div className="section-label">Diet</div>
         <div className="chip-row wrap">{DIETS.map(d => <Chip key={d} active={diets.includes(d)} onClick={() => toggle(diets, d, setDiets)}>{capitalize(d)}</Chip>)}</div>
         <div className="section-label">Must include ingredients</div>
@@ -144,5 +165,23 @@ export default function Recipes() {
         )}
       </Sheet>
     </div>
+  );
+}
+
+/** Page numbers with ellipses: 1 … 4 5 6 … 42 */
+function Pager({ page, count, onPage }: { page: number; count: number; onPage: (n: number) => void }) {
+  if (count <= 1) return null;
+  const nums = new Set([1, count, page - 1, page, page + 1].filter(n => n >= 1 && n <= count));
+  const sorted = Array.from(nums).sort((a, b) => a - b);
+  const items: (number | 'gap')[] = [];
+  sorted.forEach((n, i) => { if (i && n - sorted[i - 1] > 1) items.push('gap'); items.push(n); });
+  return (
+    <nav className="pager" aria-label="Pages">
+      <button type="button" onClick={() => onPage(page - 1)} disabled={page === 1} aria-label="Previous page"><Icon name="chevronLeft" size={18} /></button>
+      {items.map((n, i) => n === 'gap'
+        ? <span key={`g${i}`} className="gap">…</span>
+        : <button key={n} type="button" className={`pg-num ${n === 1 || n === count ? 'edge' : ''}`} aria-current={n === page ? 'page' : undefined} onClick={() => onPage(n)}>{n}</button>)}
+      <button type="button" onClick={() => onPage(page + 1)} disabled={page === count} aria-label="Next page"><Icon name="chevronRight" size={18} /></button>
+    </nav>
   );
 }

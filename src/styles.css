@@ -878,3 +878,27 @@ code { background: var(--surface-2); padding: 1px 6px; border-radius: 6px; font-
 .home-strip { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 14px; background: var(--accent-soft); color: var(--accent-text); font-weight: 600; font-size: .9rem; }
 .home-strip .btn { flex-shrink: 0; }
 .at-home-tag { margin-left: 8px; font-size: .7rem; font-weight: 750; padding: 2px 7px; border-radius: 999px; background: var(--accent-soft); color: var(--accent-text); }
+
+/* Cuisines by region */
+.region-tabs { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; border-bottom: 1px solid var(--surface-3); margin-bottom: 12px; }
+.region-tabs::-webkit-scrollbar { display: none; }
+.region-tab { display: inline-flex; align-items: center; gap: 6px; padding: 10px 12px; font-weight: 700; font-size: 0.9rem; color: var(--text-2); white-space: nowrap; border-bottom: 2.5px solid transparent; margin-bottom: -1px; min-height: 44px; }
+.region-tab.on { color: var(--text); border-bottom-color: var(--brand); }
+.region-count { font-size: 0.72rem; font-weight: 700; padding: 1px 7px; border-radius: 999px; background: var(--surface-2); color: var(--text-3); }
+.region-tab.on .region-count { background: var(--brand-soft); color: var(--brand-text); }
+.cuisine-tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+@media (min-width: 560px) { .cuisine-tiles { grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); } }
+.cuisine-tile { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; padding: 12px 14px; border-radius: 14px; background: var(--surface-2); text-align: left; transition: background .15s; }
+.cuisine-tile:hover { background: var(--surface-3); }
+.cuisine-name { font-weight: 750; }
+.cuisine-count { font-size: 0.78rem; color: var(--text-3); }
+.chip-count { font-size: 0.72rem; font-weight: 700; opacity: 0.6; margin-left: 2px; }
+
+/* Pagination */
+.pager { display: flex; align-items: center; justify-content: center; gap: 6px; margin: 28px 0 8px; flex-wrap: wrap; }
+.pager button { min-width: 40px; height: 40px; padding: 0 10px; border-radius: 12px; font-weight: 700; background: var(--surface-2); color: var(--text); display: inline-flex; align-items: center; justify-content: center; gap: 4px; }
+.pager button[aria-current='page'] { background: var(--primary); color: var(--primary-text); }
+.pager button:disabled { opacity: 0.35; cursor: default; }
+.pager .gap { color: var(--text-3); padding: 0 2px; }
+.pager-info { text-align: center; color: var(--text-3); font-size: 0.82rem; margin-bottom: 8px; }
+@media (max-width: 420px) { .pager .pg-num:not([aria-current='page']):not(.edge) { display: none; } }

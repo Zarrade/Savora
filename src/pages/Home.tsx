@@ -1,3 +1,4 @@
+import { CuisinePicker } from '../components/CuisinePicker';
 import { useMemo, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useLiveQuery } from 'dexie-react-hooks';
@@ -60,7 +61,6 @@ export default function Home() {
   const quick = doable.filter(r => totalTime(r) > 0 && totalTime(r) <= 20).slice(0, 12);
   const budgetFriendly = [...doable].sort((a, b) => recipeCost(a, settings.priceOverrides).perServing - recipeCost(b, settings.priceOverrides).perServing).filter(r => r.mealTypes.includes('dinner')).slice(0, 12);
   const recent = [...recipes].sort((a, b) => b.createdAt - a.createdAt).slice(0, 12);
-  const cuisines = useMemo(() => Array.from(new Set(recipes.map(r => r.cuisine))).sort(), [recipes]);
   const initial = (settings.name || 'Me').trim()[0]?.toUpperCase();
 
   return (
@@ -181,10 +181,8 @@ export default function Home() {
       <Shelf title="Recently added" to="/recipes" recipes={recent} />
 
       <section>
-        <div className="section-head"><h2>Cuisines</h2></div>
-        <div className="chip-row wrap">
-          {cuisines.map(c => <Chip key={c} onClick={() => nav(`/recipes?cuisine=${encodeURIComponent(c)}`)}>{c}</Chip>)}
-        </div>
+        <div className="section-head"><h2>Explore cuisines</h2></div>
+        <CuisinePicker tiles recipes={recipes} onPick={c => nav(`/recipes?cuisine=${encodeURIComponent(c)}`)} />
       </section>
 
       <DecideSheet open={decide} onClose={() => setDecide(false)} recipes={recipes} />
@@ -221,7 +219,6 @@ export function DecideSheet({ open, onClose, recipes }: { open: boolean; onClose
   const [favOnly, setFavOnly] = useState(false);
   const [cheap, setCheap] = useState(false);
   const [pick, setPick] = useState<Recipe | null>(null);
-  const cuisines = Array.from(new Set(recipes.map(r => r.cuisine))).sort();
 
   const pool = useMemo(() => eligibleRecipes(recipes, settings).filter(r =>
     (meal === 'any' || r.mealTypes.includes(meal)) &&
@@ -249,10 +246,7 @@ export function DecideSheet({ open, onClose, recipes }: { open: boolean; onClose
         {[null, 15, 30, 45].map(t => <Chip key={String(t)} active={maxTime === t} onClick={() => setMaxTime(t)}>{t ? `≤ ${t} min` : 'Any'}</Chip>)}
       </div>
       <div className="section-label">Cuisine</div>
-      <div className="chip-row wrap">
-        <Chip active={cuisine === 'any'} onClick={() => setCuisine('any')}>Any</Chip>
-        {cuisines.map(c => <Chip key={c} active={cuisine === c} onClick={() => setCuisine(c)}>{c}</Chip>)}
-      </div>
+      <CuisinePicker any recipes={recipes} selected={cuisine === 'any' ? [] : [cuisine]} onPick={c => setCuisine(!c || c === cuisine ? 'any' : c)} />
       <div className="chip-row wrap" style={{ marginTop: 12 }}>
         <Chip active={favOnly} onClick={() => setFavOnly(!favOnly)}><SIcon name="heart" size={16} /> Favourites</Chip>
         <Chip active={cheap} onClick={() => setCheap(!cheap)}><SIcon name="wallet" size={16} /> Under {fmtMoney(6, settings.currency, 0)}/serving</Chip>
