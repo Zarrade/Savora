@@ -1,0 +1,511 @@
+@ Coq au Vin-Style Chicken (Alcohol-Free) | French | dinner | 4 | 15 | 60 | casserole | gluten-free
+= Chicken braised with mushrooms, pearl onions and grape juice-vinegar sauce.
+- 1 kg chicken thighs
+- 250 g mushrooms
+- 200 g pearl onions
+- 2 carrots
+- 3 garlic cloves
+- 300 ml red grape juice
+- 2 tbsp red wine vinegar
+- 400 ml chicken stock
+- 1 sprig thyme
+* Brown chicken; then onions, mushrooms and carrots.
+* Add garlic, juice, vinegar, stock and thyme.
+* Simmer covered 50 minutes.
+
+@ Beef Bourguignon-Style Stew | French | dinner | 6 | 20 | 150 | pot | gluten-free
+= Slow-braised beef with mushrooms and carrots in a rich sauce.
+- 1 kg beef chuck, cubed
+- 250 g mushrooms
+- 3 carrots
+- 1 onion
+- 2 tbsp tomato paste
+- 300 ml red grape juice
+- 600 ml beef stock
+- 2 bay leaves
+* Brown beef in batches; soften onion and carrots.
+* Add paste, juice, stock and bay; simmer covered 2 hours.
+* Add mushrooms and cook 30 minutes.
+
+@ Chicken Provençal | French | dinner | 4 | 10 | 40 | drumstick | gluten-free, dairy-free
+= Chicken roasted with tomatoes, olives, garlic and herbs.
+- 8 chicken thighs
+- 300 g cherry tomatoes
+- 80 g black olives
+- 6 garlic cloves
+- 2 tsp herbes de provence
+- 3 tbsp olive oil
+* Toss everything in a roasting tin.
+* Roast at 200°C for 40 minutes.
+
+@ Quiche with Spinach & Cheese | French | lunch,dinner | 6 | 20 | 40 | pie | vegetarian
+= Buttery pastry with a silky egg, spinach and gruyère filling.
+- 320 g shortcrust pastry
+- 200 g spinach
+- 4 eggs
+- 300 ml cream
+- 100 g gruyère
+- 1 onion
+* Blind bake pastry at 190°C for 15 minutes.
+* Soften onion, wilt spinach and spread in the case with cheese.
+* Pour over whisked eggs and cream.
+* Bake at 170°C for 30 minutes.
+
+@ Niçoise Chicken Traybake | French | dinner | 4 | 10 | 35 | drumstick | gluten-free
+= Chicken with potatoes, green beans and olives.
+- 8 chicken thighs
+- 600 g baby potatoes
+- 200 g green beans
+- 60 g black olives
+- 2 tsp herbes de provence
+- 3 tbsp olive oil
+* Roast chicken and potatoes with herbs and oil at 210°C for 25 minutes.
+* Add beans and olives for 10 minutes.
+
+@ Crêpes | French | breakfast,dessert | 4 | 10 | 15 | pancakes | vegetarian
+= Thin French pancakes with lemon and sugar.
+- 125 g flour
+- 2 eggs
+- 300 ml milk
+- 1 tbsp butter
+- 2 tbsp sugar
+- 1 lemon
+* Whisk flour, eggs and milk into a smooth batter.
+* Cook thin crêpes in a buttered pan 1 minute per side.
+* Serve with lemon and sugar.
+
+@ Croque Monsieur (Turkey) | French | lunch | 2 | 10 | 12 | sandwich |
+= Toasted turkey-ham and gruyère sandwich with béchamel.
+- 4 slices bread
+- 100 g turkey ham
+- 80 g gruyère
+- 1 tbsp butter
+- 1 tbsp flour
+- 150 ml milk
+* Make a quick béchamel with butter, flour and milk.
+* Build sandwiches with ham and cheese, top with sauce and remaining cheese.
+* Bake at 220°C for 10 minutes.
+
+@ Spanish Chicken & Rice | Spanish | dinner | 4 | 10 | 40 | rice | gluten-free, dairy-free
+= Smoky paprika chicken with saffron rice, peppers and peas.
+- 8 chicken thighs
+- 1 onion
+- 1 red pepper
+- 300 g paella rice
+- 2 tsp smoked paprika
+- 1 pinch saffron
+- 800 ml chicken stock
+- 150 g peas
+* Brown chicken; soften onion and pepper.
+* Add rice, spices and stock; nestle chicken back in.
+* Simmer covered 25 minutes; add peas for 5.
+
+@ Patatas Bravas | Spanish | snack | 4 | 10 | 35 | potato | vegetarian, gluten-free
+= Crispy potatoes with spicy tomato sauce and garlic mayo.
+- 800 g potatoes, cubed
+- 3 tbsp olive oil
+- 200 ml passata
+- 1 tsp smoked paprika
+- ½ tsp chili flakes
+- 3 tbsp mayonnaise
+- 1 garlic clove
+* Roast potatoes with oil at 220°C for 35 minutes.
+* Simmer passata with paprika and chili 8 minutes.
+* Mix mayo with garlic and serve with both sauces.
+
+@ Gambas al Ajillo | Spanish | snack,dinner | 4 | 5 | 6 | shrimp | pescatarian, gluten-free, quick
+= Sizzling garlic prawns in olive oil with chili.
+- 400 g prawns
+- 6 garlic cloves, sliced
+- 1 red chili
+- 6 tbsp olive oil
+- 1 handful parsley
+* Heat oil with garlic and chili until fragrant.
+* Add prawns and cook 3 minutes.
+* Sprinkle parsley and serve with bread.
+
+@ Spanish Lentil Stew | Spanish | dinner | 4 | 10 | 35 | pot | vegan, gluten-free
+= Brown lentils with potatoes, carrots and smoked paprika.
+- 250 g brown lentils
+- 2 potatoes
+- 2 carrots
+- 1 onion
+- 2 garlic cloves
+- 2 tsp smoked paprika
+- 1.2 l vegetable stock
+* Soften onion and garlic with paprika.
+* Add everything else and simmer 35 minutes.
+
+@ Spanish Chickpeas & Spinach (Espinacas con Garbanzos) | Spanish | dinner | 4 | 10 | 15 | beans | vegan
+= Seville-style chickpeas with spinach, cumin and garlic bread.
+- 2 cans chickpeas (400 g each)
+- 300 g spinach
+- 3 garlic cloves
+- 1 slice bread
+- 1 tsp ground cumin
+- 1 tsp smoked paprika
+- 1 tbsp vinegar
+- 4 tbsp olive oil
+* Fry garlic and bread in oil; blend with spices and vinegar.
+* Wilt spinach, add chickpeas and the paste with water.
+* Simmer 10 minutes.
+
+@ Portuguese Piri-Piri Chicken | Portuguese | dinner | 4 | 15 | 40 | drumstick | gluten-free, dairy-free
+= Fiery chili-lemon chicken roasted until charred.
+- 1.2 kg chicken pieces
+- 4 red chilies
+- 4 garlic cloves
+- 1 tsp paprika
+- 2 lemons
+- 4 tbsp olive oil
+* Blend chilies, garlic, paprika, lemon and oil.
+* Marinate chicken 2 hours.
+* Roast at 210°C for 40 minutes.
+
+@ Portuguese Custard Tarts (Easy) | Portuguese | dessert | 12 | 20 | 18 | pie | vegetarian
+= Puff pastry tarts with caramelised custard.
+- 320 g puff pastry
+- 4 egg yolks
+- 100 g sugar
+- 2 tbsp cornflour
+- 300 ml milk
+- 1 tsp vanilla extract
+* Cook yolks, sugar, cornflour and milk until thick; add vanilla.
+* Roll pastry into a log, slice and press into muffin tins.
+* Fill and bake at 240°C for 18 minutes.
+
+@ German Potato Salad | German | lunch,snack | 6 | 10 | 20 | potato | vegan, gluten-free
+= Warm potatoes in a tangy mustard-vinegar dressing.
+- 1 kg waxy potatoes
+- 1 onion, finely chopped
+- 250 ml vegetable stock
+- 3 tbsp vinegar
+- 1 tbsp mustard
+- 3 tbsp vegetable oil
+- 1 handful chives
+* Boil potatoes 18 minutes and slice warm.
+* Heat stock with onion, vinegar and mustard; pour over.
+* Add oil and chives; rest 15 minutes.
+
+@ Chicken Schnitzel | German | dinner | 4 | 15 | 12 | drumstick |
+= Thin crispy breaded chicken with lemon.
+- 4 chicken breasts, flattened
+- 60 g flour
+- 2 eggs
+- 120 g breadcrumbs
+- 4 tbsp vegetable oil
+- 1 lemon
+* Dip chicken in flour, egg and breadcrumbs.
+* Fry 3 minutes per side until golden.
+* Serve with lemon.
+
+@ Goulash | Hungarian | dinner | 6 | 15 | 120 | pot | gluten-free, dairy-free
+= Paprika-rich beef and pepper stew.
+- 1 kg beef chuck, cubed
+- 2 onions
+- 2 peppers
+- 3 tbsp sweet paprika
+- 1 tsp caraway
+- 2 tbsp tomato paste
+- 1 l beef stock
+- 3 potatoes
+* Brown beef; soften onions and peppers.
+* Add paprika, caraway, paste and stock; simmer 90 minutes.
+* Add potatoes and cook 30 minutes.
+
+@ Polish Pierogi with Potato & Cheese | Polish | dinner | 4 | 60 | 10 | pasta | vegetarian
+= Dumplings filled with potato and cheese, topped with fried onions.
+- 300 g flour
+- 1 egg
+- 150 ml water
+- 3 potatoes, boiled and mashed
+- 150 g cottage cheese
+- 2 onions, sliced
+- 2 tbsp butter
+* Knead flour, egg and water; rest 20 minutes.
+* Mix potato with cheese and half the onions, fried.
+* Roll, cut circles, fill and seal; boil 4 minutes.
+* Fry in butter with remaining onions.
+
+@ Borscht | Ukrainian | dinner | 6 | 20 | 45 | soup | vegetarian, gluten-free
+= Vivid beetroot soup with cabbage, potatoes and dill.
+- 3 beetroots, grated
+- 2 potatoes
+- 200 g cabbage
+- 1 onion
+- 1 carrot
+- 2 tbsp tomato paste
+- 1.5 l vegetable stock
+- 1 lemon
+- 4 tbsp sour cream
+- 1 handful dill
+* Soften onion and carrot, add beetroot and paste.
+* Add stock and potatoes; simmer 25 minutes.
+* Add cabbage for 10 minutes; finish with lemon.
+* Serve with sour cream and dill.
+
+@ Russian Beef Stroganoff | Russian | dinner | 4 | 10 | 20 | steak | gluten-free
+= Strips of beef in mushroom sour cream sauce.
+- 600 g beef steak, strips
+- 250 g mushrooms
+- 1 onion
+- 200 ml sour cream
+- 1 tsp mustard
+- 200 ml beef stock
+- 2 tbsp butter
+* Sear beef quickly; set aside.
+* Cook onion and mushrooms in butter.
+* Add stock, mustard and sour cream; return beef.
+
+@ Swedish Meatballs | Swedish | dinner | 4 | 20 | 25 | meat |
+= Tender meatballs in a creamy gravy.
+- 500 g beef mince
+- 1 onion, grated
+- 40 g breadcrumbs
+- 1 egg
+- ¼ tsp allspice
+- 2 tbsp butter
+- 2 tbsp flour
+- 400 ml beef stock
+- 100 ml cream
+* Mix mince, onion, crumbs, egg and allspice; roll balls.
+* Brown in butter; set aside.
+* Stir in flour, then stock and cream; simmer meatballs 10 minutes.
+
+@ Ethiopian Doro Wat | Ethiopian | dinner | 4 | 15 | 60 | drumstick | gluten-free
+= Spicy berbere chicken stew with hard-boiled eggs.
+- 1 kg chicken pieces
+- 3 onions, finely chopped
+- 3 tbsp berbere spice
+- 3 garlic cloves
+- 1 tbsp ginger
+- 3 tbsp butter
+- 500 ml chicken stock
+- 4 eggs, boiled
+* Cook onions slowly in butter 20 minutes.
+* Add berbere, garlic and ginger, then chicken and stock.
+* Simmer 40 minutes; add eggs for the last 10.
+
+@ Nigerian Jollof Rice | Nigerian | dinner | 6 | 15 | 45 | rice | vegan, gluten-free
+= Smoky tomato-pepper rice, a West African favourite.
+- 400 g long-grain rice
+- 3 tomatoes
+- 2 red peppers
+- 1 scotch bonnet chili
+- 2 onions
+- 3 tbsp tomato paste
+- 1 tsp curry powder
+- 1 tsp thyme
+- 700 ml vegetable stock
+- 4 tbsp vegetable oil
+* Blend tomatoes, peppers, chili and one onion.
+* Fry the other onion, add paste and the blend; cook 15 minutes.
+* Add rice, spices and stock, cover and cook 25 minutes on low.
+
+@ West African Peanut Stew | West African | dinner | 4 | 10 | 30 | pot | vegan, gluten-free
+= Sweet potato and chickpeas in a creamy peanut-tomato sauce.
+- 2 sweet potatoes, cubed
+- 1 can chickpeas (400 g)
+- 1 onion
+- 2 garlic cloves
+- 1 tbsp ginger
+- 4 tbsp peanut butter
+- 1 can chopped tomatoes (400 g)
+- 600 ml vegetable stock
+- 100 g spinach
+* Fry onion, garlic and ginger.
+* Add sweet potato, tomatoes, stock and peanut butter; simmer 20 minutes.
+* Add chickpeas and spinach for 5 minutes.
+
+@ South African Bobotie | South African | dinner | 6 | 15 | 45 | casserole |
+= Curried beef bake with a golden egg custard topping.
+- 700 g beef mince
+- 1 onion
+- 2 tbsp curry powder
+- 1 slice bread, soaked in milk
+- 2 tbsp chutney
+- 40 g raisins
+- 2 eggs
+- 250 ml milk
+* Brown mince with onion and curry powder.
+* Mix in squeezed bread, chutney and raisins; press into a dish.
+* Whisk eggs and milk, pour over.
+* Bake at 180°C for 35 minutes.
+
+@ Tunisian Couscous with Fish | Tunisian | dinner | 4 | 15 | 30 | fish | pescatarian, dairy-free
+= Spicy tomato-harissa fish stew over couscous.
+- 600 g white fish
+- 1 onion
+- 2 tbsp harissa
+- 2 tbsp tomato paste
+- 2 potatoes
+- 1 zucchini
+- 600 ml fish stock
+- 250 g couscous
+* Fry onion with harissa and paste.
+* Add potatoes and stock; simmer 15 minutes. Add zucchini and fish for 8 minutes.
+* Steep couscous in boiling water and serve with the stew.
+
+@ Libyan Sharba (Lamb & Orzo Soup) | Libyan | dinner | 6 | 15 | 50 | soup | dairy-free
+= Ramadan soup of lamb, orzo, tomato, mint and chickpeas.
+- 400 g lamb, diced
+- 1 onion
+- 2 tbsp tomato paste
+- 1 tsp turmeric
+- 1 tsp paprika
+- 1 can chickpeas (400 g)
+- 120 g orzo
+- 1.8 l water
+- 1 handful mint
+* Brown lamb and onion with spices and paste.
+* Add water and simmer 35 minutes.
+* Add chickpeas and orzo for 12 minutes; finish with mint.
+
+@ Sudanese Fava Beans (Ful Sudani) | Sudanese | breakfast | 4 | 5 | 10 | beans | vegetarian, gluten-free
+= Ful mashed with feta, tomato and sesame oil.
+- 2 cans fava beans (400 g each)
+- 80 g feta
+- 1 tomato
+- 1 onion
+- 2 tbsp sesame oil
+- 1 tsp ground cumin
+* Warm beans and mash lightly.
+* Top with feta, tomato, onion, cumin and sesame oil.
+
+@ Shakshuka Libyan-Style (Shakshouka bil Lahm) | Libyan | breakfast,dinner | 4 | 10 | 25 | pan |
+= Spicy tomato sauce with minced lamb and eggs.
+- 300 g lamb mince
+- 1 onion
+- 1 tbsp harissa
+- 1 can chopped tomatoes (400 g)
+- 4 eggs
+- 1 handful parsley
+* Brown lamb and onion with harissa.
+* Add tomatoes and simmer 12 minutes.
+* Crack in eggs, cover 6 minutes.
+
+@ Greek Lamb Kleftiko | Greek | dinner | 6 | 15 | 180 | steak | gluten-free
+= Lamb slow-baked in a parcel with potatoes, lemon and oregano.
+- 1.5 kg lamb shoulder
+- 800 g potatoes
+- 2 lemons
+- 6 garlic cloves
+- 2 tsp dried oregano
+- 4 tbsp olive oil
+* Put lamb and potatoes in a tin with garlic, lemon, oregano and oil.
+* Wrap tightly in baking paper and foil.
+* Bake at 160°C for 3 hours.
+
+@ Cypriot Kolokasi-Style Chicken Stew | Cypriot | dinner | 4 | 15 | 50 | pot | gluten-free, dairy-free
+= Chicken, potatoes and celery in tomato with cinnamon.
+- 800 g chicken thighs
+- 4 potatoes
+- 2 celery sticks
+- 1 onion
+- 400 ml passata
+- 1 cinnamon stick
+- 2 tbsp olive oil
+* Brown chicken and onion.
+* Add potatoes, celery, passata, cinnamon and 300 ml water.
+* Simmer 45 minutes.
+
+@ Maltese Stuffed Peppers | Maltese | dinner | 4 | 20 | 45 | pepper |
+= Peppers filled with beef, rice, olives and capers.
+- 4 peppers
+- 300 g beef mince
+- 100 g rice
+- 40 g olives
+- 1 tbsp capers
+- 300 ml passata
+* Mix mince, rice, chopped olives and capers.
+* Fill peppers and stand in a dish with passata.
+* Bake at 190°C for 45 minutes.
+
+@ French Lentil Salad | French | lunch | 4 | 10 | 25 | salad | vegan, gluten-free
+= Puy lentils with mustard vinaigrette and herbs.
+- 250 g puy lentils
+- 1 carrot, diced
+- 1 shallot
+- 1 tbsp mustard
+- 2 tbsp red wine vinegar
+- 4 tbsp olive oil
+- 1 handful parsley
+* Simmer lentils 22 minutes.
+* Whisk mustard, vinegar and oil.
+* Toss warm lentils with dressing, carrot, shallot and parsley.
+
+@ Belgian Fries with Mayo | Belgian | snack | 4 | 10 | 35 | potato | vegetarian, gluten-free
+= Double-cooked crispy fries.
+- 1 kg potatoes
+- 3 tbsp vegetable oil
+- 4 tbsp mayonnaise
+* Cut potatoes into fries and soak 10 minutes; dry well.
+* Toss with oil and bake at 220°C for 35 minutes, turning.
+* Serve with mayo.
+
+@ Dutch Baby Pancake | German | breakfast | 4 | 5 | 20 | pancakes | vegetarian
+= Puffy oven pancake with berries and lemon.
+- 3 eggs
+- 100 g flour
+- 180 ml milk
+- 2 tbsp butter
+- 150 g berries
+- 1 lemon
+* Heat butter in a cast iron pan in a 220°C oven.
+* Blend eggs, flour and milk; pour into the hot pan.
+* Bake 18 minutes until puffed. Top with berries and lemon.
+
+@ Austrian Apple Strudel (Easy) | Austrian | dessert | 8 | 20 | 35 | pie | vegetarian
+= Flaky filo rolled around cinnamon apples and raisins.
+- 6 sheets filo pastry
+- 4 apples, diced
+- 60 g sugar
+- 1 tsp ground cinnamon
+- 40 g raisins
+- 40 g breadcrumbs
+- 60 g butter, melted
+* Mix apples, sugar, cinnamon, raisins and crumbs.
+* Layer buttered filo, spread filling and roll up.
+* Brush with butter and bake at 190°C for 35 minutes.
+
+@ Moroccan Harira with Lamb | Moroccan | dinner | 6 | 15 | 60 | soup | dairy-free
+= Ramadan soup of lamb, lentils, chickpeas and tomato.
+- 300 g lamb, diced
+- 100 g green lentils
+- 1 can chickpeas (400 g)
+- 1 onion
+- 1 can chopped tomatoes (400 g)
+- 1 tsp ginger
+- 1 tsp turmeric
+- 1 tsp ground cinnamon
+- 1 bunch coriander
+- 2 tbsp flour
+* Brown lamb and onion with spices.
+* Add lentils, tomatoes and 1.8 l water; simmer 40 minutes.
+* Add chickpeas, coriander and flour mixed in water; cook 10 minutes.
+
+@ Egyptian Macarona Béchamel | Egyptian | dinner | 8 | 25 | 40 | pasta |
+= Baked penne with spiced beef and a thick béchamel layer.
+- 500 g penne
+- 500 g beef mince
+- 1 onion
+- 200 ml passata
+- 1 tsp seven spice
+- 60 g butter
+- 60 g flour
+- 800 ml milk
+- 1 egg
+* Cook pasta; brown mince with onion, passata and spice.
+* Make béchamel and beat in egg.
+* Layer pasta, meat and pasta; top with béchamel.
+* Bake at 190°C for 40 minutes.
+
+@ Turkish Simit Breakfast Sandwich | Turkish | breakfast | 2 | 5 | 2 | sandwich | vegetarian, quick
+= Sesame ring with white cheese, tomato and cucumber.
+- 2 simit rings
+- 100 g feta
+- 1 tomato
+- 1 cucumber
+- 6 olives
+* Split simit.
+* Fill with cheese, tomato, cucumber and olives.
