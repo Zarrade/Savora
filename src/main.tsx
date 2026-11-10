@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { registerSW } from 'virtual:pwa-register';
 import App from './App';
-import { ensureSeeded } from './db';
+import { ensureSeeded, seedMore } from './db';
 import { initAuth } from './lib/account';
 import '@fontsource-variable/plus-jakarta-sans';
 import './styles.css';
@@ -21,4 +21,6 @@ ensureSeeded().finally(() => {
   );
   // Restores the session from this device (no network needed); the app shows a splash meanwhile
   initAuth().catch(err => console.error('auth init failed', err));
+  // Hundreds more starter recipes, installed in the background
+  setTimeout(() => { seedMore().catch(err => console.error('seedMore failed', err)); }, 1500);
 });

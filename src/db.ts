@@ -2,6 +2,7 @@ import Dexie, { type Table } from 'dexie';
 import type { Recipe, PlanEntry, GroceryItem, Collection, Settings, Ingredient, StockItem } from './types';
 import type { SeedRecipe } from './data/seedRecipes';
 import { ALL_SEEDS, SEED_VERSION, SEEDS_BY_VERSION } from './data/seeds';
+import { MORE_BATCH_IDS, loadBatch } from './data/moreSeeds';
 import { toIngredient } from './lib/ingredients';
 import { autoTargets } from './lib/planner';
 import { DEFAULT_EQUIPMENT } from './lib/kitchen';
@@ -144,6 +145,7 @@ export async function ensureSeeded(): Promise<void> {
     const s = await db.settings.get('settings');
     const now = Date.now();
     if (!s) {
+      try { localStorage.removeItem(MORE_KEY); } catch { /* storage blocked */ }   // fresh database: install every batch again
       await db.settings.put({ ...DEFAULT_SETTINGS, seedVersion: SEED_VERSION });
       if ((await db.recipes.count()) === 0) {
         await db.recipes.bulkPut(ALL_SEEDS.map((r, i) => seedToRecipe(r, now - i)));
@@ -169,11 +171,43 @@ export async function ensureSeeded(): Promise<void> {
   });
 }
 
+/* ------------------------------------------------------- more starter recipes */
+
+const MORE_KEY = 'savora-seed-batches'; // per device: which extra batches were installed here
+function installedBatches(): string[] { try { return JSON.parse(localStorage.getItem(MORE_KEY) || '[]'); } catch { return []; } }
+
+/**
+ * Install extra starter-recipe batches in the background (never blocks startup).
+ * A batch is installed once per device, so recipes you delete stay deleted;
+ * deletions made on other devices arrive through sync.
+ */
+export async function seedMore(onProgress?: (added: number) => void): Promise<number> {
+  const done = new Set(installedBatches());
+  let added = 0;
+  for (const id of MORE_BATCH_IDS) {
+    if (done.has(id)) continue;
+    const seeds = await loadBatch(id);
+    const now = Date.now();
+    await untracked(async () => {
+      const existing = new Set(await db.recipes.where('id').anyOf(seeds.map(s => s.id)).primaryKeys());
+      const fresh = seeds.filter(s => !existing.has(s.id)).map((s, i) => seedToRecipe(s, now - i));
+      await db.recipes.bulkAdd(fresh);
+      added += fresh.length;
+    });
+    done.add(id);
+    try { localStorage.setItem(MORE_KEY, JSON.stringify([...done])); } catch { /* storage blocked */ }
+    onProgress?.(added);
+  }
+  return added;
+}
+
 /** Re-add any starter recipes the user deleted (does not overwrite edits). */
 export async function restoreStarterRecipes(): Promise<number> {
   const existing = new Set(await db.recipes.toCollection().primaryKeys());
-  const missing = ALL_SEEDS.filter(r => !existing.has(r.id)).map(r => seedToRecipe(r));
-  await db.recipes.bulkPut(missing);
+  const all = [...ALL_SEEDS];
+  for (const id of MORE_BATCH_IDS) all.push(...(await loadBatch(id)));
+  const missing = all.filter(r => !existing.has(r.id)).map(r => seedToRecipe(r));
+  await untracked(async () => { await db.recipes.bulkPut(missing); });
   return missing.length;
 }
 
