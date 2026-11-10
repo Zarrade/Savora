@@ -22,5 +22,5 @@ ensureSeeded().finally(() => {
   // Restores the session from this device (no network needed); the app shows a splash meanwhile
   initAuth().catch(err => console.error('auth init failed', err));
   // Hundreds more starter recipes, installed in the background
-  setTimeout(() => { seedMore().catch(err => console.error('seedMore failed', err)); }, 1500);
+  setTimeout(() => { seedMore().then(() => window.dispatchEvent(new Event('savora-seeded'))).catch(err => console.error('seedMore failed', err)); }, 1500);
 });

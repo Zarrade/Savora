@@ -35,7 +35,7 @@ export default defineConfig({
         navigateFallbackDenylist: [/^\/api\//],
         runtimeCaching: [
           {
-            urlPattern: ({ url }) => url.hostname === 'upload.wikimedia.org',
+            urlPattern: ({ url }) => url.hostname === 'upload.wikimedia.org' || url.hostname === 'thumb.wikimedia.org',
             handler: 'CacheFirst',
             options: {
               cacheName: 'recipe-photos',

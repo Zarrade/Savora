@@ -2,8 +2,7 @@ import { HashRouter, NavLink, Route, Routes, useLocation, useNavigate } from 're
 import { useEffect, useState } from 'react';
 import { Icon } from './components/Icon';
 import { Sheet, ToastHost, toast } from './components/ui';
-import { saveDeviceSettings, useSettingsLoaded, useTheme } from './hooks';
-import { db } from './db';
+import { useSettingsLoaded, useTheme } from './hooks';
 import { autoResolvePhotos } from './lib/photos';
 import Home from './pages/Home';
 import Recipes from './pages/Recipes';
@@ -134,14 +133,12 @@ export default function App() {
   // Fetch real photos for the starter recipes whenever we're online
   useEffect(() => {
     if (!settings?.onboarded) return;
-    const run = () => autoResolvePhotos(
-      async () => (await db.settings.get('settings'))?.photosVersion,
-      v => saveDeviceSettings({ photosVersion: v }),
-      toast
-    );
+    const run = () => { autoResolvePhotos(toast); };
+    const seeded = () => { autoResolvePhotos(toast, true); };
     run();
     window.addEventListener('online', run);
-    return () => window.removeEventListener('online', run);
+    window.addEventListener('savora-seeded', seeded);
+    return () => { window.removeEventListener('online', run); window.removeEventListener('savora-seeded', seeded); };
   }, [settings?.onboarded]);
 
 
