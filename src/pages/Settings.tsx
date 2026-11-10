@@ -8,7 +8,7 @@ import { autoTargets } from '../lib/planner';
 import { capitalize, DAY_SHORT, uid } from '../lib/util';
 import { KitchenPicker } from '../components/KitchenPicker';
 import { prefetchPhotos, resolveStarterPhotos } from '../lib/photos';
-import { fmtMoney } from '../lib/pricing';
+import { CURRENCIES, fmtMoney, fromCurrency, inputAmount } from '../lib/pricing';
 import { ALLERGY_OPTIONS } from './Onboarding';
 import { AISettings } from './AISettings';
 import { AccountCard } from '../components/AccountCard';
@@ -31,8 +31,8 @@ export default function SettingsPage() {
   const [importData, setImportData] = useState<Backup | null>(null);
   const [counts, setCounts] = useState({ recipes: 0, plan: 0, photos: 0 });
   const [photoBusy, setPhotoBusy] = useState<string | null>(null);
-  const [budgetText, setBudgetText] = useState(s.weeklyBudget ? String(s.weeklyBudget) : '');
-  useEffect(() => { setBudgetText(s.weeklyBudget ? String(s.weeklyBudget) : ''); }, [s.weeklyBudget]);
+  const [budgetText, setBudgetText] = useState(inputAmount(s.weeklyBudget, s.currency));
+  useEffect(() => { setBudgetText(inputAmount(s.weeklyBudget, s.currency)); }, [s.weeklyBudget, s.currency]);
 
   useEffect(() => {
     Promise.all([db.recipes.count(), db.plan.count(), db.recipes.filter(r => !!r.image && /^https?:/.test(r.image)).count()])
@@ -115,11 +115,16 @@ export default function SettingsPage() {
 
       <section className="card" id="budget">
         <h2 className="h-ico"><SIcon name="wallet" size={24} /> Weekly budget</h2>
+        <label className="field currency-field"><span>Currency</span>
+          <select value={s.currency} onChange={e => saveSettings({ currency: e.target.value })}>
+            {CURRENCIES.map(c => <option key={c.code} value={c.code}>{c.label}</option>)}
+          </select>
+        </label>
         <p className="muted small" style={{ marginTop: -4, marginBottom: 12 }}>Plan my week aims to keep the week’s meals under this. Leave empty to turn it off.</p>
         <div className="input-with-btn">
           <div className="prefix-input grow"><span>{s.currency}</span>
             <input inputMode="numeric" placeholder="e.g. 400" value={budgetText} onChange={e => setBudgetText(e.target.value)}
-              onBlur={() => saveSettings({ weeklyBudget: num(budgetText) })} onKeyDown={e => e.key === 'Enter' && (e.target as HTMLInputElement).blur()} />
+              onBlur={() => saveSettings({ weeklyBudget: Math.round(fromCurrency(num(budgetText), s.currency) * 100) / 100 })} onKeyDown={e => e.key === 'Enter' && (e.target as HTMLInputElement).blur()} />
           </div>
         </div>
         <div className="chip-row wrap" style={{ marginTop: 10 }}>

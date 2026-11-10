@@ -155,7 +155,7 @@ export default function Planner() {
       <div className="summary-row">
         <Link to={budget ? '/groceries' : '/settings#budget'} className="summary-card">
           <span className="label"><SIcon name="wallet" size={14} /> Est. cost</span>
-          <span className="big">{fmtMoney(weekCost, settings.currency, 0)}{budget > 0 && <small> / {budget}</small>}</span>
+          <span className="big">{fmtMoney(weekCost, settings.currency, 0)}{budget > 0 && <small> / {fmtMoney(budget, settings.currency, 0)}</small>}</span>
           {budget > 0
             ? <div className={`bar ${weekCost > budget ? 'over' : ''}`}><span style={{ width: `${Math.min(100, (weekCost / budget) * 100)}%` }} /></div>
             : <small className="faint" style={{ fontWeight: 650 }}>Set a weekly budget →</small>}

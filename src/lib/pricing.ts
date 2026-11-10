@@ -66,8 +66,37 @@ export function groceryItemCost(item: Pick<GroceryItem, 'name' | 'qty' | 'unit' 
   return ingredientCost(item.name, item.qty, item.unit, overrides);
 }
 
-export function fmtMoney(n: number, currency = 'AED', decimals?: number): string {
-  const d = decimals ?? (n < 10 ? 1 : 0);
-  const v = n.toLocaleString(undefined, { minimumFractionDigits: d, maximumFractionDigits: d });
-  return `${currency} ${v}`;
+/**
+ * Currencies. Every amount Savora stores (built-in prices, your prices, budgets) is in AED;
+ * it is converted only for display and when you type an amount in.
+ * Rates: USD is pegged at 3.6725 AED; LBP uses the Banque du Liban rate of 89,500 per USD.
+ */
+export const CURRENCIES = [
+  { code: 'AED', label: 'UAE dirham (AED)', perAED: 1 },
+  { code: 'USD', label: 'US dollar (USD)', perAED: 1 / 3.6725 },
+  { code: 'LBP', label: 'Lebanese pound (LBP)', perAED: 89500 / 3.6725 }
+] as const;
+export type CurrencyCode = (typeof CURRENCIES)[number]['code'];
+const rate = (c?: string) => CURRENCIES.find(x => x.code === c)?.perAED ?? 1;
+
+/** AED -> the chosen currency. */
+export const toCurrency = (aed: number, currency = 'AED') => aed * rate(currency);
+/** An amount typed in the chosen currency -> AED for storage. */
+export const fromCurrency = (value: number, currency = 'AED') => value / rate(currency);
+/** Value to show in an input box (rounded sensibly for the currency). */
+export function inputAmount(aed: number, currency = 'AED'): string {
+  if (!aed) return '';
+  const v = toCurrency(aed, currency);
+  return String(currency === 'LBP' ? Math.round(v / 1000) * 1000 : Math.round(v * 100) / 100);
+}
+
+export function fmtMoney(aed: number, currency = 'AED', decimals?: number): string {
+  let v = toCurrency(aed, currency);
+  if (currency === 'LBP') {
+    v = Math.round(v / 1000) * 1000;                     // nobody prices in single pounds
+    return `LBP ${v.toLocaleString(undefined, { maximumFractionDigits: 0 })}`;
+  }
+  const d = decimals ?? (currency === 'USD' ? (v < 100 ? 2 : 0) : (v < 10 ? 1 : 0));
+  const s = v.toLocaleString(undefined, { minimumFractionDigits: d, maximumFractionDigits: d });
+  return currency === 'USD' ? `$${s}` : `${currency} ${s}`;
 }

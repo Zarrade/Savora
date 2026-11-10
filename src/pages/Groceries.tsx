@@ -9,7 +9,7 @@ import { Empty, PageHeader, Sheet, Toggle, toast, useConfirm } from '../componen
 import { AISLES, FOODS } from '../data/nutritionDb';
 import { aisleFor, matchFood, parseIngredientLine, toGrams, unitLabel, UNIT_OPTIONS } from '../lib/ingredients';
 import { fmtGrocery, itemKey, mergeInto } from '../lib/grocery';
-import { fmtMoney, groceryItemCost } from '../lib/pricing';
+import { fmtMoney, fromCurrency, groceryItemCost, inputAmount } from '../lib/pricing';
 import { aisleIcon, foodIcon } from '../lib/foodIcons';
 import { SIcon } from '../components/SavoraIcons';
 import type { GroceryItem, Recipe, StockItem } from '../types';
@@ -294,12 +294,13 @@ function EditItem({ item, onClose }: { item: GroceryItem; onClose: () => void })
   const [unit, setUnit] = useState(item.unit);
   const [aisle, setAisle] = useState(item.aisle);
   const estimate = groceryItemCost({ ...item, price: undefined }, settings.priceOverrides);
-  const [price, setPrice] = useState(item.price !== undefined ? String(item.price) : '');
+  const [price, setPrice] = useState(item.price !== undefined ? inputAmount(item.price, settings.currency) : '');
   const [remember, setRemember] = useState(false);
 
   const save = async () => {
     const q = qty === '' ? null : Number(qty.replace(',', '.')) || 0;
-    const p = price.trim() === '' ? undefined : Number(price.replace(',', '.'));
+    const typed = price.trim() === '' ? undefined : Number(price.replace(',', '.'));
+    const p = typed === undefined || isNaN(typed) ? typed : fromCurrency(typed, settings.currency);
     await db.grocery.update(item.id, { name: name.trim() || item.name, qty: q, unit, aisle, price: p !== undefined && !isNaN(p) ? p : undefined });
     if (remember && p !== undefined && !isNaN(p) && q) {
       // Save as your own price per kg (or per item when it can't be weighed)
@@ -323,7 +324,7 @@ function EditItem({ item, onClose }: { item: GroceryItem; onClose: () => void })
         </label>
       </div>
       <label className="field"><span>Your price</span>
-        <div className="prefix-input"><span>{settings.currency}</span><input inputMode="decimal" value={price} onChange={e => setPrice(e.target.value)} placeholder={estimate !== null ? `≈ ${estimate.toFixed(2)} (estimate)` : 'No estimate'} /></div>
+        <div className="prefix-input"><span>{settings.currency}</span><input inputMode="decimal" value={price} onChange={e => setPrice(e.target.value)} placeholder={estimate !== null ? `≈ ${inputAmount(estimate, settings.currency) || '0'} (estimate)` : 'No estimate'} /></div>
       </label>
       {price.trim() !== '' && <Toggle checked={remember} onChange={setRemember} label="Remember this price" hint="Use it for future lists and recipe costs" />}
       <label className="field" style={{ marginTop: 8 }}><span>Aisle</span>

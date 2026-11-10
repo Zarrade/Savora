@@ -164,7 +164,7 @@ export default function Home() {
         <div className="summary-row">
           <Link to="/plan" className="summary-card">
             <span className="label">Meals this week</span>
-            <span className="big">{fmtMoney(weekCost, settings.currency, 0)}{settings.weeklyBudget > 0 && <small> / {settings.weeklyBudget}</small>}</span>
+            <span className="big">{fmtMoney(weekCost, settings.currency, 0)}{settings.weeklyBudget > 0 && <small> / {fmtMoney(settings.weeklyBudget, settings.currency, 0)}</small>}</span>
             {settings.weeklyBudget > 0 && <div className={`bar ${weekCost > settings.weeklyBudget ? 'over' : ''}`}><span style={{ width: `${Math.min(100, (weekCost / settings.weeklyBudget) * 100)}%` }} /></div>}
           </Link>
           <Link to="/groceries" className="summary-card">

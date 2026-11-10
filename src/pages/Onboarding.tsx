@@ -4,7 +4,7 @@ import { Chip, ChipInput, Stepper } from '../components/ui';
 import { DIETS, type Diet } from '../types';
 import { capitalize } from '../lib/util';
 import { KitchenPicker } from '../components/KitchenPicker';
-import { fmtMoney } from '../lib/pricing';
+import { CURRENCIES, fmtMoney, fromCurrency, inputAmount } from '../lib/pricing';
 import { LogoMark } from '../components/Logo';
 import { useAuth } from '../components/Account';
 import { displayName } from '../lib/account';
@@ -22,12 +22,13 @@ export default function Onboarding() {
   const [avoid, setAvoid] = useState<string[]>(s.avoid);
   const [diets, setDiets] = useState<Diet[]>(s.diets);
   const [equipment, setEquipment] = useState<string[]>(s.equipment);
-  const [budget, setBudget] = useState(s.weeklyBudget ? String(s.weeklyBudget) : '');
+  const [currency, setCurrency] = useState(s.currency);
+  const [budget, setBudget] = useState(inputAmount(s.weeklyBudget, s.currency));
 
   const toggle = <T,>(list: T[], v: T) => (list.includes(v) ? list.filter(x => x !== v) : [...list, v]);
   const finish = () => saveSettings({
     name: name.trim(), householdServings: servings, allergies, avoid, diets, equipment,
-    weeklyBudget: Number(budget.replace(/[^\d.]/g, '')) || 0, onboarded: true, featureTipSeen: true
+    currency, weeklyBudget: Math.round(fromCurrency(Number(budget.replace(/[^\d.]/g, '')) || 0, currency) * 100) / 100, onboarded: true, featureTipSeen: true
   });
   const nav = (
     <div className="row gap" style={{ marginTop: 8 }}>
@@ -67,9 +68,10 @@ export default function Onboarding() {
         <>
           <h1>Weekly grocery budget</h1>
           <p className="muted">Optional. Plan my week will try to stay under it, and your grocery list shows what’s left.</p>
-          <div className="prefix-input"><span>{s.currency}</span><input inputMode="numeric" placeholder="e.g. 400" value={budget} onChange={e => setBudget(e.target.value)} /></div>
+          <div className="chip-row wrap">{CURRENCIES.map(c => <Chip key={c.code} active={currency === c.code} onClick={() => { setCurrency(c.code); setBudget(''); }}>{c.code}</Chip>)}</div>
+          <div className="prefix-input"><span>{currency}</span><input inputMode="numeric" placeholder="e.g. 400" value={budget} onChange={e => setBudget(e.target.value)} /></div>
           <div className="chip-row wrap">
-            {[250, 400, 600, 800].map(v => <Chip key={v} active={budget === String(v)} onClick={() => setBudget(String(v))}>{fmtMoney(v, s.currency, 0)}</Chip>)}
+            {[250, 400, 600, 800].map(v => <Chip key={v} active={budget === inputAmount(v, currency)} onClick={() => setBudget(inputAmount(v, currency))}>{fmtMoney(v, currency, 0)}</Chip>)}
             <Chip active={!budget} onClick={() => setBudget('')}>No budget</Chip>
           </div>
         </>

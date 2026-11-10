@@ -7,7 +7,7 @@ import { Chip, ChipInput, Empty, Sheet, PageHeader } from '../components/ui';
 import { DIETS, MEAL_TYPES, type Diet, type MealType, type Recipe } from '../types';
 import { recipeConflicts, recipeDiets, recipeNutrition } from '../lib/ingredients';
 import { missingEquipment } from '../lib/kitchen';
-import { recipeCost } from '../lib/pricing';
+import { fmtMoney, recipeCost } from '../lib/pricing';
 import { capitalize } from '../lib/util';
 import { SIcon } from '../components/SavoraIcons';
 import { legacyIcon } from '../lib/foodIcons';
@@ -127,7 +127,7 @@ export default function Recipes() {
         <div className="section-label">Total time</div>
         <div className="chip-row wrap">{[null, 15, 20, 30, 45, 60].map(t => <Chip key={String(t)} active={maxTime === t} onClick={() => setMaxTime(t)}>{t ? `≤ ${t} min` : 'Any'}</Chip>)}</div>
         <div className="section-label">Cost per serving</div>
-        <div className="chip-row wrap">{[null, 4, 6, 10].map(c => <Chip key={String(c)} active={maxCost === c} onClick={() => setMaxCost(c)}>{c ? `≤ ${settings.currency} ${c}` : 'Any'}</Chip>)}</div>
+        <div className="chip-row wrap">{[null, 4, 6, 10].map(c => <Chip key={String(c)} active={maxCost === c} onClick={() => setMaxCost(c)}>{c ? `≤ ${fmtMoney(c, settings.currency, 0)}` : 'Any'}</Chip>)}</div>
         <div className="chip-row" style={{ marginTop: 12 }}><Chip active={myKitchen} onClick={() => setMyKitchen(!myKitchen)}><SIcon name="hob" size={16} /> Only what my kitchen can make</Chip></div>
         <div className="section-label">Cuisine</div>
         <div className="chip-row wrap">{allCuisines.map(c => <Chip key={c} active={cuisines.includes(c)} onClick={() => toggle(cuisines, c, setCuisines)}>{c}</Chip>)}</div>
