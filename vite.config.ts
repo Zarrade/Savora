@@ -14,9 +14,9 @@ export default defineConfig({
       manifest: {
         name: 'Savora — AI Recipes & Meal Planner',
         short_name: 'Savora',
-        description: 'Offline recipes, weekly meal planner, nutrition and grocery list.',
-        theme_color: '#1f6f50',
-        background_color: '#f7f5f0',
+        description: 'Recipes, meal planning, groceries and an AI kitchen assistant — synced to your account, works offline.',
+        theme_color: '#FDF8EC',
+        background_color: '#FDF8EC',
         display: 'standalone',
         orientation: 'portrait',
         start_url: './',
@@ -28,7 +28,8 @@ export default defineConfig({
         ]
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,svg,png,ico,webmanifest}'],
+        globPatterns: ['**/*.{js,css,html,svg,png,ico,webmanifest,woff2}'],
+        maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
         navigateFallback: 'index.html',
         // Recipe photos from Wikimedia: keep them on the phone so they work offline
         // AI calls to OpenRouter must always hit the network (never cached, never served stale)

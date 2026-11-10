@@ -82,7 +82,7 @@ export default function Groceries() {
   const clearAll = async () => {
     setMoreOpen(false);
     if (!(await confirm('Remove every item from your grocery list?', 'Clear list'))) return;
-    await db.grocery.clear();
+    await db.grocery.bulkDelete(await db.grocery.toCollection().primaryKeys());
   };
 
   return (

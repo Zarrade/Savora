@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { saveSettings, useCollections, useSettings } from '../hooks';
+import { saveDeviceSettings, saveSettings, useCollections, useSettings } from '../hooks';
 import { db, exportAll, importAll, restoreStarterRecipes, wipeAll, type Backup } from '../db';
 import { Icon } from '../components/Icon';
 import { Chip, ChipInput, PageHeader, Sheet, Stepper, toast, useConfirm } from '../components/ui';
@@ -11,11 +11,15 @@ import { prefetchPhotos, resolveStarterPhotos } from '../lib/photos';
 import { fmtMoney } from '../lib/pricing';
 import { ALLERGY_OPTIONS } from './Onboarding';
 import { AISettings } from './AISettings';
+import { AccountCard } from '../components/AccountCard';
+import { useAuth } from '../components/Account';
 
 const ACTIVITY: [number, string][] = [[1.2, 'Sedentary'], [1.375, 'Light (1–3 days/wk)'], [1.55, 'Moderate (3–5 days/wk)'], [1.725, 'Very active (6–7 days/wk)'], [1.9, 'Athlete (2× a day)']];
 
 export default function SettingsPage() {
   const s = useSettings();
+  const auth = useAuth();
+  const signedIn = auth.status === 'signedIn';
   const collections = useCollections();
   const { confirm, confirmNode } = useConfirm();
   const fileRef = useRef<HTMLInputElement>(null);
@@ -46,7 +50,7 @@ export default function SettingsPage() {
     setPhotoBusy(force ? 'refresh' : 'missing');
     try {
       const n = await resolveStarterPhotos(force, (d, t) => setPhotoBusy(`${d}/${t}`));
-      await saveSettings({ photosVersion: 1 });
+      await saveDeviceSettings({ photosVersion: 1 });
       toast(n ? `Updated ${n} photos` : 'All starter recipes already have photos');
     } catch { toast('Couldn’t reach Wikimedia — try again later'); }
     setPhotoBusy(null);
@@ -96,6 +100,8 @@ export default function SettingsPage() {
   return (
     <div className="page settings">
       <PageHeader title="Me" back="/" />
+
+      <AccountCard />
 
       <section className="card" id="kitchen">
         <h2>🍳 My kitchen</h2>
@@ -228,17 +234,19 @@ export default function SettingsPage() {
 
       <section className="card">
         <h2>Your data</h2>
-        <p className="muted small">Everything is stored only on this phone ({counts.recipes} recipes, {counts.plan} planned meals). Back up regularly — clearing Chrome’s site data or uninstalling the app deletes it.</p>
+        <p className="muted small">{signedIn
+          ? <>{counts.recipes} recipes and {counts.plan} planned meals, kept on this device and synced to your account. A backup file is still handy for your own records.</>
+          : <>Everything is stored only on this device ({counts.recipes} recipes, {counts.plan} planned meals). Sign in to keep it safe, or back up regularly — clearing site data deletes it.</>}</p>
         <div className="menu">
           <button onClick={doExport}><Icon name="download" /> Back up (export file)</button>
           <button onClick={() => fileRef.current?.click()}><Icon name="upload" /> Restore from backup</button>
           <button onClick={async () => { const n = await restoreStarterRecipes(); toast(n ? `Restored ${n} starter recipes` : 'All starter recipes are already here'); }}><Icon name="refresh" /> Restore starter recipes</button>
-          <button className="danger" onClick={async () => { if (await confirm('Delete ALL recipes, plans, groceries and settings on this device? This cannot be undone.', 'Delete everything')) await wipeAll(); }}><Icon name="trash" /> Reset app</button>
+          {!signedIn && <button className="danger" onClick={async () => { if (await confirm('Delete ALL recipes, plans, groceries and settings on this device? This cannot be undone.', 'Delete everything')) await wipeAll(); }}><Icon name="trash" /> Reset app</button>}
         </div>
         <input ref={fileRef} type="file" accept="application/json,.json" hidden onChange={e => onImportFile(e.target.files?.[0])} />
       </section>
 
-      <p className="fineprint center">Savora · AI recipes & meal planner · offline-first · personal use<br />Nutrition and prices are estimates. Photos: Wikimedia Commons contributors.</p>
+      <p className="fineprint center">Savora · recipes, planning & AI kitchen assistant · works offline<br />Nutrition and prices are estimates. Photos: Wikimedia Commons contributors.</p>
 
       <Sheet open={!!importData} onClose={() => setImportData(null)} title="Restore backup">
         {importData && <p className="muted">Backup from {new Date(importData.exportedAt).toLocaleString()} with {importData.recipes.length} recipes and {importData.plan?.length ?? 0} planned meals.</p>}

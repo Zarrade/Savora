@@ -23,7 +23,7 @@ export async function startOpenRouterLogin() {
   const challenge = b64url(new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(verifier))));
   localStorage.setItem(VERIFIER, JSON.stringify({ v: verifier, t: Date.now() }));
   // Hash routing: the callback is the page itself (no #fragment); the code comes back in ?code=
-  const callback = location.origin + location.pathname;
+  const callback = location.origin + location.pathname + '?or=1'; // marker: not a Supabase sign-in code
   const url = `https://openrouter.ai/auth?callback_url=${encodeURIComponent(callback)}&code_challenge=${challenge}&code_challenge_method=S256`;
   location.href = url;
 }
@@ -32,7 +32,7 @@ export async function startOpenRouterLogin() {
 export async function finishOpenRouterLogin(): Promise<'connected' | 'failed' | null> {
   const params = new URLSearchParams(location.search);
   const code = params.get('code');
-  if (!code) return null;
+  if (!code || !params.has('or')) return null;
   let verifier: string | null = null;
   try {
     const saved = JSON.parse(localStorage.getItem(VERIFIER) || 'null');

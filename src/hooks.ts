@@ -1,6 +1,6 @@
 import { useLiveQuery } from 'dexie-react-hooks';
 import { useEffect, useMemo } from 'react';
-import { db, DEFAULT_SETTINGS } from './db';
+import { db, DEFAULT_SETTINGS, untracked } from './db';
 import type { Recipe, Settings, Collection } from './types';
 
 export function useSettings(): Settings {
@@ -16,6 +16,14 @@ export function useSettingsLoaded(): Settings | undefined {
 export async function saveSettings(patch: Partial<Settings>) {
   const cur = (await db.settings.get('settings')) ?? DEFAULT_SETTINGS;
   await db.settings.put({ ...cur, ...patch, id: 'settings' });
+}
+
+/** Settings that only describe this device (e.g. which photos it has fetched): not synced. */
+export async function saveDeviceSettings(patch: Partial<Settings>) {
+  await untracked(async () => {
+    const cur = (await db.settings.get('settings')) ?? DEFAULT_SETTINGS;
+    await db.settings.put({ ...cur, ...patch, id: 'settings' });
+  });
 }
 
 export function useRecipes(): Recipe[] | undefined {

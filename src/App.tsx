@@ -2,7 +2,7 @@ import { HashRouter, NavLink, Route, Routes, useLocation, useNavigate } from 're
 import { useEffect, useState } from 'react';
 import { Icon } from './components/Icon';
 import { Sheet, ToastHost, toast } from './components/ui';
-import { saveSettings, useSettingsLoaded, useTheme } from './hooks';
+import { saveDeviceSettings, useSettingsLoaded, useTheme } from './hooks';
 import { db } from './db';
 import { autoResolvePhotos } from './lib/photos';
 import Home from './pages/Home';
@@ -17,7 +17,11 @@ import SettingsPage from './pages/Settings';
 import Onboarding from './pages/Onboarding';
 import Fridge from './pages/Fridge';
 import PhotoImport from './pages/PhotoImport';
+import AuthPage from './pages/Auth';
 import { finishOpenRouterLogin } from './lib/ai/oauth';
+import { Logo, LogoMark } from './components/Logo';
+import { MergePrompt, SyncBadge, useAuth } from './components/Account';
+import { displayName } from './lib/account';
 
 function ScrollTop() {
   const { pathname } = useLocation();
@@ -25,13 +29,49 @@ function ScrollTop() {
   return null;
 }
 
+const NAV: [string, string, string, boolean?][] = [
+  ['/', 'home', 'Home', true],
+  ['/recipes', 'book', 'Recipes'],
+  ['/plan', 'calendar', 'Plan'],
+  ['/groceries', 'cart', 'Groceries']
+];
+
+const ADD_ACTIONS: { to: string; icon: string; title: string; sub: string; ai?: boolean }[] = [
+  { to: '/new', icon: 'edit', title: 'Write a recipe', sub: 'Type or dictate your own' },
+  { to: '/import', icon: 'link', title: 'Import a recipe', sub: 'Paste text or a link' },
+  { to: '/photo', icon: 'camera', title: 'From a photo', sub: 'Cookbook page, card or dish', ai: true },
+  { to: '/fridge', icon: 'leaf', title: 'What can I make?', sub: 'Meals from what you have', ai: true },
+  { to: '/plan?generate=1', icon: 'calendar', title: 'Plan my week', sub: 'Fits your kitchen & budget' },
+  { to: '/groceries', icon: 'cart', title: 'Add groceries', sub: 'Quick-add to your list' }
+];
+
+function AddSheet({ open, onClose }: { open: boolean; onClose: () => void }) {
+  const nav = useNavigate();
+  return (
+    <Sheet open={open} onClose={onClose} title="Create">
+      <div className="action-grid">
+        {ADD_ACTIONS.map(a => (
+          <button key={a.to} className="action-tile" onClick={() => { onClose(); nav(a.to); }}>
+            <span className="action-ico"><Icon name={a.icon} size={20} /></span>
+            <b>{a.title}{a.ai && <span className="ai-pill">AI</span>}</b>
+            <small>{a.sub}</small>
+          </button>
+        ))}
+      </div>
+    </Sheet>
+  );
+}
+
+function hiddenChrome(pathname: string) {
+  return pathname.startsWith('/cook/') || pathname.endsWith('/edit') || pathname === '/new' || pathname === '/import' || pathname === '/photo';
+}
+
 function TabBar() {
   const { pathname } = useLocation();
-  const nav = useNavigate();
   const [addOpen, setAddOpen] = useState(false);
-  if (pathname.startsWith('/cook/') || pathname.endsWith('/edit') || pathname === '/new' || pathname === '/import' || pathname === '/photo') return null;
-  const tab = (to: string, icon: string, label: string, end = false) => (
-    <NavLink to={to} end={end} className={({ isActive }) => `tab ${isActive ? 'tab-active' : ''}`}>
+  if (hiddenChrome(pathname)) return null;
+  const tab = ([to, icon, label, end]: (typeof NAV)[number]) => (
+    <NavLink key={to} to={to} end={end} className={({ isActive }) => `tab ${isActive ? 'tab-active' : ''}`}>
       <Icon name={icon} size={22} />
       <span>{label}</span>
     </NavLink>
@@ -39,34 +79,61 @@ function TabBar() {
   return (
     <>
       <nav className="tabbar" aria-label="Main">
-        {tab('/', 'home', 'Home', true)}
-        {tab('/recipes', 'book', 'Recipes')}
-        <button className="tab-plus" aria-label="Add" onClick={() => setAddOpen(true)}><Icon name="plus" size={26} strokeWidth={2.4} /></button>
-        {tab('/plan', 'calendar', 'Plan')}
-        {tab('/groceries', 'cart', 'Groceries')}
+        {tab(NAV[0])}{tab(NAV[1])}
+        <button className="tab-plus" aria-label="Create" onClick={() => setAddOpen(true)}><Icon name="plus" size={26} strokeWidth={2.4} /></button>
+        {tab(NAV[2])}{tab(NAV[3])}
       </nav>
-      <Sheet open={addOpen} onClose={() => setAddOpen(false)} title="Add">
-        <div className="menu">
-          <button onClick={() => { setAddOpen(false); nav('/new'); }}><span style={{ fontSize: 22 }}>✍️</span><span>Write a recipe<small>Type or dictate your own</small></span></button>
-          <button onClick={() => { setAddOpen(false); nav('/import'); }}><span style={{ fontSize: 22 }}>📋</span><span>Paste a recipe<small>From a website, caption or note</small></span></button>
-          <button onClick={() => { setAddOpen(false); nav('/photo'); }}><span style={{ fontSize: 22 }}>📸</span><span>Recipe from a photo<small>Cookbook page, card or a dish (AI)</small></span></button>
-          <button onClick={() => { setAddOpen(false); nav('/fridge'); }}><span style={{ fontSize: 22 }}>🧊</span><span>What can I make?<small>Meals from what you have (AI)</small></span></button>
-          <button onClick={() => { setAddOpen(false); nav('/plan?generate=1'); }}><span style={{ fontSize: 22 }}>✨</span><span>Plan my week<small>Meals that fit your kitchen and budget</small></span></button>
-          <button onClick={() => { setAddOpen(false); nav('/groceries'); }}><span style={{ fontSize: 22 }}>🛒</span><span>Add to groceries<small>Quick-add items to your list</small></span></button>
-        </div>
-      </Sheet>
+      <AddSheet open={addOpen} onClose={() => setAddOpen(false)} />
     </>
   );
 }
 
+/** Desktop / tablet navigation (≥ 900px). */
+function Sidebar() {
+  const auth = useAuth();
+  const [addOpen, setAddOpen] = useState(false);
+  const name = displayName(auth.user);
+  return (
+    <aside className="sidebar" aria-label="Main">
+      <div className="sidebar-logo"><Logo size={34} /></div>
+      <button className="btn btn-primary block sidebar-create" onClick={() => setAddOpen(true)}><Icon name="plus" size={18} strokeWidth={2.4} /> Create</button>
+      <nav className="sidebar-nav">
+        {NAV.map(([to, icon, label, end]) => (
+          <NavLink key={to} to={to} end={end} className={({ isActive }) => `side-link ${isActive ? 'active' : ''}`}>
+            <Icon name={icon} size={20} /> {label}
+          </NavLink>
+        ))}
+        <div className="side-label">AI kitchen</div>
+        <NavLink to="/fridge" className={({ isActive }) => `side-link ${isActive ? 'active' : ''}`}><Icon name="leaf" size={20} /> What can I make?</NavLink>
+        <NavLink to="/photo" className={({ isActive }) => `side-link ${isActive ? 'active' : ''}`}><Icon name="camera" size={20} /> From a photo</NavLink>
+        <NavLink to="/import" className={({ isActive }) => `side-link ${isActive ? 'active' : ''}`}><Icon name="link" size={20} /> Import a recipe</NavLink>
+      </nav>
+      <NavLink to="/settings" className={({ isActive }) => `side-account ${isActive ? 'active' : ''}`}>
+        <span className="avatar sm">{(name || 'G')[0].toUpperCase()}</span>
+        <span className="grow">
+          <b className="truncate">{auth.status === 'signedIn' ? name : 'Guest'}</b>
+          <small className="truncate">{auth.status === 'signedIn' ? auth.user?.email : 'Not signed in'}</small>
+        </span>
+        <SyncBadge />
+      </NavLink>
+      <AddSheet open={addOpen} onClose={() => setAddOpen(false)} />
+    </aside>
+  );
+}
+
+function Splash() {
+  return <div className="boot"><LogoMark size={72} className="boot-mark" /></div>;
+}
+
 export default function App() {
   const settings = useSettingsLoaded();
+  const auth = useAuth();
   useTheme(settings?.theme ?? 'system');
   const [foodsVer, setFoodsVer] = useState(0);
   useEffect(() => { const f = () => setFoodsVer(v => v + 1); window.addEventListener('savora-foods', f); return () => window.removeEventListener('savora-foods', f); }, []);
 
-  // Returning from OpenRouter's sign-in (?code=…)
-  const ready = !!settings; // wait until the toast host is mounted so the result is visible
+  // Returning from OpenRouter's sign-in (?or=1&code=…)
+  const ready = !!settings && auth.status !== 'loading';
   useEffect(() => {
     if (!ready) return;
     finishOpenRouterLogin().then(r => {
@@ -80,7 +147,7 @@ export default function App() {
     if (!settings?.onboarded) return;
     const run = () => autoResolvePhotos(
       async () => (await db.settings.get('settings'))?.photosVersion,
-      v => saveSettings({ photosVersion: v }),
+      v => saveDeviceSettings({ photosVersion: v }),
       toast
     );
     run();
@@ -88,32 +155,40 @@ export default function App() {
     return () => window.removeEventListener('online', run);
   }, [settings?.onboarded]);
 
-  if (!settings) return <div className="boot" />;
+
+  if (!settings || auth.status === 'loading') return <><Splash /><ToastHost /></>;
+  if (auth.recovery) return <><AuthPage recovery /><ToastHost /></>;
+  if (auth.status === 'signedIn' && auth.merge === 'ask') return <><MergePrompt /><ToastHost /></>;
+  if (auth.status === 'signedOut' && !auth.guest) return <><AuthPage /><ToastHost /></>;
+
   return (
     <HashRouter>
       <ScrollTop />
-      <main className="app">
-        {!settings.onboarded ? (
-          <Onboarding />
-        ) : (
-          <Routes key={foodsVer}>
-            <Route path="/" element={<Home />} />
-            <Route path="/recipes" element={<Recipes />} />
-            <Route path="/recipe/:id" element={<RecipeDetail />} />
-            <Route path="/recipe/:id/edit" element={<RecipeEditor />} />
-            <Route path="/new" element={<RecipeEditor />} />
-            <Route path="/import" element={<ImportPage />} />
-            <Route path="/fridge" element={<Fridge />} />
-            <Route path="/photo" element={<PhotoImport />} />
-            <Route path="/cook/:id" element={<CookMode />} />
-            <Route path="/plan" element={<Planner />} />
-            <Route path="/groceries" element={<Groceries />} />
-            <Route path="/settings" element={<SettingsPage />} />
-            <Route path="*" element={<Home />} />
-          </Routes>
-        )}
-      </main>
-      {settings.onboarded && <TabBar />}
+      {settings.onboarded ? (
+        <div className="shell">
+          <Sidebar />
+          <main className="app">
+            <Routes key={foodsVer}>
+              <Route path="/" element={<Home />} />
+              <Route path="/recipes" element={<Recipes />} />
+              <Route path="/recipe/:id" element={<RecipeDetail />} />
+              <Route path="/recipe/:id/edit" element={<RecipeEditor />} />
+              <Route path="/new" element={<RecipeEditor />} />
+              <Route path="/import" element={<ImportPage />} />
+              <Route path="/fridge" element={<Fridge />} />
+              <Route path="/photo" element={<PhotoImport />} />
+              <Route path="/cook/:id" element={<CookMode />} />
+              <Route path="/plan" element={<Planner />} />
+              <Route path="/groceries" element={<Groceries />} />
+              <Route path="/settings" element={<SettingsPage />} />
+              <Route path="*" element={<Home />} />
+            </Routes>
+          </main>
+          <TabBar />
+        </div>
+      ) : (
+        <main className="app"><Onboarding /></main>
+      )}
       <ToastHost />
     </HashRouter>
   );

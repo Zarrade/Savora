@@ -6,6 +6,8 @@ import { saveSettings, useRecipeMap, useRecipes, useSettings } from '../hooks';
 import { Icon } from '../components/Icon';
 import { Cover, RecipeCard, totalTime } from '../components/RecipeCard';
 import { Chip, Sheet } from '../components/ui';
+import { Logo } from '../components/Logo';
+import { SyncBadge } from '../components/Account';
 import { MEAL_TYPES, SLOTS, type MealType, type PlanEntry, type Recipe } from '../types';
 import { today, capitalize, addDays, weekStartOf, DAY_SHORT, mondayIndex, parseIso } from '../lib/util';
 import { recipeNutrition } from '../lib/ingredients';
@@ -39,7 +41,17 @@ export default function Home() {
       return { date: d, main: list[0], more: Math.max(0, list.length - 1) };
     });
   }, [upcoming, start]);
-  const plannedDays = days.filter(d => d.main);
+  // Today's next meal (or the next planned one) gets the big card
+  const featured = useMemo(() => {
+    const h = new Date().getHours();
+    const order: string[] = h < 11 ? ['breakfast', 'lunch', 'dinner', 'snack'] : h < 16 ? ['lunch', 'dinner', 'snack'] : ['dinner', 'snack'];
+    const todays = upcoming.filter(e => e.date === start && e.recipeId && !e.leftover && order.includes(e.slot)).sort((a, b) => order.indexOf(a.slot) - order.indexOf(b.slot));
+    const e = todays[0] ?? upcoming.filter(x => x.date > start && x.recipeId).sort((a, b) => a.date.localeCompare(b.date))[0];
+    const r = e?.recipeId ? map.get(e.recipeId) : undefined;
+    if (!e || !r) return null;
+    const label = e.date === start ? `${capitalize(e.slot)} today` : `${DAY_SHORT[mondayIndex(e.date)]} · ${capitalize(e.slot)}`;
+    return { r, label };
+  }, [upcoming, start, map]);
 
   const weekCost = planCost(weekEntries, map, settings.priceOverrides);
   const favourites = recipes.filter(r => r.favorite).slice(0, 12);
@@ -51,86 +63,100 @@ export default function Home() {
   const initial = (settings.name || 'Me').trim()[0]?.toUpperCase();
 
   return (
-    <div className="page">
-      <header className="home-head">
-        <div>
-          <div className="hello">{greeting()}{settings.name ? `, ${settings.name}` : ''} 👋</div>
-          <h1>What’s cooking?</h1>
+    <div className="page home">
+      <header className="home-top">
+        <Logo size={30} />
+        <div className="row gap-sm">
+          <SyncBadge />
+          <Link to="/settings" className="avatar" aria-label="Me and settings">{initial}</Link>
         </div>
-        <Link to="/settings" className="avatar" aria-label="Me and settings">{initial}</Link>
       </header>
 
-      <Link to="/recipes" className="search-box search-link">
-        <Icon name="search" size={18} />
-        <span>Search {recipes.length} recipes</span>
-      </Link>
+      <section className="home-hero">
+        <div className="hello">{greeting()}{settings.name ? `, ${settings.name}` : ''}</div>
+        <h1 className="display">What’s cooking <em>{new Date().getHours() < 11 ? 'this morning' : new Date().getHours() < 16 ? 'for lunch' : 'tonight'}</em>?</h1>
+        <Link to="/recipes" className="search-box search-link">
+          <Icon name="search" size={18} />
+          <span className="truncate">Search {recipes.length} recipes…</span>
+        </Link>
+      </section>
 
       {!settings.featureTipSeen && (
         <div className="feature-tip">
-          <span className="emoji">🍳</span>
+          <span className="feature-ico"><Icon name="settings" size={20} /></span>
           <div className="grow">
-            <b>New: your kitchen & budget</b>
-            <small className="muted">Tell Savora which appliances you have and your weekly grocery budget.</small>
+            <b>Set up your kitchen & budget</b>
+            <small className="muted">Savora only suggests what you can actually cook.</small>
           </div>
           <button className="btn btn-primary btn-sm" onClick={() => { saveSettings({ featureTipSeen: true }); nav('/settings#kitchen'); }}>Set up</button>
           <button className="icon-btn sm" aria-label="Dismiss" onClick={() => saveSettings({ featureTipSeen: true })}><Icon name="close" size={16} /></button>
         </div>
       )}
 
-      <div className="hero-actions">
-        <button className="hero-tile hero-dark" onClick={() => setDecide(true)}>
-          <span className="hero-emoji">🎲</span>
-          <span><b>Decide for me</b><br /><small>Can’t choose? Roll the dice</small></span>
+      {featured ? (
+        <button className="tonight" onClick={() => nav(`/recipe/${featured.r.id}`)}>
+          <Cover recipe={featured.r} large className="tonight-cover" />
+          <div className="tonight-shade" />
+          <div className="tonight-body">
+            <span className="tonight-kicker">{featured.label}</span>
+            <h2>{featured.r.title}</h2>
+            <span className="tonight-meta">
+              <span><Icon name="clock" size={14} /> {totalTime(featured.r)} min</span>
+              <span><Icon name="flame" size={14} /> {Math.round(recipeNutrition(featured.r).perServing.kcal)} kcal</span>
+              {featured.r.cuisine && <span>{featured.r.cuisine}</span>}
+            </span>
+          </div>
+          <span className="tonight-cta" onClick={e => { e.stopPropagation(); nav(`/cook/${featured.r.id}`); }}><Icon name="play" size={16} /> Cook</span>
         </button>
-        <button className="hero-tile hero-light" onClick={() => nav('/plan?generate=1')}>
-          <span className="hero-emoji">✨</span>
-          <span><b>Plan my week</b><br /><small>{settings.weeklyBudget ? `Within ${fmtMoney(settings.weeklyBudget, settings.currency)}` : 'Breakfast to dinner'}</small></span>
+      ) : (
+        <button className="plan-cta" onClick={() => nav('/plan?generate=1')}>
+          <span className="plan-cta-ico"><Icon name="sparkles" size={24} /></span>
+          <span className="grow">
+            <b>Plan your week in one tap</b>
+            <small>Breakfast to dinner{settings.weeklyBudget ? `, within ${fmtMoney(settings.weeklyBudget, settings.currency, 0)}` : ''} — built around your kitchen and diet.</small>
+          </span>
+          <Icon name="arrowRight" size={20} />
         </button>
-      </div>
+      )}
 
-      <div className="hero-actions">
-        <button className="hero-tile hero-light" onClick={() => nav('/fridge')}>
-          <span className="hero-emoji">🧊</span>
-          <span><b>What can I make?</b><br /><small>From what you have</small></span>
+      <div className="ai-grid">
+        <button className="ai-tile ai-tile-a" onClick={() => nav('/fridge')}>
+          <span className="ai-tile-ico"><Icon name="leaf" size={20} /></span>
+          <b>What can I make?</b><small>From what you have</small>
         </button>
-        <button className="hero-tile hero-light" onClick={() => nav('/photo')}>
-          <span className="hero-emoji">📸</span>
-          <span><b>From a photo</b><br /><small>Page, card or dish</small></span>
+        <button className="ai-tile ai-tile-b" onClick={() => nav('/photo')}>
+          <span className="ai-tile-ico"><Icon name="camera" size={20} /></span>
+          <b>From a photo</b><small>Page, card or dish</small>
+        </button>
+        <button className="ai-tile ai-tile-c" onClick={() => setDecide(true)}>
+          <span className="ai-tile-ico"><Icon name="dice" size={20} /></span>
+          <b>Decide for me</b><small>Can’t choose? Roll</small>
+        </button>
+        <button className="ai-tile ai-tile-d" onClick={() => nav('/import')}>
+          <span className="ai-tile-ico"><Icon name="link" size={20} /></span>
+          <b>Import a recipe</b><small>Paste text or a link</small>
         </button>
       </div>
 
       <section>
         <div className="section-head">
-          <h2>This week</h2>
-          <Link to="/plan">See plan</Link>
+          <h2>Your week</h2>
+          <Link to="/plan">Open planner</Link>
         </div>
-        {plannedDays.length === 0 ? (
-          <button className="add-row" onClick={() => nav('/plan?generate=1')}>
-            <span className="add-ico"><Icon name="sparkles" size={20} /></span>
-            <span className="grow" style={{ textAlign: 'left' }}>Nothing planned yet — let Savora plan your week</span>
-          </button>
-        ) : (
-          <div className="week-list">
-            {days.map(({ date, main, more }) => {
-              const r = main?.recipeId ? map.get(main.recipeId) : undefined;
-              const isToday = date === start;
-              return (
-                <button key={date} className="week-row" onClick={() => (r ? nav(`/recipe/${r.id}`) : nav('/plan'))}>
-                  <div className={`week-day ${isToday ? 'today' : ''}`}>
-                    <b>{isToday ? 'Today' : DAY_SHORT[mondayIndex(date)]}</b>
-                    <small>{parseIso(date).getDate()}</small>
-                  </div>
-                  {r ? <Cover recipe={r} className="cover-xs" /> : <div className="cover cover-xs cover-emoji" style={{ ['--hue' as string]: 0, opacity: 0.5 }}><span>＋</span></div>}
-                  <div className="week-row-body">
-                    <span className="week-row-title">{r ? r.title : <span className="faint">Nothing planned</span>}</span>
-                    {main && <span className="row gap-sm"><span className={`tag tag-${main.slot}`}>{capitalize(main.slot)}</span>{more > 0 && <small className="faint">+{more} more</small>}</span>}
-                  </div>
-                  {r && main && !main.leftover && <Icon name="chevronRight" size={18} className="faint" />}
-                </button>
-              );
-            })}
-          </div>
-        )}
+        <div className="week-strip">
+          {days.map(({ date, main, more }) => {
+            const r = main?.recipeId ? map.get(main.recipeId) : undefined;
+            const isToday = date === start;
+            return (
+              <button key={date} className={`day-card ${isToday ? 'today' : ''} ${r ? '' : 'empty'}`} onClick={() => (r ? nav(`/recipe/${r.id}`) : nav('/plan'))}>
+                <span className="day-card-head"><b>{isToday ? 'Today' : DAY_SHORT[mondayIndex(date)]}</b><small>{parseIso(date).getDate()}</small></span>
+                {r ? <Cover recipe={r} className="day-card-cover" /> : <span className="day-card-add"><Icon name="plus" size={20} /></span>}
+                <span className="day-card-title">{r ? r.title : 'Nothing planned'}</span>
+                {main && more > 0 && <small className="faint">+{more} more</small>}
+              </button>
+            );
+          })}
+        </div>
       </section>
 
       {(settings.weeklyBudget > 0 || groceryLeft > 0) && (

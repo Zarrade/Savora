@@ -228,9 +228,20 @@ const INDEX: IndexEntry[] = FOODS.flatMap(food =>
 const matchCache = new Map<string, Food | null>();
 
 /* Foods the AI estimated for ingredients missing from the built-in database (kept on this device). */
-const CUSTOM_KEY = 'savora-custom-foods';
+let CUSTOM_KEY = 'savora-custom-foods';
 let customFoods: Record<string, number[]> = {};
 try { customFoods = JSON.parse(localStorage.getItem(CUSTOM_KEY) || '{}'); } catch { /* none */ }
+export function setCustomFoodsScope(uid: string | null) {
+  const next = uid ? `savora-custom-foods:${uid}` : 'savora-custom-foods';
+  if (uid && !localStorage.getItem(next) && localStorage.getItem('savora-custom-foods')) {
+    localStorage.setItem(next, localStorage.getItem('savora-custom-foods')!);
+    localStorage.removeItem('savora-custom-foods');
+  }
+  CUSTOM_KEY = next;
+  try { customFoods = JSON.parse(localStorage.getItem(CUSTOM_KEY) || '{}'); } catch { customFoods = {}; }
+  matchCache.clear();
+  nutritionCache.clear();
+}
 export function addCustomFoods(foods: Record<string, number[]>) {
   customFoods = { ...customFoods, ...foods };
   try { localStorage.setItem(CUSTOM_KEY, JSON.stringify(customFoods)); } catch { /* storage blocked */ }

@@ -1,10 +1,34 @@
-# Savora — AI Recipes & Meal Planner
+# Savora — Recipes, Meal Planner & AI Kitchen
 
-A personal, **offline-first** recipe box and weekly meal planner for Android (and any phone), now with an
-**optional AI assistant powered by [OpenRouter](https://openrouter.ai)**. It installs from Chrome like a normal app,
-works with no internet, and keeps every recipe, plan and grocery list **only on your phone**. No accounts, no subscription, no tracking.
+A recipe box, weekly meal planner, nutrition tracker and grocery list for Android, iPhone and desktop browsers,
+with **personal accounts that sync across devices** and an **optional AI assistant powered by [OpenRouter](https://openrouter.ai)**.
+It installs like a normal app and keeps working **offline**: your data lives on the device and syncs to your account whenever you're online.
 
-Savora is the next version of the earlier "Mise" app (same engine, new name, big AI upgrade).
+Savora is the next version of the earlier "Mise" app.
+
+## Accounts & sync
+
+- **Sign in with email + password**, a one-tap email link, or reset a forgotten password. People can also **continue without an account** (data stays on that device only).
+- **Your data follows you.** Recipes, plans, groceries, collections and preferences sync to your account through Supabase and update live on your other devices.
+- **Offline first.** Edits made offline are queued and uploaded when you're back. If the same thing was edited on two devices, the most recent edit wins.
+- **Private by design.** Every row is protected by Postgres Row Level Security, so each user can only ever read or change their own data. Your OpenRouter key and AI-estimated foods stay on the device and are kept per user.
+- **Signing in on a phone that already has guest data** asks whether to add it to your account.
+- **Me → Account**: rename yourself, see sync status, sign out (removes your data from that device only), or permanently delete your account and all its data.
+
+### One-time Supabase dashboard setup (required for email links)
+
+Project: `egwfaymxvrlphznceyfj`. In the Supabase dashboard:
+
+1. **Authentication → URL Configuration**
+   - **Site URL:** `https://zarrade.github.io/savora/`
+   - **Redirect URLs:** add `https://zarrade.github.io/savora/**` and `http://localhost:5173/**`
+
+   Without this, confirmation, magic-link and password-reset emails send people to `localhost`.
+2. **Emails.** Supabase's built-in email sender is for testing only. It sends a handful of emails per hour and **only to members of your Supabase team**. To let anyone sign up, either:
+   - set up **custom SMTP** (Authentication → Emails → SMTP settings — e.g. Resend, Postmark, SendGrid), or
+   - turn off **Confirm email** (Authentication → Sign In / Providers → Email) so new accounts can sign in straight away.
+
+The database schema (table `user_records`, RLS policies, `push_records` and `delete_my_account` functions) is in `supabase/migrations/`.
 
 ## AI features (all optional)
 
@@ -18,8 +42,8 @@ Connect once in **Me → AI assistant** (sign in with OpenRouter, or paste an AP
 - 🥦 **Nutrition for unknown foods** — estimate missing ingredients and keep them in your on-device database.
 
 **Privacy & safety**
-- With no key (or no internet) the app behaves exactly as before — every AI feature is an optional extra.
-- Your key is stored on this device only (localStorage) and is **never included in backups**. Set a spend limit on the key at openrouter.ai.
+- With no key (or no internet) everything else works as normal — every AI feature is an optional extra.
+- Your key is stored on this device only, separately for each signed-in user, and is **never synced or included in backups**. Set a spend limit on the key at openrouter.ai.
 - Text or photos are sent to OpenRouter and your chosen model **only when you press an AI button**.
 - AI recipes always open in the editor for review before saving. Allergy/avoid lists are re-checked in code on AI suggestions. Nutrition values and quantities are estimates.
 
@@ -130,9 +154,9 @@ Then on GitHub:
 
 ## 4. Keep your data safe
 
-Everything is stored in the browser storage of the installed app on your phone. Clearing Chrome's
-site data or uninstalling the app deletes it. Use **Me → Back up** regularly and keep the file in
-Google Drive. **Me → Restore from backup** brings it back (on the same or a new phone).
+**Signed in:** your data is saved to your account automatically — sign in on any device to get it back.
+**Guest mode:** everything lives only in the app's storage on that device; clearing site data or uninstalling deletes it.
+Either way, **Me → Back up** exports a file you can keep, and **Me → Restore from backup** brings it back (old Mise backups work too).
 
 ---
 
@@ -156,8 +180,9 @@ To add an ingredient to the nutrition database, add a line to `FOODS` with its n
 
 ## Tech
 
-React 18 + TypeScript + Vite, IndexedDB via Dexie, offline service worker via `vite-plugin-pwa`,
-hash routing (works on any static host). No backend. AI calls go straight from the phone to OpenRouter (`src/lib/ai/`).
+React 18 + TypeScript + Vite, IndexedDB via Dexie (local working copy), Supabase Auth + Postgres + Realtime for accounts and sync
+(`src/lib/account.ts`, `src/lib/sync.ts`, `src/lib/outbox.ts`), offline service worker via `vite-plugin-pwa`, hash routing
+(works on any static host). AI calls go straight from the device to OpenRouter (`src/lib/ai/`). Fonts are bundled (Plus Jakarta Sans) so the UI works offline.
 
 ## Notes
 

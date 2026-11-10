@@ -3,7 +3,7 @@
  * Looked up on your phone when online, then cached by the service worker so
  * they keep working offline. Every photo carries a credit link to its source page.
  */
-import { db } from '../db';
+import { db, untracked } from '../db';
 import type { Recipe } from '../types';
 
 export const PHOTO_VERSION = 1;
@@ -220,7 +220,8 @@ export async function resolveStarterPhotos(force = false, onProgress?: (done: nu
     } catch { /* offline or rate-limited — try next time */ }
     onProgress?.(found.size, targets.length);
   }
-  await db.transaction('rw', db.recipes, async () => {
+  // automatic photos are per-device, not user edits: don't sync them
+  await untracked(async () => {
     for (const [id, h] of found) {
       const cur = await db.recipes.get(id);
       if (!cur || (cur.image && !cur.photoAuto && !force)) continue;

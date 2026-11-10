@@ -1,6 +1,6 @@
 import { useSyncExternalStore } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { loadAIConfig, notifyAIConfig, subscribeAIConfig, type AIConfig } from '../lib/ai/config';
+import { aiStoreKey, loadAIConfig, notifyAIConfig, subscribeAIConfig, type AIConfig } from '../lib/ai/config';
 import { AIError } from '../lib/ai/client';
 import type { AIRecipeDraft } from '../lib/ai/json';
 import { IMPORT_KEY } from '../pages/RecipeEditor';
@@ -10,7 +10,7 @@ import { Icon } from './Icon';
 let snap = loadAIConfig();
 subscribeAIConfig(() => { snap = loadAIConfig(); });
 // A key saved by another tab (e.g. the OAuth callback) should reach this one without a reload
-window.addEventListener('storage', e => { if (e.key === 'savora-ai-config') { snap = loadAIConfig(); notifyAIConfig(); } });
+window.addEventListener('storage', e => { if (e.key === aiStoreKey()) { snap = loadAIConfig(); notifyAIConfig(); } });
 export function useAIConfig(): AIConfig {
   return useSyncExternalStore(
     cb => subscribeAIConfig(cb),

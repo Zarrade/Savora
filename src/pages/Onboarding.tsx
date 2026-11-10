@@ -5,6 +5,9 @@ import { DIETS, type Diet } from '../types';
 import { capitalize } from '../lib/util';
 import { KitchenPicker } from '../components/KitchenPicker';
 import { fmtMoney } from '../lib/pricing';
+import { LogoMark } from '../components/Logo';
+import { useAuth } from '../components/Account';
+import { displayName } from '../lib/account';
 
 export const ALLERGY_OPTIONS = ['gluten', 'dairy', 'egg', 'nuts', 'peanuts', 'shellfish', 'fish', 'soy', 'sesame'];
 const STEPS = 5;
@@ -12,7 +15,8 @@ const STEPS = 5;
 export default function Onboarding() {
   const s = useSettings();
   const [step, setStep] = useState(0);
-  const [name, setName] = useState(s.name);
+  const auth = useAuth();
+  const [name, setName] = useState(s.name || displayName(auth.user));
   const [servings, setServings] = useState(s.householdServings);
   const [allergies, setAllergies] = useState<string[]>(s.allergies);
   const [avoid, setAvoid] = useState<string[]>(s.avoid);
@@ -36,11 +40,12 @@ export default function Onboarding() {
 
   return (
     <div className="onboarding">
-      <div className="onb-logo" aria-hidden="true">🍲</div>
+      <LogoMark size={64} className="onb-logo" />
+      <div className="onb-progress"><span style={{ width: `${((step + 1) / STEPS) * 100}%` }} /></div>
       {step === 0 && (
         <>
-          <h1>Welcome to Savora</h1>
-          <p className="muted">Recipes, a weekly meal plan, nutrition, grocery list and budget — all on your phone, all offline.</p>
+          <h1>Welcome to <em>Savora</em></h1>
+          <p className="muted">Let’s set up your kitchen in under a minute. Recipes, weekly plans, nutrition, groceries and budget — tailored to you.</p>
           <label className="field">
             <span>What should we call you?</span>
             <input value={name} onChange={e => setName(e.target.value)} placeholder="Your name (optional)" />

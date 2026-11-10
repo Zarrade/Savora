@@ -5,6 +5,7 @@ import { ALL_SEEDS, SEED_VERSION, SEEDS_BY_VERSION } from './data/seeds';
 import { toIngredient } from './lib/ingredients';
 import { autoTargets } from './lib/planner';
 import { DEFAULT_EQUIPMENT } from './lib/kitchen';
+import { TABLE_KIND, isUntracked, markUntracked, recordChange, recordRescan } from './lib/outbox';
 
 class SavoraDB extends Dexie {
   recipes!: Table<Recipe, string>;
@@ -22,10 +23,56 @@ class SavoraDB extends Dexie {
       collections: 'id, name',
       settings: 'id'
     });
+    // Sync middleware: note every change to a synced table in the outbox (see lib/outbox.ts)
+    this.use({
+      stack: 'dbcore',
+      name: 'savora-sync',
+      create: down => ({
+        ...down,
+        table: name => {
+          const t = down.table(name);
+          const kind = TABLE_KIND[name];
+          if (!kind) return t;
+          return {
+            ...t,
+            mutate: async req => {
+              const res = await t.mutate(req);
+              if (isUntracked(req.trans as object)) return res;
+              const ts = Date.now();
+              if (req.type === 'add' || req.type === 'put') {
+                const keys: unknown[] = res.results ?? req.keys ?? (req.type === 'put' ? req.updates?.keys : undefined) ?? req.values.map(v => (v as { id?: unknown })?.id);
+                if (keys?.length && keys.every(k => k !== undefined)) recordChange(kind, keys, ts);
+                else recordRescan(kind);
+              } else if (req.type === 'delete') {
+                if (req.keys?.length) recordChange(kind, req.keys, ts); else recordRescan(kind);
+              } else {
+                recordRescan(kind); // deleteRange, e.g. table.clear()
+              }
+              return res;
+            }
+          };
+        }
+      })
+    });
   }
 }
 
 export const db = new SavoraDB();
+
+export const ALL_TABLES = () => [db.recipes, db.plan, db.grocery, db.collections, db.settings];
+
+/** Run writes that must NOT be uploaded (seeding, automatic photos, applying cloud changes). */
+export function untracked<T>(fn: () => Promise<T>): Promise<T> {
+  return db.transaction('rw', ALL_TABLES(), async tx => {
+    markUntracked(tx.idbtrans);
+    return fn();
+  });
+}
+
+/** Empty every table without syncing the deletions (used on sign-out / switching account). */
+export async function wipeLocal(): Promise<void> {
+  await untracked(async () => { await Promise.all(ALL_TABLES().map(t => t.clear())); });
+}
 
 const BASE_PROFILE = { sex: 'male' as const, age: 30, heightCm: 175, weightKg: 75, activity: 1.55, goal: 'maintain' as const };
 
@@ -90,7 +137,7 @@ export function seedToRecipe(s: SeedRecipe, now = Date.now()): Recipe {
 
 /** First-run setup: settings + starter recipes + default collections. */
 export async function ensureSeeded(): Promise<void> {
-  await db.transaction('rw', db.settings, db.recipes, db.collections, async () => {
+  await untracked(async () => {
     const s = await db.settings.get('settings');
     const now = Date.now();
     if (!s) {
@@ -157,7 +204,8 @@ export async function importAll(data: Backup, mode: 'replace' | 'merge'): Promis
   if ((data?.app !== 'savora' && data?.app !== 'mise') || !Array.isArray(data.recipes)) throw new Error('This file is not a Savora (or Mise) backup.');
   await db.transaction('rw', [db.recipes, db.plan, db.grocery, db.collections, db.settings], async () => {
     if (mode === 'replace') {
-      await Promise.all([db.recipes.clear(), db.plan.clear(), db.grocery.clear(), db.collections.clear(), db.settings.clear()]);
+      // keyed deletes (not clear()) so a signed-in account gets proper deletions synced
+      await Promise.all(ALL_TABLES().map(async t => t.bulkDelete(await t.toCollection().primaryKeys())));
     }
     await db.recipes.bulkPut(data.recipes);
     await db.plan.bulkPut(data.plan ?? []);

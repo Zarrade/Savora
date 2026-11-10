@@ -2,6 +2,8 @@
  * AI configuration lives in localStorage on this device — deliberately NOT in the
  * IndexedDB settings, so your OpenRouter key is never included in backup files.
  */
+const listeners = new Set<() => void>();
+
 export interface AIConfig {
   key: string;
   model: string;        // text model
@@ -10,7 +12,20 @@ export interface AIConfig {
 
 export const DEFAULT_MODEL = 'openai/gpt-4o-mini';
 export const DEFAULT_VISION_MODEL = 'openai/gpt-4o-mini';
-const STORE = 'savora-ai-config';
+// Per user: someone else signing in on this phone never gets your key.
+const GUEST_STORE = 'savora-ai-config';
+let STORE = GUEST_STORE;
+
+/** Switch to a user's AI settings (null = guest). Optionally carry a guest key into a new account. */
+export function setAIScope(uid: string | null, inheritGuest = false) {
+  STORE = uid ? `savora-ai-config:${uid}` : GUEST_STORE;
+  if (uid && inheritGuest && !localStorage.getItem(STORE)) {
+    const g = localStorage.getItem(GUEST_STORE);
+    if (g) { localStorage.setItem(STORE, g); localStorage.removeItem(GUEST_STORE); }
+  }
+  listeners.forEach(l => l());
+}
+export const aiStoreKey = () => STORE;
 
 export function loadAIConfig(): AIConfig {
   try {
@@ -25,7 +40,6 @@ export function loadAIConfig(): AIConfig {
   }
 }
 
-const listeners = new Set<() => void>();
 export function saveAIConfig(patch: Partial<AIConfig>) {
   const next = { ...loadAIConfig(), ...patch };
   try { localStorage.setItem(STORE, JSON.stringify(next)); } catch { /* storage blocked */ }

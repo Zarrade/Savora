@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="hat" gradientUnits="userSpaceOnUse" x1="0" y1="100" x2="0" y2="420">
+      <stop offset="0" stop-color="#2F6B28"/>
+      <stop offset="1" stop-color="#173F1B"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="#FDF6E6"/>
+  <g transform="translate(256 256) scale(.78) translate(-256 -256)"><g transform="translate(-32 6)" fill="none" stroke="url(#hat)" stroke-width="30" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M160 312C112 306 92 268 100 234C110 192 152 170 196 182C206 138 250 104 300 108C350 112 386 148 392 190C432 174 474 202 476 246C478 286 448 308 400 312"/>
+    <path d="M160 312L168 412C232 388 330 392 396 412L400 312"/>
+    <path d="M172 352C236 334 330 336 392 352"/>
+  </g>
+</g>
+</svg>
