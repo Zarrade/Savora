@@ -1,0 +1,602 @@
+@ Spaghetti Aglio e Olio | Italian | dinner | 2 | 5 | 12 | pasta | vegan, quick
+= Spaghetti tossed with garlic, chili and olive oil — ready in minutes.
+- 200 g spaghetti
+- 4 garlic cloves, sliced
+- 1 tsp chili flakes
+- 5 tbsp olive oil
+- 1 handful parsley, chopped
+* Cook the spaghetti for 10 minutes. Keep a cup of pasta water.
+* Gently fry the garlic and chili in the oil for 3 minutes until golden.
+* Toss the pasta with the oil and a splash of pasta water.
+* Finish with parsley.
+
+@ Penne Arrabbiata | Italian | dinner | 4 | 5 | 20 | pasta | vegan
+= Penne in a fiery tomato and garlic sauce.
+- 400 g penne
+- 1 can chopped tomatoes (400 g)
+- 3 garlic cloves, sliced
+- 1 tsp chili flakes
+- 3 tbsp olive oil
+- 1 handful basil
+* Fry the garlic and chili in oil for 2 minutes.
+* Add the tomatoes and simmer for 15 minutes.
+* Cook the penne for 11 minutes and toss with the sauce.
+* Tear over basil.
+
+@ Spaghetti Bolognese | Italian | dinner | 4 | 15 | 60 | pasta |
+= A slow-simmered beef ragù with soffritto and tomato.
+- 500 g beef mince
+- 1 onion, finely chopped
+- 1 carrot, finely chopped
+- 1 celery stick, finely chopped
+- 2 garlic cloves, crushed
+- 2 tbsp tomato paste
+- 1 can chopped tomatoes (400 g)
+- 200 ml beef stock
+- 400 g spaghetti
+- 40 g parmesan, grated
+* Fry the onion, carrot and celery in oil for 8 minutes. Add garlic.
+* Brown the mince, then add tomato paste, tomatoes and stock.
+* Simmer gently for 50 minutes.
+* Toss with cooked spaghetti and serve with parmesan.
+
+@ Creamy Mushroom Tagliatelle | Italian | dinner | 4 | 10 | 15 | pasta | vegetarian
+= Silky tagliatelle with garlicky mushrooms and parmesan cream.
+- 350 g tagliatelle
+- 400 g mushrooms, sliced
+- 2 garlic cloves, crushed
+- 200 ml cream
+- 50 g parmesan, grated
+- 2 tbsp butter
+- 1 handful parsley, chopped
+* Fry the mushrooms in butter for 8 minutes until golden. Add garlic.
+* Pour in the cream and simmer 3 minutes. Stir in parmesan.
+* Toss with cooked tagliatelle and parsley.
+
+@ Chicken Alfredo | Italian-American | dinner | 4 | 10 | 20 | pasta |
+= Fettuccine in a rich parmesan sauce with seared chicken.
+- 350 g fettuccine
+- 2 chicken breasts
+- 2 tbsp butter
+- 2 garlic cloves, crushed
+- 300 ml cream
+- 80 g parmesan, grated
+* Season and pan-fry the chicken for 6 minutes per side. Slice.
+* Melt butter, add garlic, then cream; simmer 3 minutes. Stir in parmesan.
+* Toss with cooked fettuccine and top with chicken.
+
+@ Pasta alla Norma | Italian | dinner | 4 | 10 | 30 | pasta | vegetarian
+= Sicilian pasta with fried eggplant, tomato and salted ricotta.
+- 400 g rigatoni
+- 1 eggplant, cubed
+- 1 can chopped tomatoes (400 g)
+- 2 garlic cloves, crushed
+- 4 tbsp olive oil
+- 60 g ricotta
+- 1 handful basil
+* Fry the eggplant in oil for 12 minutes until golden.
+* Add garlic and tomatoes and simmer 15 minutes.
+* Toss with cooked pasta.
+* Top with ricotta and basil.
+
+@ Pasta e Fagioli | Italian | lunch,dinner | 4 | 10 | 30 | soup | vegan
+= A thick Italian soup of small pasta and borlotti beans.
+- 1 onion, chopped
+- 1 carrot, chopped
+- 1 celery stick, chopped
+- 2 garlic cloves
+- 1 can borlotti beans (400 g)
+- 2 tbsp tomato paste
+- 1.2 l vegetable stock
+- 120 g ditalini pasta
+- 1 sprig rosemary
+* Fry the vegetables in oil for 8 minutes. Add garlic and tomato paste.
+* Add the beans, stock and rosemary and simmer 15 minutes.
+* Mash a few beans, add the pasta and cook 10 minutes.
+
+@ Minestrone | Italian | lunch,dinner | 6 | 15 | 35 | soup | vegan
+= A big pot of vegetable soup with beans and small pasta.
+- 1 onion, chopped
+- 2 carrots, diced
+- 2 celery sticks, diced
+- 1 zucchini, diced
+- 2 potatoes, diced
+- 1 can chopped tomatoes (400 g)
+- 1 can cannellini beans (400 g)
+- 100 g small pasta
+- 1.5 l vegetable stock
+- 100 g spinach
+* Fry the onion, carrots and celery for 8 minutes.
+* Add the potatoes, tomatoes and stock and simmer 15 minutes.
+* Add zucchini, beans and pasta and cook 10 minutes.
+* Stir in the spinach.
+
+@ Pesto Genovese Pasta with Potatoes & Beans | Italian | dinner | 4 | 10 | 15 | pasta | vegetarian
+= Trofie with basil pesto, potatoes and green beans.
+- 350 g pasta
+- 2 potatoes, diced
+- 150 g green beans, trimmed
+- 1 bunch basil
+- 30 g pine nuts
+- 40 g parmesan, grated
+- 1 garlic clove
+- 80 ml olive oil
+* Blend basil, pine nuts, parmesan, garlic and oil into pesto.
+* Boil the pasta and potatoes together; add the beans for the last 5 minutes.
+* Drain, keeping some water, and toss with pesto.
+
+@ Lemon Ricotta Spaghetti | Italian | dinner | 4 | 5 | 12 | pasta | vegetarian, quick
+= Bright, creamy no-cook sauce of ricotta, lemon and parmesan.
+- 350 g spaghetti
+- 250 g ricotta
+- 1 lemon, zested and juiced
+- 40 g parmesan, grated
+- 1 handful basil
+* Cook the spaghetti for 10 minutes.
+* Mix ricotta, lemon zest, juice and parmesan.
+* Toss with pasta and a splash of pasta water.
+* Finish with basil and black pepper.
+
+@ Tuna & Tomato Pasta | Italian | dinner | 4 | 5 | 15 | pasta | pescatarian, quick
+= A store-cupboard pasta with tuna, capers and tomatoes.
+- 350 g fusilli
+- 1 can tuna (160 g), drained
+- 1 can chopped tomatoes (400 g)
+- 2 tbsp capers
+- 2 garlic cloves, crushed
+- 2 tbsp olive oil
+- 1 handful parsley
+* Fry the garlic in oil, add tomatoes and simmer 10 minutes.
+* Stir in tuna and capers.
+* Toss with cooked pasta and parsley.
+
+@ Spinach & Ricotta Cannelloni | Italian | dinner | 4 | 25 | 35 | pasta | vegetarian
+= Pasta tubes filled with spinach and ricotta, baked in tomato sauce.
+- 250 g cannelloni tubes
+- 400 g spinach
+- 250 g ricotta
+- 50 g parmesan, grated
+- 1 egg
+- 500 ml passata
+- 125 g mozzarella, sliced
+* Wilt the spinach, squeeze and chop. Mix with ricotta, half the parmesan and egg.
+* Fill the tubes.
+* Spread half the passata in a dish, add tubes and cover with the rest.
+* Top with mozzarella and parmesan. Bake at 190°C for 35 minutes.
+
+@ Baked Ziti | Italian-American | dinner | 6 | 15 | 30 | pasta |
+= Pasta baked with meat sauce, ricotta and melting mozzarella.
+- 450 g ziti or penne
+- 400 g beef mince
+- 700 ml passata
+- 1 onion, chopped
+- 250 g ricotta
+- 200 g mozzarella, grated
+- 40 g parmesan
+* Brown the beef and onion, add passata and simmer 10 minutes.
+* Cook the pasta for 8 minutes and mix with the sauce.
+* Layer pasta with dollops of ricotta and mozzarella.
+* Top with parmesan and bake at 200°C for 25 minutes.
+
+@ Shrimp Scampi | Italian-American | dinner | 4 | 10 | 15 | shrimp | pescatarian
+= Garlic butter prawns with lemon over linguine.
+- 350 g linguine
+- 500 g prawns, peeled
+- 4 garlic cloves, sliced
+- 3 tbsp butter
+- 2 tbsp olive oil
+- 1 lemon, juiced
+- 1 handful parsley
+- ½ tsp chili flakes
+* Cook the linguine.
+* Fry the garlic in butter and oil for 1 minute. Add prawns and chili and cook 3 minutes.
+* Add lemon and a splash of pasta water.
+* Toss with pasta and parsley.
+
+@ Pasta Primavera | Italian | dinner | 4 | 15 | 15 | pasta | vegetarian
+= Spring vegetables tossed with pasta, lemon and parmesan.
+- 350 g penne
+- 1 zucchini, sliced
+- 150 g asparagus, chopped
+- 100 g peas
+- 150 g cherry tomatoes
+- 2 garlic cloves
+- 40 g parmesan
+- 3 tbsp olive oil
+* Cook the pasta, adding peas and asparagus for the last 3 minutes.
+* Sauté the zucchini, tomatoes and garlic in oil for 5 minutes.
+* Toss everything with parmesan and a splash of pasta water.
+
+@ Gnocchi with Tomato & Mozzarella | Italian | dinner | 4 | 5 | 20 | pasta | vegetarian
+= Soft gnocchi baked in tomato sauce with bubbling mozzarella.
+- 500 g gnocchi
+- 500 ml passata
+- 2 garlic cloves
+- 125 g mozzarella
+- 1 handful basil
+- 2 tbsp olive oil
+* Simmer passata with garlic and oil for 10 minutes.
+* Boil the gnocchi for 2 minutes until they float; drain.
+* Mix with sauce in a dish, top with mozzarella.
+* Grill for 6 minutes. Add basil.
+
+@ Butternut Squash Risotto | Italian | dinner | 4 | 10 | 30 | rice | vegetarian, gluten-free
+= Creamy risotto with roasted squash and sage.
+- 500 g butternut squash, cubed
+- 300 g arborio rice
+- 1 onion, chopped
+- 1.2 l vegetable stock
+- 40 g parmesan
+- 2 tbsp butter
+- 6 sage leaves
+* Roast the squash at 210°C for 25 minutes.
+* Soften the onion in butter, add rice and toast 2 minutes.
+* Add hot stock a ladle at a time, stirring, for 18 minutes.
+* Fold in squash, parmesan and crisp sage.
+
+@ Lemon & Pea Risotto | Italian | dinner | 4 | 10 | 25 | rice | vegetarian, gluten-free
+= Bright green risotto with peas, lemon and mint.
+- 300 g arborio rice
+- 1 onion, chopped
+- 200 g frozen peas
+- 1 lemon, zested and juiced
+- 1.2 l vegetable stock
+- 40 g parmesan
+- 2 tbsp butter
+- 1 handful mint
+* Soften the onion in butter. Add rice.
+* Add hot stock gradually, stirring, for 18 minutes.
+* Stir in peas, lemon, parmesan and mint.
+
+@ Chicken Cacciatore | Italian | dinner | 4 | 15 | 45 | drumstick | gluten-free, dairy-free
+= Hunter-style chicken braised with peppers, olives and tomato.
+- 8 chicken thighs
+- 1 onion, sliced
+- 2 peppers, sliced
+- 3 garlic cloves
+- 1 can chopped tomatoes (400 g)
+- 80 g black olives
+- 1 sprig rosemary
+- 2 tbsp olive oil
+* Brown the chicken in oil and set aside.
+* Soften the onion, peppers and garlic.
+* Add tomatoes, olives, rosemary and chicken. Simmer covered 35 minutes.
+
+@ Chicken Parmigiana | Italian-American | dinner | 4 | 20 | 25 | drumstick |
+= Crumbed chicken baked with tomato sauce and mozzarella.
+- 4 chicken breasts, flattened
+- 1 egg
+- 80 g breadcrumbs
+- 30 g parmesan
+- 400 ml passata
+- 150 g mozzarella
+- 3 tbsp olive oil
+* Dip chicken in egg, then breadcrumbs mixed with parmesan.
+* Fry for 3 minutes per side.
+* Top with passata and mozzarella.
+* Bake at 200°C for 15 minutes.
+
+@ Chicken Piccata | Italian | dinner | 4 | 10 | 15 | drumstick |
+= Thin chicken cutlets in a lemon, caper and butter sauce.
+- 4 chicken breasts, sliced thin
+- 3 tbsp flour
+- 2 tbsp olive oil
+- 3 tbsp butter
+- 1 lemon, juiced
+- 2 tbsp capers
+- 200 ml chicken stock
+- 1 handful parsley
+* Dust chicken in flour and fry in oil for 3 minutes per side. Remove.
+* Add stock, lemon and capers to the pan and reduce for 4 minutes.
+* Swirl in butter and return the chicken.
+* Finish with parsley.
+
+@ Saltimbocca-Style Chicken with Sage | Italian | dinner | 4 | 10 | 15 | drumstick | gluten-free
+= Chicken escalopes wrapped in turkey ham and sage in a lemon butter sauce.
+- 4 chicken breasts, flattened
+- 4 slices turkey ham
+- 8 sage leaves
+- 2 tbsp butter
+- 1 lemon, juiced
+- 150 ml chicken stock
+* Lay sage and ham on each chicken piece and secure with a toothpick.
+* Fry ham-side down for 3 minutes, then 3 minutes more.
+* Add stock and lemon and reduce 3 minutes. Swirl in butter.
+
+@ Italian Meatballs in Tomato Sauce | Italian | dinner | 4 | 20 | 30 | meat |
+= Tender beef meatballs simmered in tomato sauce.
+- 500 g beef mince
+- 50 g breadcrumbs
+- 1 egg
+- 30 g parmesan
+- 2 garlic cloves, crushed
+- 1 handful parsley
+- 700 ml passata
+- 2 tbsp olive oil
+* Mix beef, breadcrumbs, egg, parmesan, garlic and parsley. Roll 20 meatballs.
+* Brown in oil for 6 minutes.
+* Add passata and simmer 20 minutes.
+* Serve with pasta or bread.
+
+@ Margherita Pizza | Italian | dinner | 2 | 20 | 10 | flatbread | vegetarian
+= Classic pizza with tomato, mozzarella and basil.
+- 400 g pizza dough
+- 200 ml passata
+- 1 garlic clove, crushed
+- 200 g mozzarella, torn
+- 1 handful basil
+- 1 tbsp olive oil
+* Heat the oven to its highest setting with a tray inside.
+* Stretch the dough into 2 rounds.
+* Spread with passata mixed with garlic, add mozzarella.
+* Bake for 9 minutes. Top with basil and oil.
+
+@ Veggie Supreme Pizza | Italian | dinner | 2 | 20 | 12 | flatbread | vegetarian
+= Pizza loaded with peppers, mushrooms, olives and onion.
+- 400 g pizza dough
+- 200 ml passata
+- 200 g mozzarella, grated
+- 1 pepper, sliced
+- 100 g mushrooms, sliced
+- 1 red onion, sliced
+- 40 g black olives
+* Heat the oven to its highest setting.
+* Stretch the dough, spread with passata and cheese.
+* Scatter over the vegetables and olives.
+* Bake for 11 minutes.
+
+@ Chicken BBQ Pizza | American | dinner | 2 | 20 | 12 | flatbread |
+= Smoky BBQ sauce base with chicken, red onion and coriander.
+- 400 g pizza dough
+- 4 tbsp bbq sauce
+- 200 g cooked chicken, shredded
+- 150 g mozzarella, grated
+- 1 red onion, sliced
+- 1 handful coriander
+* Heat the oven to its highest setting.
+* Spread the dough with BBQ sauce.
+* Top with cheese, chicken and onion.
+* Bake 11 minutes and scatter with coriander.
+
+@ Focaccia with Rosemary & Olives | Italian | snack | 8 | 120 | 25 | bread | vegan
+= Pillowy olive oil bread dimpled with rosemary and olives.
+- 500 g flour
+- 7 g yeast
+- 400 ml warm water
+- 6 tbsp olive oil
+- 2 sprigs rosemary
+- 80 g black olives
+- 1 tsp sea salt
+* Mix flour, yeast, water and 2 tbsp oil into a wet dough. Rise for 1 hour.
+* Tip into an oiled tin, stretch out and rise 45 minutes.
+* Dimple with fingers, add olives, rosemary, oil and salt.
+* Bake at 220°C for 25 minutes.
+
+@ Bruschetta | Italian | snack | 4 | 10 | 5 | bread | vegan, quick
+= Toasted bread topped with fresh tomato, garlic and basil.
+- 8 slices ciabatta
+- 4 tomatoes, diced
+- 1 garlic clove, halved
+- 1 handful basil
+- 3 tbsp olive oil
+* Toast the bread and rub with garlic.
+* Mix tomatoes, basil and oil.
+* Pile onto toasts.
+
+@ Caprese Salad | Italian | lunch,snack | 4 | 10 | 0 | salad | vegetarian, gluten-free, no-cook
+= Ripe tomatoes, fresh mozzarella and basil with olive oil.
+- 4 tomatoes, sliced
+- 250 g mozzarella, sliced
+- 1 handful basil
+- 3 tbsp olive oil
+- 1 tbsp balsamic vinegar
+* Alternate tomato and mozzarella slices on a plate.
+* Tuck in basil.
+* Drizzle with oil and balsamic.
+
+@ Panzanella | Italian | lunch | 4 | 15 | 10 | salad | vegan
+= Tuscan bread salad with juicy tomatoes and red onion.
+- 250 g stale bread, cubed
+- 5 tomatoes, chopped
+- 1 cucumber, chopped
+- 1 red onion, sliced
+- 1 handful basil
+- 2 tbsp red wine vinegar
+- 5 tbsp olive oil
+* Toast the bread cubes in the oven for 10 minutes.
+* Mix tomatoes, cucumber and onion with vinegar and oil.
+* Toss in the bread and basil and rest 10 minutes.
+
+@ Italian Wedding Soup | Italian | lunch,dinner | 6 | 20 | 25 | soup |
+= Mini meatballs, greens and small pasta in chicken broth.
+- 300 g beef mince
+- 30 g breadcrumbs
+- 20 g parmesan
+- 1 egg
+- 1.5 l chicken stock
+- 1 carrot, diced
+- 100 g small pasta
+- 150 g spinach
+* Mix mince, breadcrumbs, parmesan and egg; roll tiny meatballs.
+* Simmer the stock with carrot for 5 minutes.
+* Add meatballs and pasta and cook 10 minutes.
+* Stir in spinach.
+
+@ Ribollita | Italian | lunch,dinner | 6 | 15 | 45 | soup | vegan
+= Thick Tuscan bean and kale soup thickened with bread.
+- 1 onion, chopped
+- 2 carrots, diced
+- 2 celery sticks, diced
+- 1 can chopped tomatoes (400 g)
+- 2 cans cannellini beans (400 g each)
+- 200 g kale, chopped
+- 1.2 l vegetable stock
+- 150 g stale bread
+* Fry the vegetables for 10 minutes.
+* Add tomatoes, beans and stock and simmer 25 minutes.
+* Add kale and bread and cook 10 minutes until thick.
+
+@ Tiramisu | Italian | dessert | 8 | 30 | 0 | pudding | vegetarian
+= Coffee-soaked biscuits layered with mascarpone cream.
+- 250 g mascarpone
+- 3 eggs, separated
+- 80 g sugar
+- 300 ml strong coffee, cooled
+- 200 g ladyfinger biscuits
+- 2 tbsp cocoa powder
+* Whisk yolks and sugar until pale, then beat in mascarpone.
+* Whisk the whites to soft peaks and fold in.
+* Dip biscuits in coffee and layer with cream twice.
+* Chill for 4 hours and dust with cocoa.
+
+@ Panna Cotta with Berries | Italian | dessert | 6 | 10 | 5 | pudding | vegetarian, gluten-free
+= Silky vanilla set cream with a berry sauce.
+- 500 ml cream
+- 200 ml milk
+- 80 g sugar
+- 1 tsp vanilla extract
+- 3 gelatine sheets
+- 200 g mixed berries
+* Soak gelatine in cold water for 5 minutes.
+* Heat cream, milk, sugar and vanilla until steaming; stir in gelatine.
+* Pour into 6 glasses and chill 4 hours.
+* Top with berries crushed with a little sugar.
+
+@ Affogato | Italian | dessert | 2 | 2 | 0 | coffee | vegetarian, quick
+= Vanilla ice cream drowned in hot espresso.
+- 4 scoops vanilla ice cream
+- 2 shots espresso
+- 1 tbsp chocolate, grated
+* Put ice cream in two glasses.
+* Pour over hot espresso.
+* Grate over chocolate and serve immediately.
+
+@ Lasagne Verdi with Spinach & Ricotta | Italian | dinner | 6 | 30 | 45 | pasta | vegetarian
+= Vegetarian lasagne layered with spinach, ricotta and tomato.
+- 12 lasagne sheets
+- 500 g spinach
+- 400 g ricotta
+- 700 ml passata
+- 250 g mozzarella, grated
+- 50 g parmesan
+- 1 egg
+* Wilt and chop the spinach. Mix with ricotta, egg and half the parmesan.
+* Layer passata, sheets and spinach mixture three times.
+* Top with passata, mozzarella and parmesan.
+* Bake at 190°C for 45 minutes.
+
+@ One-Pot Tomato Orzo with Chicken | Italian | dinner | 4 | 10 | 25 | pasta |
+= Creamy tomato orzo cooked in one pan with chicken and spinach.
+- 300 g orzo
+- 2 chicken breasts, diced
+- 1 onion, chopped
+- 2 garlic cloves
+- 400 ml passata
+- 600 ml chicken stock
+- 100 g spinach
+- 30 g parmesan
+* Brown the chicken, then the onion and garlic.
+* Add orzo, passata and stock. Simmer 12 minutes, stirring.
+* Stir in spinach and parmesan.
+
+@ Pasta with Broccoli & Anchovy-Free Garlic Crumbs | Italian | dinner | 4 | 10 | 15 | pasta | vegetarian
+= Orecchiette with soft broccoli, chili and crunchy garlic breadcrumbs.
+- 350 g orecchiette
+- 1 broccoli, in small florets
+- 3 garlic cloves, sliced
+- ½ tsp chili flakes
+- 50 g breadcrumbs
+- 5 tbsp olive oil
+- 30 g parmesan
+* Toast breadcrumbs in 1 tbsp oil until golden.
+* Boil pasta with broccoli for 11 minutes.
+* Fry garlic and chili in the rest of the oil. Toss with pasta, broccoli and parmesan.
+* Top with crumbs.
+
+@ Polenta with Mushroom Ragù | Italian | dinner | 4 | 10 | 25 | mushroom | vegetarian, gluten-free
+= Soft cheesy polenta topped with a rich mushroom stew.
+- 200 g polenta
+- 1 l water
+- 40 g parmesan
+- 500 g mushrooms, sliced
+- 1 onion, chopped
+- 2 garlic cloves
+- 200 ml passata
+- 2 tbsp olive oil
+* Fry the onion and mushrooms for 10 minutes. Add garlic and passata and simmer 10 minutes.
+* Whisk polenta into boiling water and cook 8 minutes, stirring. Stir in parmesan.
+* Spoon mushrooms over polenta.
+
+@ Italian Sausage-Free Peppers & Beans | Italian | lunch,dinner | 4 | 10 | 25 | pepper | vegan, gluten-free
+= Sweet peppers and cannellini beans stewed with garlic and tomato.
+- 3 peppers, sliced
+- 1 onion, sliced
+- 3 garlic cloves
+- 1 can cannellini beans (400 g)
+- 1 can chopped tomatoes (400 g)
+- 1 tsp dried oregano
+- 3 tbsp olive oil
+* Soften the peppers and onion in oil for 10 minutes.
+* Add garlic, beans, tomatoes and oregano.
+* Simmer 15 minutes. Serve with bread.
+
+@ Salmon with Pesto & Cherry Tomatoes | Italian | dinner | 4 | 5 | 15 | fish | pescatarian, gluten-free, quick
+= Salmon fillets roasted with pesto and blistered tomatoes.
+- 4 salmon fillets
+- 4 tbsp pesto
+- 300 g cherry tomatoes
+- 1 tbsp olive oil
+* Put salmon and tomatoes in a tray.
+* Spread pesto over the salmon and drizzle tomatoes with oil.
+* Roast at 200°C for 14 minutes.
+
+@ Calzone with Spinach & Ricotta | Italian | dinner | 2 | 20 | 15 | pie | vegetarian
+= Folded pizza filled with spinach, ricotta and mozzarella.
+- 400 g pizza dough
+- 200 g spinach
+- 150 g ricotta
+- 100 g mozzarella
+- 1 garlic clove
+- 1 tbsp olive oil
+* Wilt the spinach with garlic and squeeze dry. Mix with ricotta and mozzarella.
+* Roll 2 rounds, fill one half and fold over. Crimp the edges.
+* Brush with oil and bake at 230°C for 15 minutes.
+
+@ Arancini | Italian | snack | 6 | 30 | 15 | falafel | vegetarian
+= Crispy fried risotto balls with a melting mozzarella centre.
+- 400 g cooked risotto, cold
+- 100 g mozzarella, cubed
+- 2 eggs
+- 80 g breadcrumbs
+- 500 ml vegetable oil, for frying
+* Roll risotto into balls, pushing a cube of mozzarella into each.
+* Dip in beaten egg, then breadcrumbs.
+* Fry at 175°C for 5 minutes until golden.
+* Serve with tomato sauce.
+
+@ Eggplant Parmigiana | Italian | dinner | 4 | 20 | 40 | eggplant | vegetarian, gluten-free
+= Layers of eggplant, tomato sauce, mozzarella and parmesan.
+- 3 eggplants, sliced
+- 700 ml passata
+- 2 garlic cloves
+- 250 g mozzarella
+- 60 g parmesan
+- 1 handful basil
+- 4 tbsp olive oil
+* Roast the eggplant with oil at 220°C for 20 minutes.
+* Simmer passata with garlic for 10 minutes.
+* Layer eggplant, sauce, mozzarella, basil and parmesan three times.
+* Bake at 190°C for 30 minutes.
+
+@ Pasta with Zucchini, Lemon & Mint | Italian | dinner | 4 | 10 | 15 | pasta | vegetarian, quick
+= Light summer pasta with golden zucchini and fresh mint.
+- 350 g linguine
+- 3 zucchini, grated
+- 2 garlic cloves
+- 1 lemon, zested and juiced
+- 30 g parmesan
+- 1 handful mint
+- 3 tbsp olive oil
+* Cook the pasta.
+* Fry the zucchini and garlic in oil for 6 minutes.
+* Toss with pasta, lemon, parmesan and mint.
