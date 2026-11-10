@@ -1,0 +1,554 @@
+@ Classic Beef Burger | American | dinner | 4 | 15 | 10 | burger |
+= Juicy grilled beef patties with cheese, lettuce, tomato and pickles.
+- 600 g beef mince
+- 4 burger buns
+- 4 slices cheddar
+- 1 lettuce
+- 2 tomatoes, sliced
+- 1 red onion, sliced
+- 4 tbsp burger sauce
+- 50 g pickles
+* Shape beef into 4 patties and season.
+* Grill 4 minutes per side, adding cheese for the last minute.
+* Toast buns.
+* Build with sauce, lettuce, tomato, onion and pickles.
+
+@ Crispy Chicken Burger | American | dinner | 4 | 20 | 15 | burger |
+= Buttermilk-style crunchy chicken with slaw and spicy mayo.
+- 4 chicken thighs, boneless
+- 150 g yogurt
+- 100 g flour
+- 1 tsp paprika
+- 4 burger buns
+- 150 g coleslaw
+- 3 tbsp mayonnaise
+- 1 tsp sriracha
+- 500 ml vegetable oil, for frying
+* Soak chicken in yogurt 30 minutes.
+* Coat in seasoned flour and fry at 175°C for 7 minutes.
+* Mix mayo and sriracha.
+* Build burgers with slaw and spicy mayo.
+
+@ Mushroom & Halloumi Burger | International | dinner | 4 | 10 | 10 | burger | vegetarian
+= Grilled portobello and halloumi stacked in a brioche bun.
+- 4 portobello mushrooms
+- 200 g halloumi, sliced
+- 4 brioche buns
+- 2 tbsp pesto
+- 1 handful rocket
+- 2 tbsp olive oil
+* Brush mushrooms with oil and grill 8 minutes.
+* Grill halloumi 2 minutes per side.
+* Spread buns with pesto and stack mushroom, halloumi and rocket.
+
+@ Black Bean Burger | American | dinner | 4 | 20 | 12 | burger | vegan
+= Smoky black bean patties with avocado and salsa.
+- 2 cans black beans (400 g each), drained
+- 60 g breadcrumbs
+- 1 onion, grated
+- 1 tsp smoked paprika
+- 1 tsp ground cumin
+- 4 burger buns
+- 1 avocado
+- 4 tbsp salsa
+* Mash beans, mix with breadcrumbs, onion and spices.
+* Shape into patties and chill 15 minutes.
+* Pan-fry 5 minutes per side.
+* Serve in buns with avocado and salsa.
+
+@ Mac & Cheese | American | dinner | 4 | 10 | 25 | pasta | vegetarian
+= Creamy baked macaroni with a golden cheese crust.
+- 300 g macaroni
+- 40 g butter
+- 40 g flour
+- 600 ml milk
+- 200 g cheddar, grated
+- 1 tsp mustard
+- 30 g breadcrumbs
+* Cook macaroni 7 minutes.
+* Make a sauce with butter, flour and milk; stir in cheese and mustard.
+* Mix with pasta, top with crumbs.
+* Bake at 200°C for 15 minutes.
+
+@ Sloppy Joes | American | dinner | 4 | 10 | 20 | sandwich |
+= Saucy beef mince piled on toasted buns.
+- 500 g beef mince
+- 1 onion, chopped
+- 1 pepper, chopped
+- 200 ml passata
+- 2 tbsp ketchup
+- 1 tbsp mustard
+- 1 tbsp brown sugar
+- 4 burger buns
+* Brown mince with onion and pepper.
+* Add passata, ketchup, mustard and sugar and simmer 12 minutes.
+* Spoon into toasted buns.
+
+@ BBQ Chicken Drumsticks | American | dinner | 4 | 10 | 40 | drumstick | gluten-free
+= Sticky oven-baked drumsticks glazed with smoky BBQ sauce.
+- 8 chicken drumsticks
+- 1 tsp smoked paprika
+- 1 tsp garlic powder
+- 6 tbsp bbq sauce
+- 1 tbsp olive oil
+* Rub drumsticks with spices and oil.
+* Bake at 200°C for 30 minutes.
+* Brush with BBQ sauce and bake 10 minutes more.
+
+@ Buffalo Cauliflower Bites | American | snack | 4 | 10 | 30 | broccoli | vegetarian
+= Crispy roasted cauliflower tossed in buffalo hot sauce.
+- 1 cauliflower, florets
+- 60 g flour
+- 120 ml milk
+- 4 tbsp hot sauce
+- 2 tbsp butter, melted
+* Dip florets in flour-milk batter.
+* Roast at 220°C for 20 minutes.
+* Toss in hot sauce and butter and roast 10 minutes.
+
+@ Chicken Pot Pie | American | dinner | 6 | 25 | 35 | pie |
+= Creamy chicken and vegetable filling under a flaky pastry lid.
+- 500 g chicken breast, diced
+- 1 onion, chopped
+- 2 carrots, diced
+- 150 g peas
+- 40 g butter
+- 40 g flour
+- 500 ml chicken stock
+- 100 ml cream
+- 320 g puff pastry
+- 1 egg
+* Cook chicken, onion and carrot in butter 8 minutes.
+* Stir in flour, then stock and cream; simmer 5 minutes. Add peas.
+* Pour into a dish, cover with pastry and brush with egg.
+* Bake at 200°C for 30 minutes.
+
+@ Shepherd's Pie (Lamb) | British | dinner | 6 | 20 | 45 | casserole | gluten-free
+= Minced lamb in rich gravy under fluffy mashed potato.
+- 600 g lamb mince
+- 1 onion, chopped
+- 2 carrots, diced
+- 2 tbsp tomato paste
+- 400 ml beef stock
+- 1 kg potatoes
+- 50 g butter
+- 100 ml milk
+* Brown lamb with onion and carrot; add paste and stock and simmer 20 minutes.
+* Boil potatoes 15 minutes and mash with butter and milk.
+* Spread mince in a dish and top with mash.
+* Bake at 200°C for 25 minutes.
+
+@ Cottage Pie with Lentils | British | dinner | 6 | 20 | 45 | casserole | vegetarian, gluten-free
+= Hearty lentil and mushroom filling topped with cheesy mash.
+- 250 g green lentils, cooked
+- 250 g mushrooms, chopped
+- 1 onion, chopped
+- 2 carrots, diced
+- 2 tbsp tomato paste
+- 300 ml vegetable stock
+- 1 kg potatoes
+- 60 g cheddar
+- 40 g butter
+* Fry onion, carrot and mushrooms 8 minutes; add paste, lentils and stock and simmer 10 minutes.
+* Boil and mash potatoes with butter.
+* Top the filling with mash and cheese.
+* Bake at 200°C for 25 minutes.
+
+@ Fish & Chips (Oven-Baked) | British | dinner | 4 | 15 | 35 | fish | pescatarian
+= Crumbed cod and crispy oven chips with peas.
+- 4 cod fillets
+- 1 egg
+- 80 g breadcrumbs
+- 1 kg potatoes, cut into chips
+- 3 tbsp vegetable oil
+- 300 g frozen peas
+- 1 lemon
+* Toss chips with oil and bake at 220°C for 35 minutes.
+* Dip fish in egg and crumbs and bake for the last 15 minutes.
+* Cook peas.
+* Serve with lemon.
+
+@ Chicken & Leek Pie | British | dinner | 6 | 20 | 35 | pie |
+= Tender chicken and leeks in creamy sauce under puff pastry.
+- 600 g chicken thighs, diced
+- 2 leeks, sliced
+- 40 g butter
+- 30 g flour
+- 400 ml chicken stock
+- 100 ml cream
+- 1 tsp mustard
+- 320 g puff pastry
+- 1 egg
+* Brown chicken and soften leeks in butter.
+* Stir in flour, stock, cream and mustard; simmer 8 minutes.
+* Top with pastry and brush with egg.
+* Bake at 200°C for 30 minutes.
+
+@ British Beef Stew & Dumplings | British | dinner | 6 | 20 | 150 | pot |
+= Slow-cooked beef and root vegetables with fluffy herb dumplings.
+- 900 g beef chuck, cubed
+- 2 onions, chopped
+- 3 carrots, chunked
+- 2 tbsp flour
+- 2 tbsp tomato paste
+- 1 l beef stock
+- 150 g self-raising flour
+- 75 g butter
+- 1 tsp thyme leaves
+* Toss beef in flour and brown; add onions, carrots, paste and stock.
+* Simmer covered 2 hours.
+* Rub butter into self-raising flour, add thyme and water to form dough balls.
+* Drop on top of the stew and cook covered 25 minutes.
+
+@ Jacket Potatoes with Beans & Cheese | British | lunch,dinner | 4 | 5 | 60 | potato | vegetarian, gluten-free
+= Fluffy baked potatoes with baked beans and melted cheddar.
+- 4 large potatoes
+- 1 can baked beans (400 g)
+- 100 g cheddar, grated
+- 2 tbsp butter
+* Prick potatoes and bake at 200°C for 60 minutes.
+* Warm the beans.
+* Split potatoes, add butter, beans and cheese.
+
+@ Toad in the Hole (Chicken Sausage) | British | dinner | 4 | 10 | 35 | casserole |
+= Chicken sausages baked in a puffy Yorkshire pudding batter.
+- 8 chicken sausages
+- 140 g flour
+- 3 eggs
+- 200 ml milk
+- 2 tbsp vegetable oil
+* Brown sausages in oil in a roasting tin at 220°C for 10 minutes.
+* Whisk flour, eggs and milk into a batter.
+* Pour around sausages and bake 25 minutes without opening the oven.
+
+@ Bangers & Mash with Onion Gravy | British | dinner | 4 | 10 | 30 | potato |
+= Beef sausages with creamy mash and slow-cooked onion gravy.
+- 8 beef sausages
+- 1 kg potatoes
+- 50 g butter
+- 100 ml milk
+- 2 onions, sliced
+- 1 tbsp flour
+- 400 ml beef stock
+* Cook sausages in a pan 15 minutes.
+* Boil and mash potatoes with butter and milk.
+* Soften onions 15 minutes, add flour then stock and simmer 5 minutes.
+
+@ Full English-Style Breakfast (Halal) | British | breakfast | 2 | 5 | 20 | pan |
+= Beef sausages, eggs, mushrooms, tomatoes, beans and toast.
+- 4 beef sausages
+- 4 eggs
+- 150 g mushrooms
+- 2 tomatoes, halved
+- 1 can baked beans (400 g)
+- 4 slices bread
+- 1 tbsp butter
+* Cook sausages 15 minutes.
+* Fry mushrooms and tomatoes in the pan.
+* Warm beans and fry the eggs.
+* Serve with buttered toast.
+
+@ Cream of Tomato Soup & Grilled Cheese | American | lunch | 4 | 10 | 25 | soup | vegetarian
+= Velvety tomato soup with crispy cheese toasties for dipping.
+- 2 cans chopped tomatoes (400 g each)
+- 1 onion
+- 2 garlic cloves
+- 500 ml vegetable stock
+- 100 ml cream
+- 8 slices bread
+- 150 g cheddar
+- 2 tbsp butter
+* Simmer onion, garlic, tomatoes and stock 20 minutes; blend with cream.
+* Make cheese sandwiches and toast in butter 3 minutes per side.
+
+@ Clam-Free New England Fish Chowder | American | dinner | 4 | 15 | 25 | soup | pescatarian
+= Creamy potato and fish chowder with sweetcorn.
+- 400 g white fish, chunked
+- 3 potatoes, diced
+- 1 onion, chopped
+- 2 celery sticks
+- 200 g sweetcorn
+- 600 ml fish stock
+- 300 ml milk
+- 2 tbsp butter
+* Soften onion and celery in butter.
+* Add potatoes and stock and simmer 12 minutes.
+* Add milk, corn and fish and cook 6 minutes.
+
+@ Chicken Caesar Wrap | American | lunch | 4 | 10 | 12 | wrap |
+= Grilled chicken, romaine and parmesan in a creamy Caesar dressing.
+- 2 chicken breasts
+- 4 large tortillas
+- 1 romaine lettuce, chopped
+- 40 g parmesan
+- 4 tbsp caesar dressing
+- 40 g croutons
+* Grill chicken 6 minutes per side and slice.
+* Toss lettuce, parmesan, croutons and dressing.
+* Fill tortillas with salad and chicken and roll.
+
+@ Turkey Club Sandwich | American | lunch | 2 | 10 | 5 | sandwich |
+= Triple-decker toasted sandwich with turkey, lettuce and tomato.
+- 6 slices bread, toasted
+- 200 g sliced turkey breast
+- 2 tomatoes, sliced
+- 4 lettuce leaves
+- 2 tbsp mayonnaise
+- 2 slices cheddar
+* Spread toast with mayo.
+* Layer turkey, cheese, lettuce and tomato across three slices.
+* Stack, secure with toothpicks and cut into triangles.
+
+@ Tuna Melt | American | lunch | 2 | 5 | 8 | sandwich | pescatarian
+= Tuna salad and melted cheese on toasted bread.
+- 1 can tuna (160 g)
+- 2 tbsp mayonnaise
+- 1 celery stick, diced
+- 4 slices bread
+- 80 g cheddar
+* Mix tuna, mayo and celery.
+* Spread on bread, top with cheese.
+* Grill 4 minutes until bubbling.
+
+@ Philly-Style Steak Sandwich | American | dinner | 4 | 10 | 15 | sandwich |
+= Thinly sliced steak with peppers, onions and melted cheese in a roll.
+- 500 g beef steak, very thinly sliced
+- 1 pepper, sliced
+- 1 onion, sliced
+- 4 sub rolls
+- 150 g mozzarella
+- 2 tbsp vegetable oil
+* Fry onion and pepper 8 minutes.
+* Add steak and cook 3 minutes.
+* Pile into rolls, top with cheese and grill 2 minutes.
+
+@ Cobb Salad | American | lunch | 4 | 15 | 15 | salad | gluten-free
+= Rows of chicken, egg, avocado, tomato and blue cheese on greens.
+- 2 chicken breasts
+- 4 eggs
+- 1 romaine lettuce
+- 2 tomatoes
+- 1 avocado
+- 80 g blue cheese
+- 4 tbsp ranch dressing
+* Grill chicken and slice; boil eggs 9 minutes.
+* Arrange lettuce, then rows of chicken, egg, avocado, tomato and cheese.
+* Drizzle with dressing.
+
+@ Classic Pancakes with Maple | American | breakfast | 4 | 5 | 15 | pancakes | vegetarian
+= Fluffy stacked pancakes with butter and maple syrup.
+- 200 g flour
+- 2 tsp baking powder
+- 1 tbsp sugar
+- 1 egg
+- 250 ml milk
+- 2 tbsp butter
+- 4 tbsp maple syrup
+* Whisk dry ingredients, then egg and milk.
+* Cook ladlefuls 2 minutes per side.
+* Serve with butter and syrup.
+
+@ American Meatloaf | American | dinner | 6 | 15 | 60 | meat |
+= Tender beef meatloaf with a tangy ketchup glaze.
+- 800 g beef mince
+- 1 onion, grated
+- 60 g breadcrumbs
+- 1 egg
+- 100 ml milk
+- 1 tsp mustard
+- 4 tbsp ketchup
+- 1 tbsp brown sugar
+* Mix beef, onion, crumbs, egg, milk and mustard.
+* Shape into a loaf in a tin.
+* Mix ketchup and sugar and spread on top.
+* Bake at 180°C for 60 minutes.
+
+@ Southern Cornbread | American | snack,dinner | 9 | 10 | 25 | bread | vegetarian
+= Golden, slightly sweet cornbread.
+- 150 g cornmeal
+- 125 g flour
+- 1 tbsp baking powder
+- 50 g sugar
+- 2 eggs
+- 250 ml milk
+- 80 g butter, melted
+* Mix dry ingredients and wet ingredients separately, then combine.
+* Pour into a greased tin.
+* Bake at 200°C for 25 minutes.
+
+@ Coleslaw | American | snack | 6 | 15 | 0 | salad | vegetarian, gluten-free, no-cook
+= Creamy cabbage and carrot slaw.
+- 400 g cabbage, shredded
+- 2 carrots, grated
+- 4 tbsp mayonnaise
+- 2 tbsp greek yogurt
+- 1 tbsp vinegar
+- 1 tsp sugar
+* Mix mayo, yogurt, vinegar and sugar.
+* Toss with vegetables.
+
+@ Potato Salad (American) | American | snack,lunch | 6 | 10 | 15 | potato | vegetarian, gluten-free
+= Creamy potato salad with egg, celery and mustard.
+- 1 kg potatoes, cubed
+- 3 eggs
+- 2 celery sticks
+- 4 tbsp mayonnaise
+- 1 tbsp mustard
+- 2 spring onions
+* Boil potatoes 12 minutes and eggs 9 minutes.
+* Mix mayo and mustard.
+* Toss with potatoes, chopped eggs, celery and spring onions.
+
+@ Sweet Potato Fries | American | snack | 4 | 10 | 30 | potato | vegan, gluten-free
+= Crisp oven-baked sweet potato fries with paprika.
+- 3 sweet potatoes, cut into fries
+- 1 tbsp cornflour
+- 1 tsp smoked paprika
+- 2 tbsp olive oil
+* Toss fries with cornflour, paprika and oil.
+* Spread out on a tray.
+* Bake at 220°C for 30 minutes, turning once.
+
+@ Loaded Nachos | American | snack | 4 | 10 | 10 | taco | vegetarian
+= Tortilla chips with cheese, beans, jalapeños and salsa.
+- 200 g tortilla chips
+- 150 g cheddar
+- 1 can black beans (400 g)
+- 2 jalapeños, sliced
+- 4 tbsp salsa
+- 4 tbsp sour cream
+- 1 avocado
+* Layer chips, beans and cheese on a tray.
+* Bake at 200°C for 8 minutes.
+* Top with jalapeños, salsa, sour cream and avocado.
+
+@ Chicken Noodle Casserole | American | dinner | 6 | 15 | 30 | casserole |
+= Comforting creamy chicken, egg noodles and peas bake.
+- 300 g egg noodles
+- 400 g cooked chicken
+- 200 g peas
+- 40 g butter
+- 40 g flour
+- 500 ml chicken stock
+- 200 ml milk
+- 80 g cheddar
+* Cook noodles 4 minutes.
+* Make a sauce with butter, flour, stock and milk.
+* Mix with noodles, chicken and peas; top with cheese.
+* Bake at 190°C for 25 minutes.
+
+@ Chocolate Chip Cookies | American | dessert,snack | 20 | 15 | 12 | cookie | vegetarian
+= Chewy cookies with golden edges and plenty of chocolate.
+- 125 g butter, soft
+- 100 g brown sugar
+- 75 g sugar
+- 1 egg
+- 1 tsp vanilla extract
+- 200 g flour
+- ½ tsp baking soda
+- 150 g chocolate chips
+* Cream butter and sugars, beat in egg and vanilla.
+* Mix in flour, soda and chips.
+* Scoop onto trays.
+* Bake at 180°C for 11 minutes.
+
+@ Brownies | American | dessert | 16 | 15 | 25 | chocolate | vegetarian
+= Fudgy chocolate brownies with a crackly top.
+- 200 g dark chocolate
+- 150 g butter
+- 250 g sugar
+- 3 eggs
+- 100 g flour
+- 30 g cocoa powder
+* Melt chocolate and butter.
+* Whisk in sugar and eggs.
+* Fold in flour and cocoa.
+* Bake at 180°C for 25 minutes.
+
+@ Apple Pie | American | dessert | 8 | 30 | 50 | pie | vegetarian
+= Double-crust pie with cinnamon-spiced apples.
+- 500 g shortcrust pastry
+- 6 apples, sliced
+- 100 g sugar
+- 1 tsp ground cinnamon
+- 2 tbsp flour
+- 1 lemon, juiced
+- 1 egg
+* Toss apples with sugar, cinnamon, flour and lemon.
+* Line a pie dish with half the pastry, add apples and cover with the rest.
+* Brush with egg and cut vents.
+* Bake at 190°C for 50 minutes.
+
+@ Banana Pudding | American | dessert | 8 | 20 | 10 | pudding | vegetarian
+= Layers of vanilla custard, bananas and biscuits.
+- 600 ml milk
+- 100 g sugar
+- 3 tbsp cornflour
+- 3 egg yolks
+- 1 tsp vanilla extract
+- 4 bananas
+- 200 g vanilla biscuits
+- 200 ml cream
+* Cook milk, sugar, cornflour and yolks until thick; add vanilla. Cool.
+* Layer biscuits, bananas and custard.
+* Top with whipped cream and chill 3 hours.
+
+@ Sticky Toffee Pudding | British | dessert | 8 | 20 | 35 | pudding | vegetarian
+= Moist date sponge with a rich toffee sauce.
+- 200 g dates, chopped
+- 250 ml boiling water
+- 1 tsp baking soda
+- 80 g butter
+- 150 g brown sugar
+- 2 eggs
+- 175 g self-raising flour
+- 200 ml cream
+- 100 g brown sugar
+- 50 g butter
+* Soak dates in water with soda 10 minutes.
+* Cream butter and sugar, add eggs, flour and the date mix.
+* Bake at 180°C for 35 minutes.
+* Boil cream, sugar and butter 3 minutes for sauce.
+
+@ Scones with Jam & Cream | British | snack | 8 | 15 | 12 | bread | vegetarian
+= Light, crumbly scones for afternoon tea.
+- 350 g self-raising flour
+- 80 g butter
+- 3 tbsp sugar
+- 175 ml milk
+- 1 egg
+- 4 tbsp strawberry jam
+- 150 ml cream
+* Rub butter into flour, add sugar and milk to form a soft dough.
+* Pat out and cut 8 rounds.
+* Brush with egg and bake at 220°C for 12 minutes.
+* Serve with jam and cream.
+
+@ Victoria Sponge | British | dessert | 10 | 20 | 25 | cupcake | vegetarian
+= Classic sandwich cake with jam and whipped cream.
+- 200 g butter
+- 200 g sugar
+- 4 eggs
+- 200 g self-raising flour
+- 4 tbsp strawberry jam
+- 200 ml cream
+- 1 tbsp icing sugar
+* Cream butter and sugar, beat in eggs and fold in flour.
+* Divide between two tins and bake at 180°C for 25 minutes.
+* Sandwich with jam and whipped cream; dust with icing sugar.
+
+@ Carrot Cake | American | dessert | 12 | 20 | 40 | cupcake | vegetarian
+= Spiced carrot cake with cream cheese frosting.
+- 250 g flour
+- 2 tsp baking powder
+- 2 tsp ground cinnamon
+- 200 g brown sugar
+- 3 eggs
+- 200 ml vegetable oil
+- 300 g carrots, grated
+- 80 g walnuts
+- 250 g cream cheese
+- 80 g icing sugar
+* Mix dry ingredients; whisk eggs, sugar and oil and combine. Fold in carrots and walnuts.
+* Bake at 175°C for 40 minutes.
+* Beat cream cheese and icing sugar and spread over the cooled cake.

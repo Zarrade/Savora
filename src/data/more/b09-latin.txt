@@ -1,0 +1,585 @@
+@ Chicken Enchiladas | Mexican | dinner | 4 | 20 | 25 | taco |
+= Tortillas rolled around chicken and beans, baked in red sauce with cheese.
+- 8 tortillas
+- 400 g cooked chicken, shredded
+- 1 can black beans (400 g)
+- 500 ml enchilada sauce
+- 150 g cheddar, grated
+- 1 onion, chopped
+- 1 tsp ground cumin
+- 2 tbsp sour cream
+* Fry onion with cumin, mix with chicken, beans and a third of the sauce.
+* Roll the filling in tortillas and lay in a dish.
+* Pour over the rest of the sauce and add cheese.
+* Bake at 190°C for 25 minutes. Serve with sour cream.
+
+@ Beef Burritos | Mexican | dinner | 4 | 15 | 20 | wrap |
+= Big tortillas stuffed with spiced beef, rice, beans and salsa.
+- 500 g beef mince
+- 2 tsp taco seasoning
+- 200 g cooked rice
+- 1 can kidney beans (400 g)
+- 4 large tortillas
+- 100 g cheddar
+- 4 tbsp salsa
+- 1 lettuce, shredded
+* Brown the beef with seasoning and 100 ml water for 10 minutes.
+* Warm beans and rice.
+* Fill tortillas with rice, beans, beef, cheese, salsa and lettuce.
+* Roll tightly and toast seam-side down 2 minutes.
+
+@ Fish Tacos with Lime Slaw | Mexican | dinner | 4 | 15 | 10 | taco | pescatarian
+= Crispy spiced fish in tortillas with tangy cabbage slaw.
+- 500 g white fish, strips
+- 1 tsp chili powder
+- 1 tsp ground cumin
+- 3 tbsp flour
+- 8 small tortillas
+- 200 g cabbage, shredded
+- 2 limes, juiced
+- 4 tbsp sour cream
+- 1 handful coriander
+* Toss cabbage with lime juice and a pinch of salt.
+* Dust fish with flour and spices and pan-fry 3 minutes per side.
+* Warm tortillas.
+* Fill with fish, slaw, sour cream and coriander.
+
+@ Chicken Quesadillas | Mexican | lunch,dinner | 4 | 10 | 15 | taco |
+= Crispy tortillas filled with chicken, peppers and melted cheese.
+- 8 tortillas
+- 300 g cooked chicken, shredded
+- 1 pepper, sliced
+- 1 onion, sliced
+- 200 g cheddar, grated
+- 1 tsp smoked paprika
+* Sauté pepper and onion with paprika 6 minutes.
+* Fill tortillas with chicken, vegetables and cheese and fold.
+* Toast in a dry pan 2 minutes per side.
+
+@ Mexican Rice | Mexican | lunch,dinner | 4 | 5 | 25 | rice | vegan, gluten-free
+= Tomato-red rice cooked with onion, garlic and cumin.
+- 300 g long-grain rice
+- 1 onion, chopped
+- 2 garlic cloves
+- 200 ml passata
+- 400 ml vegetable stock
+- 1 tsp ground cumin
+- 2 tbsp vegetable oil
+* Fry rice in oil until lightly golden.
+* Add onion and garlic 2 minutes.
+* Add passata, stock and cumin, cover and cook 18 minutes.
+
+@ Refried Beans | Mexican | snack,lunch | 4 | 5 | 15 | beans | vegan, gluten-free
+= Creamy mashed pinto beans with garlic and cumin.
+- 2 cans pinto beans (400 g each)
+- 1 onion, chopped
+- 2 garlic cloves
+- 1 tsp ground cumin
+- 2 tbsp vegetable oil
+* Fry onion and garlic in oil 5 minutes.
+* Add beans with some liquid and cumin.
+* Mash and cook 8 minutes until thick.
+
+@ Pico de Gallo | Mexican | snack | 6 | 10 | 0 | tomato | vegan, gluten-free, no-cook
+= Fresh chopped tomato salsa with onion, chili and lime.
+- 4 tomatoes, diced
+- 1 red onion, diced
+- 1 jalapeño, chopped
+- 1 handful coriander
+- 1 lime, juiced
+* Mix everything together.
+* Season with salt and rest 10 minutes.
+
+@ Chicken Tortilla Soup | Mexican | lunch,dinner | 4 | 10 | 25 | soup | gluten-free
+= Smoky tomato chicken soup topped with crispy tortilla strips and avocado.
+- 400 g chicken breast
+- 1 onion, chopped
+- 2 garlic cloves
+- 1 can chopped tomatoes (400 g)
+- 1 tsp smoked paprika
+- 1 tsp ground cumin
+- 1 l chicken stock
+- 2 tortillas, cut in strips
+- 1 avocado
+- 1 lime
+* Simmer onion, garlic, tomatoes, spices, stock and chicken 20 minutes. Shred chicken.
+* Bake tortilla strips at 200°C for 8 minutes.
+* Serve topped with avocado, strips and lime.
+
+@ Chili sin Carne | Mexican | dinner | 6 | 15 | 35 | beans | vegan, gluten-free
+= Hearty three-bean chili with sweet potato and smoked paprika.
+- 1 onion, chopped
+- 1 pepper, chopped
+- 2 garlic cloves
+- 1 sweet potato, cubed
+- 1 can black beans (400 g)
+- 1 can kidney beans (400 g)
+- 1 can chopped tomatoes (400 g)
+- 2 tsp chili powder
+- 1 tsp smoked paprika
+- 1 tsp ground cumin
+* Fry onion, pepper and garlic 6 minutes.
+* Add spices, sweet potato, tomatoes, beans and 200 ml water.
+* Simmer 30 minutes until thick.
+
+@ Carne Asada Bowls | Mexican | dinner | 4 | 40 | 10 | steak | gluten-free
+= Citrus-marinated grilled steak over rice with beans and salsa.
+- 600 g beef steak
+- 2 limes, juiced
+- 1 orange, juiced
+- 3 garlic cloves
+- 1 tsp ground cumin
+- 300 g cooked rice
+- 1 can black beans (400 g)
+- 4 tbsp pico de gallo
+- 1 avocado
+* Marinate steak in citrus, garlic and cumin 30 minutes.
+* Grill 4 minutes per side, rest and slice.
+* Build bowls with rice, beans, steak, salsa and avocado.
+
+@ Mexican Street Corn (Elote) | Mexican | snack | 4 | 5 | 15 | corn | vegetarian, gluten-free
+= Grilled corn slathered with lime mayo, cheese and chili.
+- 4 corn cobs
+- 3 tbsp mayonnaise
+- 1 lime
+- 60 g feta, crumbled
+- 1 tsp chili powder
+* Grill corn for 12 minutes, turning.
+* Brush with lime mayo.
+* Roll in feta and dust with chili.
+
+@ Chicken Fajita Bowls | Mexican | dinner | 4 | 10 | 15 | bowl | gluten-free
+= Sizzling fajita chicken and peppers over cilantro-lime rice.
+- 600 g chicken breast, strips
+- 2 peppers, sliced
+- 1 onion, sliced
+- 2 tsp fajita seasoning
+- 300 g cooked rice
+- 1 lime
+- 1 handful coriander
+- 4 tbsp sour cream
+* Stir-fry chicken with seasoning 6 minutes.
+* Add peppers and onion 5 minutes.
+* Toss rice with lime and coriander.
+* Serve with sour cream.
+
+@ Shrimp Tacos with Mango Salsa | Mexican | dinner | 4 | 15 | 8 | shrimp | pescatarian, dairy-free
+= Chili-lime prawns with sweet mango salsa.
+- 500 g prawns
+- 1 tsp chili powder
+- 2 limes
+- 1 mango, diced
+- 1 red onion, diced
+- 1 handful coriander
+- 8 small tortillas
+* Toss prawns with chili and lime; pan-fry 3 minutes.
+* Mix mango, onion, coriander and lime.
+* Fill tortillas with prawns and salsa.
+
+@ Vegetarian Burrito Bowl | Mexican | lunch,dinner | 4 | 15 | 20 | bowl | vegan, gluten-free
+= Roasted sweet potato, black beans, corn and guacamole over rice.
+- 2 sweet potatoes, cubed
+- 1 tsp smoked paprika
+- 1 can black beans (400 g)
+- 150 g sweetcorn
+- 300 g cooked rice
+- 1 avocado, mashed
+- 1 lime
+- 4 tbsp salsa
+* Roast sweet potato with paprika at 210°C for 20 minutes.
+* Warm beans and corn.
+* Mash avocado with lime.
+* Assemble bowls with rice, vegetables, guac and salsa.
+
+@ Chilaquiles Rojos with Chicken | Mexican | breakfast,lunch | 4 | 10 | 15 | taco |
+= Tortilla chips simmered in red sauce with chicken and crema.
+- 200 g tortilla chips
+- 400 ml enchilada sauce
+- 250 g cooked chicken
+- 60 g feta
+- 4 tbsp sour cream
+- 1 red onion, sliced
+* Heat sauce, add chicken and chips and toss 2 minutes.
+* Top with feta, sour cream and onion.
+
+@ Pozole Verde with Chicken | Mexican | dinner | 6 | 15 | 40 | soup | gluten-free
+= Hominy and chicken in a tangy green tomatillo broth.
+- 600 g chicken thighs
+- 1 can hominy (400 g)
+- 400 ml salsa verde
+- 1 onion
+- 3 garlic cloves
+- 1.5 l chicken stock
+- 200 g cabbage, shredded
+- 6 radishes, sliced
+- 2 limes
+* Simmer chicken, onion and garlic in stock 25 minutes; shred chicken.
+* Add salsa verde and hominy and simmer 15 minutes.
+* Serve with cabbage, radishes and lime.
+
+@ Mexican Black Bean Soup | Mexican | lunch,dinner | 4 | 10 | 25 | soup | vegan, gluten-free
+= Smooth, smoky black bean soup with lime.
+- 2 cans black beans (400 g each)
+- 1 onion
+- 2 garlic cloves
+- 1 tsp ground cumin
+- 1 tsp smoked paprika
+- 800 ml vegetable stock
+- 1 lime
+* Fry onion and garlic 5 minutes; add spices.
+* Add beans and stock and simmer 20 minutes.
+* Blend half and finish with lime.
+
+@ Tostadas with Beans & Salsa | Mexican | lunch | 4 | 10 | 10 | taco | vegetarian
+= Crispy tortillas layered with refried beans, lettuce and cheese.
+- 8 small tortillas
+- 400 g refried beans
+- 1 lettuce, shredded
+- 100 g feta
+- 4 tbsp salsa
+- 1 avocado
+* Bake tortillas at 200°C for 8 minutes until crisp.
+* Spread with warm beans.
+* Top with lettuce, cheese, salsa and avocado.
+
+@ Churros with Chocolate | Spanish | dessert | 4 | 15 | 15 | cookie | vegetarian
+= Crispy cinnamon-sugar churros with a thick chocolate dip.
+- 250 ml water
+- 2 tbsp butter
+- 150 g flour
+- 1 egg
+- 500 ml vegetable oil, for frying
+- 4 tbsp sugar
+- 1 tsp ground cinnamon
+- 100 g dark chocolate
+- 150 ml milk
+* Boil water and butter, beat in flour, then the egg.
+* Pipe strips into oil at 180°C and fry 3 minutes.
+* Roll in cinnamon sugar.
+* Melt chocolate into hot milk for dipping.
+
+@ Tres Leches Cake | Mexican | dessert | 10 | 20 | 30 | cupcake | vegetarian
+= Light sponge soaked in three milks and topped with cream.
+- 5 eggs
+- 200 g sugar
+- 150 g flour
+- 1 tsp baking powder
+- 1 can evaporated milk (400 ml)
+- 1 can condensed milk (400 g)
+- 200 ml milk
+- 300 ml cream
+* Whisk eggs and sugar until thick; fold in flour and baking powder.
+* Bake in a tin at 180°C for 30 minutes.
+* Poke holes and pour over the three milks. Chill 4 hours.
+* Top with whipped cream.
+
+@ Mexican Hot Chocolate | Mexican | snack | 2 | 2 | 6 | coffee | vegetarian
+= Rich hot chocolate spiced with cinnamon and a pinch of chili.
+- 500 ml milk
+- 60 g dark chocolate
+- 1 tbsp sugar
+- ½ tsp ground cinnamon
+- 1 pinch chili powder
+* Heat milk until steaming.
+* Whisk in chocolate, sugar and spices until smooth.
+
+@ Brazilian Feijoada-Style Black Beans | Brazilian | dinner | 6 | 15 | 60 | beans | gluten-free
+= Black beans slow-cooked with beef, onion and orange.
+- 2 cans black beans (400 g each)
+- 400 g beef, cubed
+- 1 onion, chopped
+- 3 garlic cloves
+- 2 bay leaves
+- 600 ml beef stock
+- 1 orange, sliced
+* Brown beef with onion and garlic.
+* Add beans, bay leaves and stock and simmer 50 minutes.
+* Serve with rice and orange slices.
+
+@ Brazilian Cheese Bread (Pão de Queijo) | Brazilian | snack,breakfast | 20 | 10 | 20 | bread | vegetarian, gluten-free
+= Chewy, cheesy tapioca rolls.
+- 250 g tapioca flour
+- 120 ml milk
+- 60 ml vegetable oil
+- 1 egg
+- 100 g parmesan, grated
+* Boil milk and oil, pour over tapioca and stir.
+* Beat in egg and cheese.
+* Roll 20 balls and bake at 200°C for 20 minutes.
+
+@ Peruvian Chicken (Pollo a la Brasa) | Peruvian | dinner | 4 | 15 | 45 | drumstick | gluten-free
+= Roast chicken in a cumin, garlic and lime marinade with green sauce.
+- 1.4 kg chicken pieces
+- 4 garlic cloves
+- 2 tsp ground cumin
+- 1 tsp paprika
+- 2 limes
+- 3 tbsp soy sauce
+- 2 tbsp olive oil
+- 1 bunch coriander
+- 3 tbsp mayonnaise
+* Marinate chicken with garlic, cumin, paprika, lime, soy and oil 2 hours.
+* Roast at 210°C for 45 minutes.
+* Blend coriander, mayo and lime for green sauce.
+
+@ Peruvian Ceviche | Peruvian | lunch,snack | 4 | 25 | 0 | fish | pescatarian, gluten-free, no-cook
+= Fresh fish cured in lime with chili, red onion and coriander.
+- 500 g very fresh white fish, diced
+- 6 limes, juiced
+- 1 red onion, thinly sliced
+- 1 red chili
+- 1 handful coriander
+- 1 sweet potato, boiled
+* Toss fish with lime juice and chili and chill 20 minutes.
+* Add onion and coriander.
+* Serve with sweet potato slices.
+
+@ Argentine Chimichurri Steak | Argentinian | dinner | 4 | 15 | 10 | steak | gluten-free, dairy-free
+= Grilled steak with a bright parsley-garlic chimichurri.
+- 4 beef steaks
+- 1 bunch parsley
+- 3 garlic cloves
+- 1 tsp dried oregano
+- 3 tbsp red wine vinegar
+- 100 ml olive oil
+- ½ tsp chili flakes
+* Chop parsley and garlic finely and mix with oregano, vinegar, oil and chili.
+* Grill steaks 4 minutes per side and rest.
+* Spoon over chimichurri.
+
+@ Empanadas | Argentinian | snack,dinner | 12 | 40 | 25 | pie |
+= Baked pastry turnovers with spiced beef, onion and egg.
+- 500 g shortcrust pastry
+- 400 g beef mince
+- 1 onion, chopped
+- 1 tsp paprika
+- 1 tsp ground cumin
+- 2 eggs, boiled and chopped
+- 1 egg, beaten
+* Brown mince with onion and spices; cool and add chopped egg.
+* Cut pastry into 12 circles, fill and crimp.
+* Brush with egg and bake at 200°C for 25 minutes.
+
+@ Colombian Arepas | Colombian | breakfast,lunch | 6 | 10 | 15 | flatbread | vegetarian, gluten-free
+= Griddled corn cakes split and filled with cheese.
+- 250 g pre-cooked corn flour
+- 350 ml warm water
+- 150 g mozzarella, grated
+- 1 tbsp butter
+* Mix flour, water and salt into a dough; rest 5 minutes.
+* Shape 6 thick discs.
+* Cook in a buttered pan 6 minutes per side.
+* Split and fill with cheese.
+
+@ Cuban Black Beans & Rice | Cuban | dinner | 4 | 10 | 25 | rice | vegan, gluten-free
+= Rice and black beans with peppers, cumin and oregano.
+- 300 g rice
+- 1 can black beans (400 g)
+- 1 green pepper, chopped
+- 1 onion, chopped
+- 3 garlic cloves
+- 1 tsp ground cumin
+- 1 tsp dried oregano
+- 2 tbsp olive oil
+* Fry pepper, onion and garlic with spices 6 minutes.
+* Add rice, beans and 600 ml water.
+* Cover and cook 18 minutes.
+
+@ Cuban Picadillo | Cuban | dinner | 4 | 10 | 25 | meat | gluten-free
+= Savory beef hash with tomatoes, olives and raisins.
+- 500 g beef mince
+- 1 onion, chopped
+- 1 pepper, chopped
+- 2 garlic cloves
+- 200 ml passata
+- 50 g green olives
+- 40 g raisins
+- 1 tsp ground cumin
+* Brown mince with onion, pepper and garlic.
+* Add passata, olives, raisins and cumin.
+* Simmer 15 minutes. Serve with rice.
+
+@ Chicken Mole-Style Stew | Mexican | dinner | 4 | 15 | 40 | chocolate |
+= Chicken in a dark, rich chili-chocolate sauce.
+- 800 g chicken thighs
+- 1 onion, chopped
+- 2 garlic cloves
+- 2 tbsp chili powder
+- 1 tsp ground cinnamon
+- 2 tbsp peanut butter
+- 40 g dark chocolate
+- 400 ml passata
+- 300 ml chicken stock
+- 1 tbsp sesame seeds
+* Brown chicken; fry onion, garlic and spices.
+* Add passata, stock and peanut butter and simmer 30 minutes.
+* Stir in chocolate until melted.
+* Sprinkle with sesame.
+
+@ Taco Salad | Mexican | lunch | 4 | 10 | 10 | salad | gluten-free
+= Crunchy lettuce with seasoned beef, beans, cheese and tortilla chips.
+- 400 g beef mince
+- 2 tsp taco seasoning
+- 1 lettuce, chopped
+- 2 tomatoes, diced
+- 1 can kidney beans (400 g)
+- 100 g cheddar
+- 60 g tortilla chips
+- 4 tbsp salsa
+* Brown mince with seasoning 8 minutes.
+* Toss lettuce, tomatoes and beans.
+* Top with beef, cheese, chips and salsa.
+
+@ Huevos a la Mexicana | Mexican | breakfast | 2 | 5 | 8 | egg | vegetarian, gluten-free, quick
+= Scrambled eggs with tomato, onion and jalapeño.
+- 4 eggs
+- 1 tomato, diced
+- ½ onion, diced
+- 1 jalapeño, chopped
+- 1 tbsp vegetable oil
+* Fry onion, tomato and jalapeño 4 minutes.
+* Add beaten eggs and scramble softly.
+* Serve with warm tortillas.
+
+@ Agua Fresca de Sandía | Mexican | snack | 4 | 10 | 0 | drink | vegan, no-cook
+= Refreshing blended watermelon and lime cooler.
+- 800 g watermelon, cubed
+- 500 ml water
+- 2 limes
+- 1 tbsp sugar
+* Blend everything until smooth.
+* Strain and serve over ice.
+
+@ Horchata | Mexican | snack | 6 | 10 | 0 | drink | vegan, gluten-free, no-cook
+= Creamy cinnamon rice drink.
+- 150 g long-grain rice
+- 1 cinnamon stick
+- 1.2 l water
+- 100 g sugar
+- 1 tsp vanilla extract
+* Soak rice and cinnamon in 600 ml water overnight.
+* Blend, strain and add remaining water, sugar and vanilla.
+* Serve over ice.
+
+@ Guacamole with Pomegranate | Mexican | snack | 4 | 10 | 0 | avocado | vegan, gluten-free, no-cook
+= Chunky lime guacamole with jewel-like pomegranate seeds.
+- 3 avocados
+- 1 lime
+- ½ red onion, chopped
+- 1 handful coriander
+- 3 tbsp pomegranate seeds
+* Mash the avocados with lime and salt.
+* Fold in onion and coriander.
+* Scatter over pomegranate.
+
+@ Salsa Roja | Mexican | snack | 6 | 5 | 10 | chili | vegan, gluten-free
+= Blistered tomato and chili salsa.
+- 5 tomatoes
+- 2 red chilies
+- 2 garlic cloves
+- ½ onion
+- 1 lime
+* Char tomatoes, chilies, garlic and onion in a dry pan 10 minutes.
+* Blend with lime and salt.
+
+@ Vegetable Fajitas | Mexican | dinner | 4 | 10 | 15 | taco | vegan
+= Smoky peppers, onions and mushrooms in warm tortillas.
+- 3 peppers, sliced
+- 1 onion, sliced
+- 200 g mushrooms, sliced
+- 2 tsp fajita seasoning
+- 8 tortillas
+- 1 avocado
+- 1 lime
+- 2 tbsp vegetable oil
+* Stir-fry vegetables with seasoning 10 minutes.
+* Warm tortillas.
+* Serve with avocado and lime.
+
+@ Sopa de Lima | Mexican | dinner | 4 | 10 | 25 | soup | gluten-free
+= Yucatán lime chicken soup with tortilla strips.
+- 400 g chicken breast
+- 1 onion
+- 2 tomatoes, diced
+- 1.2 l chicken stock
+- 3 limes
+- 2 tortillas, strips
+- 1 handful coriander
+* Simmer chicken, onion and tomatoes in stock 20 minutes; shred chicken.
+* Add lime juice.
+* Serve with toasted tortilla strips and coriander.
+
+@ Chipotle Bean Quesadillas | Mexican | lunch | 4 | 10 | 10 | taco | vegetarian
+= Smoky mashed beans and cheese in crispy tortillas.
+- 1 can pinto beans (400 g)
+- 1 tbsp chipotle paste
+- 8 tortillas
+- 150 g cheddar
+- 1 handful coriander
+* Mash beans with chipotle.
+* Spread on tortillas, add cheese and coriander and fold.
+* Toast 2 minutes per side.
+
+@ Mexican Chicken & Rice Casserole | Mexican | dinner | 6 | 15 | 40 | casserole | gluten-free
+= One-dish baked rice with chicken, salsa, beans and cheese.
+- 500 g chicken breast, diced
+- 300 g long-grain rice
+- 1 can black beans (400 g)
+- 400 ml salsa
+- 500 ml chicken stock
+- 1 tsp ground cumin
+- 150 g cheddar
+* Mix rice, chicken, beans, salsa, stock and cumin in a baking dish.
+* Cover and bake at 190°C for 35 minutes.
+* Top with cheese and bake 5 minutes more.
+
+@ Arroz con Pollo | Latin American | dinner | 5 | 15 | 40 | rice | gluten-free, dairy-free
+= Saffron-yellow rice with chicken, peas and peppers.
+- 1 kg chicken thighs
+- 1 onion, chopped
+- 1 pepper, chopped
+- 3 garlic cloves
+- 350 g rice
+- 1 pinch saffron
+- 200 ml passata
+- 700 ml chicken stock
+- 150 g peas
+* Brown chicken; set aside.
+* Fry onion, pepper and garlic; add rice, saffron, passata and stock.
+* Return chicken, cover and cook 25 minutes. Add peas for 5 minutes.
+
+@ Plantain Chips | Caribbean | snack | 4 | 10 | 10 | banana | vegan, gluten-free
+= Thin, crispy fried plantain slices with lime salt.
+- 2 green plantains
+- 500 ml vegetable oil, for frying
+- 1 lime
+* Peel and thinly slice the plantains.
+* Fry at 175°C for 3 minutes until crisp.
+* Season with salt and lime zest.
+
+@ Jamaican Jerk Chicken | Jamaican | dinner | 4 | 15 | 40 | drumstick | gluten-free, dairy-free
+= Fiery allspice and thyme marinated chicken, roasted until charred.
+- 1 kg chicken thighs
+- 4 spring onions
+- 2 scotch bonnet chilies
+- 3 garlic cloves
+- 1 tbsp allspice
+- 1 tbsp thyme leaves
+- 2 tbsp soy sauce
+- 1 lime
+- 1 tbsp brown sugar
+* Blend everything except chicken into a paste.
+* Marinate chicken 2 hours.
+* Roast at 210°C for 40 minutes.
+
+@ Rice & Peas (Jamaican) | Jamaican | dinner | 4 | 5 | 25 | rice | vegan, gluten-free
+= Coconut rice with kidney beans, thyme and allspice.
+- 300 g long-grain rice
+- 1 can kidney beans (400 g)
+- 1 can coconut milk (400 ml)
+- 200 ml water
+- 2 spring onions
+- 1 tsp thyme leaves
+- ½ tsp allspice
+* Bring coconut milk, water, beans and seasonings to a boil.
+* Add rice, cover and cook 20 minutes on low.
