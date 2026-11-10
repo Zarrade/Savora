@@ -3,7 +3,6 @@ import { db, ensureSeeded, wipeLocal } from '../db';
 import { supabase, appUrl } from './supabase';
 import { clearOutbox, setOutboxUser } from './outbox';
 import { cloudHasData, queueAllLocal, startSync, stopSync, syncNow } from './sync';
-import { setAIScope } from './ai/config';
 import { setCustomFoodsScope } from './ingredients';
 
 /**
@@ -34,19 +33,19 @@ const resetSyncState = (uid: string) => {
 async function hasGuestData(): Promise<boolean> {
   const s = await db.settings.get('settings');
   if (s?.onboarded) return true;
-  const [plan, grocery, own, touched] = await Promise.all([
+  const [plan, grocery, own, touched, stock] = await Promise.all([
     db.plan.count(), db.grocery.count(),
     db.recipes.filter(r => !r.builtIn).count(),
-    db.recipes.filter(r => !!r.builtIn && r.updatedAt !== r.createdAt).count()
+    db.recipes.filter(r => !!r.builtIn && r.updatedAt !== r.createdAt).count(),
+    db.stock.count()
   ]);
-  return plan + grocery + own + touched > 0;
+  return plan + grocery + own + touched + stock > 0;
 }
 
 function begin(user: User) {
   localStorage.setItem(OWNER, user.id);
   localStorage.removeItem(GUEST);
   setOutboxUser(user.id);
-  setAIScope(user.id, true);
   setCustomFoodsScope(user.id);
   set({ status: 'signedIn', user, merge: null, guest: false });
   startSync(user.id);
@@ -92,7 +91,6 @@ async function cleanupLocal() {
   await wipeLocal();
   await ensureSeeded();
   localStorage.setItem(OWNER, 'guest');
-  setAIScope(null);
   setCustomFoodsScope(null);
 }
 
@@ -100,7 +98,7 @@ async function cleanupLocal() {
 export async function initAuth() {
   const params = new URLSearchParams(location.search);
   const code = params.get('code');
-  // Supabase email links come back with ?code=… (PKCE). OpenRouter's callback is marked ?or=1.
+  // Supabase email links come back with ?code=… (PKCE).
   if (code && !params.has('or')) {
     const recovery = params.get('type') === 'recovery';
     history.replaceState(null, '', location.pathname + location.hash);

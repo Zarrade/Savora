@@ -1,5 +1,5 @@
 import Dexie, { type Table } from 'dexie';
-import type { Recipe, PlanEntry, GroceryItem, Collection, Settings, Ingredient } from './types';
+import type { Recipe, PlanEntry, GroceryItem, Collection, Settings, Ingredient, StockItem } from './types';
 import type { SeedRecipe } from './data/seedRecipes';
 import { ALL_SEEDS, SEED_VERSION, SEEDS_BY_VERSION } from './data/seeds';
 import { toIngredient } from './lib/ingredients';
@@ -13,6 +13,7 @@ class SavoraDB extends Dexie {
   grocery!: Table<GroceryItem, string>;
   collections!: Table<Collection, string>;
   settings!: Table<Settings, string>;
+  stock!: Table<StockItem, string>;
 
   constructor() {
     super('savora');
@@ -23,6 +24,8 @@ class SavoraDB extends Dexie {
       collections: 'id, name',
       settings: 'id'
     });
+    // v2: "At home" list
+    this.version(2).stores({ stock: 'id, aisle, name, updatedAt' });
     // Sync middleware: note every change to a synced table in the outbox (see lib/outbox.ts)
     this.use({
       stack: 'dbcore',
@@ -59,7 +62,7 @@ class SavoraDB extends Dexie {
 
 export const db = new SavoraDB();
 
-export const ALL_TABLES = () => [db.recipes, db.plan, db.grocery, db.collections, db.settings];
+export const ALL_TABLES = () => [db.recipes, db.plan, db.grocery, db.collections, db.settings, db.stock];
 
 /** Run writes that must NOT be uploaded (seeding, automatic photos, applying cloud changes). */
 export function untracked<T>(fn: () => Promise<T>): Promise<T> {
@@ -185,6 +188,7 @@ export interface Backup {
   grocery: GroceryItem[];
   collections: Collection[];
   settings: Settings[];
+  stock?: StockItem[];
 }
 
 export async function exportAll(): Promise<Backup> {
@@ -196,13 +200,14 @@ export async function exportAll(): Promise<Backup> {
     plan: await db.plan.toArray(),
     grocery: await db.grocery.toArray(),
     collections: await db.collections.toArray(),
-    settings: await db.settings.toArray()
+    settings: await db.settings.toArray(),
+    stock: await db.stock.toArray()
   };
 }
 
 export async function importAll(data: Backup, mode: 'replace' | 'merge'): Promise<void> {
   if ((data?.app !== 'savora' && data?.app !== 'mise') || !Array.isArray(data.recipes)) throw new Error('This file is not a Savora (or Mise) backup.');
-  await db.transaction('rw', [db.recipes, db.plan, db.grocery, db.collections, db.settings], async () => {
+  await db.transaction('rw', ALL_TABLES(), async () => {
     if (mode === 'replace') {
       // keyed deletes (not clear()) so a signed-in account gets proper deletions synced
       await Promise.all(ALL_TABLES().map(async t => t.bulkDelete(await t.toCollection().primaryKeys())));
@@ -212,6 +217,7 @@ export async function importAll(data: Backup, mode: 'replace' | 'merge'): Promis
     await db.grocery.bulkPut(data.grocery ?? []);
     await db.collections.bulkPut(data.collections ?? []);
     if (data.settings?.length) await db.settings.bulkPut(data.settings);
+    if (data.stock?.length) await db.stock.bulkPut(data.stock);
     if (!(await db.settings.get('settings'))) await db.settings.put(DEFAULT_SETTINGS);
   });
 }

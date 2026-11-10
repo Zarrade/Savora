@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import type { Recipe, Slot, PlanEntry } from '../types';
 import { SLOTS } from '../types';
 import { Sheet, Chip, Stepper, toast } from './ui';
@@ -103,8 +103,15 @@ export function AddToPlanSheet({ open, onClose, recipe }: { open: boolean; onClo
 export function AddToGrocerySheet({ open, onClose, recipe, scale }: { open: boolean; onClose: () => void; recipe: Recipe; scale: number }) {
   const settings = useSettings();
   const [rows, setRows] = useState(() =>
-    recipe.ingredients.map(i => ({ id: i.id, name: i.name, qty: i.qty === null ? null : +(i.qty * scale).toFixed(2), unit: i.unit, on: !isPantry(i.name, settings.pantry) }))
+    recipe.ingredients.map(i => ({ id: i.id, name: i.name, qty: i.qty === null ? null : +(i.qty * scale).toFixed(2), unit: i.unit, on: !isPantry(i.name, settings.pantry), home: false }))
   );
+  // Untick what you already have at home
+  useEffect(() => {
+    db.stock.toArray().then(st => {
+      const names = st.map(x => x.name);
+      setRows(rs => rs.map(r => (isPantry(r.name, names) ? { ...r, on: false, home: true } : r)));
+    });
+  }, []);
   const set = (id: string, patch: Partial<(typeof rows)[number]>) => setRows(rs => rs.map(r => (r.id === id ? { ...r, ...patch } : r)));
   const chosen = rows.filter(r => r.on);
 
@@ -136,7 +143,7 @@ export function AddToGrocerySheet({ open, onClose, recipe, scale }: { open: bool
             <select className="unit-select" value={r.unit} onChange={e => set(r.id, { unit: e.target.value })} aria-label="Unit">
               {Array.from(new Set([r.unit, ...UNIT_OPTIONS])).map(u => <option key={u} value={u}>{u ? unitLabel(u, r.qty) : 'pcs'}</option>)}
             </select>
-            <span className="grow name">{r.name}</span>
+            <span className="grow name">{r.name}{r.home && <small className="at-home-tag">at home</small>}</span>
           </div>
         ))}
       </div>

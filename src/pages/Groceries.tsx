@@ -1,8 +1,8 @@
 import { useMemo, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '../db';
-import { saveSettings, useRecipes, useSettings } from '../hooks';
+import { saveSettings, useRecipes, useSettings, useStock } from '../hooks';
 import { Icon } from '../components/Icon';
 import { AddToGrocerySheet, RecipePicker } from '../components/Sheets';
 import { Empty, PageHeader, Sheet, Toggle, toast, useConfirm } from '../components/ui';
@@ -12,7 +12,8 @@ import { fmtGrocery, itemKey, mergeInto } from '../lib/grocery';
 import { fmtMoney, groceryItemCost } from '../lib/pricing';
 import { aisleIcon, foodIcon } from '../lib/foodIcons';
 import { SIcon } from '../components/SavoraIcons';
-import type { GroceryItem, Recipe } from '../types';
+import type { GroceryItem, Recipe, StockItem } from '../types';
+import { addStockText, backToList, putAway } from '../lib/stock';
 
 const SUGGESTIONS = Array.from(new Set(FOODS.map(f => f.k[0]))).sort();
 
@@ -29,6 +30,10 @@ export default function Groceries() {
   const [moreOpen, setMoreOpen] = useState(false);
   const { confirm, confirmNode } = useConfirm();
   const ov = settings.priceOverrides;
+  const stock = useStock();
+  const [params, setParams] = useSearchParams();
+  const tab = params.get('tab') === 'home' ? 'home' : 'buy';
+  const setTab = (t: 'buy' | 'home') => setParams(t === 'home' ? { tab: 'home' } : {}, { replace: true });
 
   const todo = items.filter(i => !i.checked);
   const done = items.filter(i => i.checked);
@@ -80,6 +85,11 @@ export default function Groceries() {
     } catch { /* cancelled */ }
   };
   const clearDone = async () => { setMoreOpen(false); await db.grocery.bulkDelete(done.map(d => d.id)); toast('Cleared ticked items'); };
+  const putAwayDone = async () => {
+    setMoreOpen(false);
+    const n = await putAway(done);
+    toast(`${n} item${n === 1 ? '' : 's'} put away — now in At home`);
+  };
   const clearAll = async () => {
     setMoreOpen(false);
     if (!(await confirm('Remove every item from your grocery list?', 'Clear list'))) return;
@@ -88,8 +98,19 @@ export default function Groceries() {
 
   return (
     <div className="page">
-      <PageHeader title="Groceries" sub={items.length ? `${todo.length} to buy · ${done.length} in cart` : undefined}
-        right={<button className="icon-btn" aria-label="More" onClick={() => setMoreOpen(true)}><Icon name="more" /></button>} />
+      <PageHeader title="Groceries" sub={tab === 'buy' ? (items.length ? `${todo.length} to buy · ${done.length} in cart` : undefined) : `${stock.length} thing${stock.length === 1 ? '' : 's'} at home`}
+        right={tab === 'buy' ? <button className="icon-btn" aria-label="More" onClick={() => setMoreOpen(true)}><Icon name="more" /></button> : undefined} />
+
+      <div className="tabs seg" role="tablist">
+        <button role="tab" aria-selected={tab === 'buy'} className={tab === 'buy' ? 'active' : ''} onClick={() => setTab('buy')}>
+          <SIcon name="cart" size={18} /> To buy{todo.length ? <span className="seg-count">{todo.length}</span> : null}
+        </button>
+        <button role="tab" aria-selected={tab === 'home'} className={tab === 'home' ? 'active' : ''} onClick={() => setTab('home')}>
+          <SIcon name="basket" size={18} /> At home{stock.length ? <span className="seg-count">{stock.length}</span> : null}
+        </button>
+      </div>
+
+      {tab === 'home' ? <AtHome stock={stock} /> : <>
 
       {items.length > 0 && (
         <div className="card-flat money-card">
@@ -160,6 +181,14 @@ export default function Groceries() {
           <p className="fineprint">Prices are estimates of typical UAE supermarket prices for the amounts you need — set your own on any item.</p>
         </>
       )}
+      {done.length > 0 && (
+        <button className="put-away" onClick={putAwayDone}>
+          <SIcon name="basket" size={22} />
+          <span className="grow"><b>Put away {done.length} ticked item{done.length === 1 ? '' : 's'}</b><small>Move them to At home so Savora knows you have them</small></span>
+          <Icon name="arrowRight" size={18} />
+        </button>
+      )}
+      </>}
 
       {edit && <EditItem item={edit} onClose={() => setEdit(null)} />}
       <RecipePicker open={pickRecipe} onClose={() => setPickRecipe(false)} recipes={recipes} title="Add ingredients from…"
@@ -169,12 +198,71 @@ export default function Groceries() {
       <Sheet open={moreOpen} onClose={() => setMoreOpen(false)} title="Grocery list">
         <div className="menu">
           <button onClick={share}><Icon name="share" /> Share / copy list</button>
+          <button onClick={putAwayDone} disabled={!done.length}><SIcon name="basket" size={20} /> Put ticked items away (At home)</button>
           <button onClick={clearDone} disabled={!done.length}><Icon name="check" /> Clear ticked items</button>
           <button className="danger" onClick={clearAll} disabled={!items.length}><Icon name="trash" /> Clear entire list</button>
         </div>
       </Sheet>
       {confirmNode}
     </div>
+  );
+}
+
+/* ------------------------------------------------------------- At home */
+
+const HOME_QUICK = ['eggs', 'milk', 'rice', 'pasta', 'onions', 'garlic', 'tomatoes', 'potatoes', 'chicken', 'olive oil', 'butter', 'cheese', 'yoghurt', 'bread', 'lemons', 'chickpeas'];
+
+function AtHome({ stock }: { stock: StockItem[] }) {
+  const nav = useNavigate();
+  const [text, setText] = useState('');
+  const have = new Set(stock.map(s => itemKey(s.name)));
+  const grouped = useMemo(() => {
+    const m = new Map<string, StockItem[]>();
+    for (const i of stock) { const l = m.get(i.aisle) ?? []; l.push(i); m.set(i.aisle, l); }
+    return AISLES.filter(a => m.has(a)).map(a => [a, m.get(a)!] as const);
+  }, [stock]);
+  const add = async (raw: string) => { if (!raw.trim()) return; await addStockText(raw); setText(''); };
+
+  return (
+    <>
+      <p className="muted small" style={{ margin: 0 }}>What’s already in your fridge and cupboards. Savora leaves these off your shopping lists and uses them for “What can I make?”.</p>
+      <form className="add-bar" onSubmit={e => { e.preventDefault(); add(text); }}>
+        <Icon name="plus" size={18} />
+        <input value={text} onChange={e => setText(e.target.value)} placeholder="Add what you have, e.g. 6 eggs, rice" aria-label="Add something you have" />
+        {text && <button type="submit" className="btn btn-primary btn-sm">Add</button>}
+      </form>
+      <div className="chip-row scroll">
+        {HOME_QUICK.filter(q => !have.has(itemKey(q))).map(q => (
+          <button key={q} className="chip chip-sm" onClick={() => add(q)}><SIcon name={foodIcon(q)} size={16} /> {q}</button>
+        ))}
+      </div>
+
+      {stock.length > 0 && (
+        <button className="plan-cta home-cta" onClick={() => nav('/fridge?from=home')}>
+          <span className="plan-cta-ico"><Icon name="sparkles" size={22} /></span>
+          <span className="grow"><b>What can I make with these?</b><small>Recipe ideas from the {stock.length} thing{stock.length === 1 ? '' : 's'} you have</small></span>
+          <Icon name="arrowRight" size={20} />
+        </button>
+      )}
+
+      {!stock.length ? (
+        <Empty icon="leaf" title="Nothing here yet">Add what you have, or tick items while shopping and tap “Put away”.</Empty>
+      ) : grouped.map(([aisle, list]) => (
+        <section key={aisle} className="aisle">
+          <div className="aisle-head"><SIcon name={aisleIcon(aisle)} size={18} /> {aisle}<span className="count">{list.length}</span></div>
+          {list.map(i => (
+            <div key={i.id} className="g-item stock-item">
+              <span className="g-emoji" aria-hidden="true"><SIcon name={foodIcon(i.name)} size={22} /></span>
+              <span className="g-body"><span className="g-name">{i.name}</span>{i.qty !== null && <small>{fmtGrocery(i)}</small>}</span>
+              <button className="btn btn-soft btn-sm" onClick={async () => { await backToList(i); toast(`${i.name} added to your shopping list`); }} title="Ran out — add to shopping list">
+                <SIcon name="cart" size={16} /> Ran out
+              </button>
+              <button className="icon-btn sm" aria-label={`Remove ${i.name}`} onClick={() => db.stock.delete(i.id)}><Icon name="trash" size={16} /></button>
+            </div>
+          ))}
+        </section>
+      ))}
+    </>
   );
 }
 

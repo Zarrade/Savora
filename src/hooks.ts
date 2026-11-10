@@ -1,7 +1,7 @@
 import { useLiveQuery } from 'dexie-react-hooks';
 import { useEffect, useMemo } from 'react';
 import { db, DEFAULT_SETTINGS, untracked } from './db';
-import type { Recipe, Settings, Collection } from './types';
+import type { Recipe, Settings, Collection, StockItem } from './types';
 
 export function useSettings(): Settings {
   const s = useLiveQuery(() => db.settings.get('settings'), []);
@@ -50,4 +50,16 @@ export function useTheme(theme: Settings['theme']) {
     if (theme === 'system') root.removeAttribute('data-theme');
     else root.setAttribute('data-theme', theme);
   }, [theme]);
+}
+
+/** Things you already have at home, sorted by name. */
+export function useStock(): StockItem[] {
+  return useLiveQuery(() => db.stock.orderBy('name').toArray(), []) ?? [];
+}
+
+/** Names to leave off shopping lists: pantry staples + everything at home. */
+export function useHaveNames(): string[] {
+  const s = useSettings();
+  const stock = useStock();
+  return useMemo(() => [...s.pantry, ...stock.map(x => x.name)], [s.pantry, stock]);
 }

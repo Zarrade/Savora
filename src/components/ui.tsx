@@ -242,3 +242,33 @@ export function DictateButton({ onText }: { onText: (t: string) => void }) {
     </button>
   );
 }
+
+/* ------------------------------------------------------------ NumField */
+
+/**
+ * Number input that keeps its own text while you type and saves when you pause or leave the field.
+ * (Saving every keystroke to the database made phones drop digits.)
+ */
+export function NumField({ value, onCommit, decimal = false, disabled, placeholder, min = 0, max = 100000, ariaLabel }: {
+  value: number; onCommit: (n: number) => void; decimal?: boolean; disabled?: boolean; placeholder?: string; min?: number; max?: number; ariaLabel?: string;
+}) {
+  const [text, setText] = useState(value ? String(value) : '');
+  const focused = useRef(false);
+  const timer = useRef<number | undefined>(undefined);
+  // follow outside changes (sync, auto targets) only while not typing
+  useEffect(() => { if (!focused.current) setText(value ? String(value) : ''); }, [value]);
+  const commit = (t: string) => {
+    window.clearTimeout(timer.current);
+    const n = Number(t.replace(',', '.').replace(decimal ? /[^\d.]/g : /[^\d]/g, ''));
+    if (!t.trim()) return;                         // leave empty while editing; keep last saved value
+    if (Number.isFinite(n) && n >= min && n <= max && n !== value) onCommit(n);
+  };
+  return (
+    <input type="text" inputMode={decimal ? 'decimal' : 'numeric'} pattern={decimal ? '[0-9]*[.,]?[0-9]*' : '[0-9]*'}
+      value={text} disabled={disabled} placeholder={placeholder} aria-label={ariaLabel}
+      onFocus={() => { focused.current = true; }}
+      onChange={e => { const t = e.target.value; setText(t); window.clearTimeout(timer.current); timer.current = window.setTimeout(() => commit(t), 700); }}
+      onBlur={() => { focused.current = false; commit(text); if (!text.trim()) setText(value ? String(value) : ''); }}
+      onKeyDown={e => { if (e.key === 'Enter') (e.target as HTMLInputElement).blur(); }} />
+  );
+}

@@ -73,7 +73,7 @@ Deno.serve(async req => {
   // ---- fair use
   const { data: used, error: usageErr } = await admin.rpc('bump_ai_usage', { uid: user.id });
   if (usageErr) return fail(req, 500, 'usage', 'Could not check AI usage.');
-  if ((used as number) > DAILY_LIMIT) return fail(req, 429, 'daily_limit', `You've used today's ${DAILY_LIMIT} free AI requests. They reset at midnight UTC — or add your own OpenRouter key in Me → AI.`);
+  if ((used as number) > DAILY_LIMIT) return fail(req, 429, 'daily_limit', `You've used today's ${DAILY_LIMIT} free AI requests. They reset at midnight UTC.`);
 
   // ---- forward to OpenRouter
   let upstream: Response;

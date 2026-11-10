@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '../db';
-import { saveSettings, useRecipeMap, useRecipes, useSettings } from '../hooks';
+import { saveSettings, useRecipeMap, useRecipes, useSettings, useHaveNames } from '../hooks';
 import { Icon } from '../components/Icon';
 import { Cover } from '../components/RecipeCard';
 import { RecipePicker } from '../components/Sheets';
@@ -463,7 +463,9 @@ function SendSheet({ onClose, entries, weekStart, map }: { onClose: () => void; 
   const settings = useSettings();
   const [range, setRange] = useState<'week' | 'future'>(entries.some(e => e.date >= today()) && entries.some(e => e.date < today()) ? 'future' : 'week');
   const chosen = entries.filter(e => e.recipeId && (range === 'week' || e.date >= today()));
-  const preview = useMemo(() => groceriesFromPlan(chosen, map, settings.pantry), [chosen, map, settings.pantry]);
+  const have = useHaveNames();
+  const preview = useMemo(() => groceriesFromPlan(chosen, map, have), [chosen, map, have]);
+  const skipped = useMemo(() => groceriesFromPlan(chosen, map, settings.pantry).length - preview.length, [chosen, map, settings.pantry, preview.length]);
   const cost = planCost(chosen, map, settings.priceOverrides);
 
   const send = async () => {
@@ -495,7 +497,7 @@ function SendSheet({ onClose, entries, weekStart, map }: { onClose: () => void; 
         <span className="cost-ico"><SIcon name="cart" size={26} /></span>
       </div>
       <p className="muted small" style={{ marginTop: 12 }}>
-        {chosen.filter(e => !e.leftover).length} meals → {preview.length} ingredients, combined and scaled to your servings. Leftover meals and pantry staples ({settings.pantry.join(', ') || 'none'}) are skipped. Sending again replaces this week’s unticked items.
+        {chosen.filter(e => !e.leftover).length} meals → {preview.length} ingredients, combined and scaled to your servings.{skipped > 0 ? ` ${skipped} you already have at home are left off.` : ''} Leftover meals and pantry staples ({settings.pantry.join(', ') || 'none'}) are skipped. Sending again replaces this week’s unticked items.
       </p>
     </Sheet>
   );

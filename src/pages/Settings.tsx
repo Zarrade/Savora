@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { saveDeviceSettings, saveSettings, useCollections, useSettings } from '../hooks';
 import { db, exportAll, importAll, restoreStarterRecipes, wipeAll, type Backup } from '../db';
 import { Icon } from '../components/Icon';
-import { Chip, ChipInput, PageHeader, Sheet, Stepper, toast, useConfirm } from '../components/ui';
+import { Chip, ChipInput, NumField, PageHeader, Sheet, Stepper, toast, useConfirm } from '../components/ui';
 import { DIETS, SLOTS, type Settings } from '../types';
 import { autoTargets } from '../lib/planner';
 import { capitalize, DAY_SHORT, uid } from '../lib/util';
@@ -143,9 +143,9 @@ export default function SettingsPage() {
           <label className="field"><span>Sex</span>
             <select value={s.sex} onChange={e => set({ sex: e.target.value as Settings['sex'] })}><option value="male">Male</option><option value="female">Female</option></select>
           </label>
-          <label className="field"><span>Age</span><input inputMode="numeric" value={s.age || ''} onChange={e => set({ age: num(e.target.value) })} /></label>
-          <label className="field"><span>Height (cm)</span><input inputMode="numeric" value={s.heightCm || ''} onChange={e => set({ heightCm: num(e.target.value) })} /></label>
-          <label className="field"><span>Weight (kg)</span><input inputMode="decimal" value={s.weightKg || ''} onChange={e => set({ weightKg: num(e.target.value) })} /></label>
+          <label className="field"><span>Age</span><NumField value={s.age} min={1} max={120} onCommit={n => set({ age: n })} ariaLabel="Age" /></label>
+          <label className="field"><span>Height (cm)</span><NumField value={s.heightCm} min={50} max={260} onCommit={n => set({ heightCm: n })} ariaLabel="Height in cm" /></label>
+          <label className="field"><span>Weight (kg)</span><NumField decimal value={s.weightKg} min={20} max={400} onCommit={n => set({ weightKg: n })} ariaLabel="Weight in kg" /></label>
         </div>
         <label className="field"><span>Activity</span>
           <select value={s.activity} onChange={e => set({ activity: Number(e.target.value) })}>{ACTIVITY.map(([v, l]) => <option key={v} value={v}>{l}</option>)}</select>
@@ -162,7 +162,7 @@ export default function SettingsPage() {
         <div className="field-grid four">
           {(['kcal', 'protein', 'carbs', 'fat'] as const).map(k => (
             <label key={k} className="field"><span>{k === 'kcal' ? 'Calories' : `${capitalize(k)} (g)`}</span>
-              <input inputMode="numeric" value={s[k] || ''} disabled={s.targetsMode === 'auto'} onChange={e => saveSettings({ [k]: num(e.target.value) })} />
+              <NumField value={s[k]} disabled={s.targetsMode === 'auto'} max={20000} onCommit={n => saveSettings({ [k]: n })} />
             </label>
           ))}
         </div>

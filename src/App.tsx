@@ -18,7 +18,6 @@ import Onboarding from './pages/Onboarding';
 import Fridge from './pages/Fridge';
 import PhotoImport from './pages/PhotoImport';
 import AuthPage from './pages/Auth';
-import { finishOpenRouterLogin } from './lib/ai/oauth';
 import { Logo, LogoMark } from './components/Logo';
 import { MergePrompt, SyncBadge, useAuth } from './components/Account';
 import { displayName } from './lib/account';
@@ -131,16 +130,6 @@ export default function App() {
   useTheme(settings?.theme ?? 'system');
   const [foodsVer, setFoodsVer] = useState(0);
   useEffect(() => { const f = () => setFoodsVer(v => v + 1); window.addEventListener('savora-foods', f); return () => window.removeEventListener('savora-foods', f); }, []);
-
-  // Returning from OpenRouter's sign-in (?or=1&code=…)
-  const ready = !!settings && auth.status !== 'loading';
-  useEffect(() => {
-    if (!ready) return;
-    finishOpenRouterLogin().then(r => {
-      if (r === 'connected') { toast('OpenRouter connected'); location.hash = '#/settings#ai'; }
-      else if (r === 'failed') { toast('Couldn’t finish connecting. Paste a key in Settings → AI instead.'); location.hash = '#/settings#ai'; }
-    });
-  }, [ready]);
 
   // Fetch real photos for the starter recipes whenever we're online
   useEffect(() => {

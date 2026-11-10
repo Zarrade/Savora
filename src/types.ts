@@ -78,6 +78,17 @@ export interface GroceryItem {
   createdAt: number;
 }
 
+/** Something you already have at home (fridge / cupboard). */
+export interface StockItem {
+  id: string;
+  name: string;
+  qty: number | null;
+  unit: string;
+  aisle: string;
+  addedAt: number;
+  updatedAt: number;
+}
+
 export interface Collection {
   id: string;
   name: string;

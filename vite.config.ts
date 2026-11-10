@@ -32,10 +32,8 @@ export default defineConfig({
         maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
         navigateFallback: 'index.html',
         // Recipe photos from Wikimedia: keep them on the phone so they work offline
-        // AI calls to OpenRouter must always hit the network (never cached, never served stale)
         navigateFallbackDenylist: [/^\/api\//],
         runtimeCaching: [
-          { urlPattern: ({ url }) => url.hostname === 'openrouter.ai', handler: 'NetworkOnly' },
           {
             urlPattern: ({ url }) => url.hostname === 'upload.wikimedia.org',
             handler: 'CacheFirst',

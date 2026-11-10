@@ -8,6 +8,8 @@ import '@fontsource-variable/plus-jakarta-sans';
 import './styles.css';
 
 registerSW({ immediate: true });
+// Personal OpenRouter keys are no longer used: remove any left on this device
+try { Object.keys(localStorage).filter(k => k.startsWith('savora-ai-config') || k === 'savora-oauth-verifier').forEach(k => localStorage.removeItem(k)); } catch { /* storage blocked */ }
 // Ask the browser to keep our data (avoids eviction on low storage)
 navigator.storage?.persist?.().catch(() => undefined);
 

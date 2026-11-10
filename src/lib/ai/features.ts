@@ -1,6 +1,5 @@
 import type { Nutrition, Recipe, Settings } from '../../types';
 import { chat, chatStream, type ChatMessage, type ContentPart } from './client';
-import { loadAIConfig } from './config';
 import { extractJSON, RECIPE_SCHEMA_HINT, toRecipeDraft, type AIRecipeDraft } from './json';
 import { EQUIP_MAP } from '../kitchen';
 import { recipeConflicts } from '../ingredients';
@@ -21,12 +20,12 @@ export function profileContext(s: Settings): string {
 
 const JSON_ONLY = 'Reply with ONLY a single JSON object — no markdown fences, no commentary.';
 
-async function jsonCall<T>(messages: ChatMessage[], parse: (raw: unknown) => T, opts: { model?: string; signal?: AbortSignal; maxTokens?: number } = {}): Promise<T> {
+async function jsonCall<T>(messages: ChatMessage[], parse: (raw: unknown) => T, opts: { signal?: AbortSignal; maxTokens?: number } = {}): Promise<T> {
   let lastErr: unknown;
   // Not every model honours response_format, so validate and retry once with the error fed back.
   for (let attempt = 0; attempt < 2; attempt++) {
     const msgs = attempt === 0 ? messages : [...messages, { role: 'user' as const, content: `That was not usable (${(lastErr as Error)?.message}). ${JSON_ONLY}` }];
-    const text = await chat({ messages: msgs, json: attempt === 0, model: opts.model, signal: opts.signal, maxTokens: opts.maxTokens ?? 3500, temperature: 0.3 });
+    const text = await chat({ messages: msgs, json: attempt === 0, signal: opts.signal, maxTokens: opts.maxTokens ?? 3500, temperature: 0.3 });
     try { return parse(extractJSON(text)); } catch (e) { lastErr = e; }
   }
   throw lastErr instanceof Error ? lastErr : new Error('Unusable reply');
@@ -129,7 +128,7 @@ export async function photoToRecipe(dataUrl: string, hint: string, s: Settings, 
   return jsonCall([
     { role: 'system', content: `You turn photos into structured recipes. Schema:\n${RECIPE_SCHEMA_HINT}\n${JSON_ONLY}` },
     { role: 'user', content: parts }
-  ], toRecipeDraft, { model: loadAIConfig().visionModel, signal, maxTokens: 4000 });
+  ], toRecipeDraft, { signal, maxTokens: 4000 });
 }
 
 /* --------------------------------------------- 5. smarter planner swaps */

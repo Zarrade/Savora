@@ -1,6 +1,4 @@
-import { useSyncExternalStore } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { aiStoreKey, loadAIConfig, notifyAIConfig, subscribeAIConfig, type AIConfig } from '../lib/ai/config';
+import { useNavigate } from 'react-router-dom';
 import { AIError } from '../lib/ai/client';
 import type { AIRecipeDraft } from '../lib/ai/json';
 import { IMPORT_KEY } from '../pages/RecipeEditor';
@@ -9,22 +7,9 @@ import { useAuth } from './Account';
 import { showSignIn } from '../lib/account';
 import { Icon } from './Icon';
 
-let snap = loadAIConfig();
-subscribeAIConfig(() => { snap = loadAIConfig(); });
-// A key saved by another tab (e.g. the OAuth callback) should reach this one without a reload
-window.addEventListener('storage', e => { if (e.key === aiStoreKey()) { snap = loadAIConfig(); notifyAIConfig(); } });
-export function useAIConfig(): AIConfig {
-  return useSyncExternalStore(
-    cb => subscribeAIConfig(cb),
-    () => snap
-  );
-}
-
-/** AI works with the user's own OpenRouter key, or — when signed in — Savora's free AI. */
+/** Savora AI is included for everyone signed in. */
 export function useAIReady(): boolean {
-  const cfg = useAIConfig();
-  const auth = useAuth();
-  return !!cfg.key || auth.status === 'signedIn';
+  return useAuth().status === 'signedIn';
 }
 
 export function aiErrorMessage(e: unknown): string {
@@ -36,7 +21,7 @@ export function aiToast(e: unknown) {
   toast(aiErrorMessage(e));
 }
 
-/** Shown in place of an AI feature for guests without their own key. */
+/** Shown in place of an AI feature for guests. */
 export function NeedKey({ what }: { what: string }) {
   return (
     <div className="card-flat need-key">
@@ -48,7 +33,6 @@ export function NeedKey({ what }: { what: string }) {
         </div>
       </div>
       <button className="btn btn-primary block" style={{ marginTop: 10 }} onClick={showSignIn}>Sign in for free AI</button>
-      <Link to="/settings#ai" className="btn btn-ghost block" style={{ marginTop: 8 }}>Or use your own OpenRouter key</Link>
     </div>
   );
 }

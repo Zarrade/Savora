@@ -34,11 +34,10 @@ The database schema (table `user_records`, RLS policies, `push_records` and `del
 
 ## AI features (all optional)
 
-**Free for everyone with a Savora account.** AI requests go through a Supabase Edge Function (`supabase/functions/ai`)
-that holds the app's OpenRouter key on the server and always uses OpenRouter's free-models router (`openrouter/free`),
-which picks a free model automatically — including one that can read photos when you send an image. Each user gets
-20 AI requests a day (`SAVORA_AI_DAILY_LIMIT` secret to change it). Guests, or anyone who wants a specific model and no daily cap,
-can add their own OpenRouter key in **Me → Savora AI**.
+**Free for everyone with a Savora account — AI comes only from the app owner's OpenRouter key.** Requests go through a
+Supabase Edge Function (`supabase/functions/ai`) that keeps the key on the server and always uses OpenRouter's free-models
+router (`openrouter/free`), which picks a free model automatically (including one that can read photos). Each user gets
+20 AI requests a day (set the `SAVORA_AI_DAILY_LIMIT` secret to change it). Guests are asked to sign in.
 
 > **Free-tier limits:** OpenRouter's free models allow about 20 requests/minute and **50 requests/day for the whole account**
 > (shared by all Savora users), or 1,000/day once the account has bought $10 of credits — still free models only.
@@ -54,7 +53,6 @@ can add their own OpenRouter key in **Me → Savora AI**.
 
 **Privacy & safety**
 - With no key (or no internet) everything else works as normal — every AI feature is an optional extra.
-- Your key is stored on this device only, separately for each signed-in user, and is **never synced or included in backups**. Set a spend limit on the key at openrouter.ai.
 - Text or photos are sent to OpenRouter and your chosen model **only when you press an AI button**.
 - AI recipes always open in the editor for review before saving. Allergy/avoid lists are re-checked in code on AI suggestions. Nutrition values and quantities are estimates.
 
@@ -107,6 +105,7 @@ can add their own OpenRouter key in **Me → Savora AI**.
 - Copy last week, clear week, week average nutrition
 
 **Groceries**
+- **At home** list: what's already in your fridge and cupboards. Put ticked shopping away in one tap, mark things as run out, and Savora leaves them off shopping lists and uses them for “What can I make?”
 - **Send the week's plan** to the list — ingredients combined, scaled and rounded sensibly
 - Add a single recipe's ingredients with **editable quantities**
 - Add items by typing (`1 kg tomatoes`) with suggestions

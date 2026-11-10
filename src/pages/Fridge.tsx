@@ -1,8 +1,10 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { PageHeader, Chip, toast } from '../components/ui';
 import { Icon } from '../components/Icon';
 import { NeedKey, aiToast, useAIReady, useOpenDraft } from '../components/AI';
-import { useSettings } from '../hooks';
+import { useSettings, useStock } from '../hooks';
+import { cleanName } from '../lib/grocery';
 import { whatCanIMake, type PantrySuggestion } from '../lib/ai/features';
 import { fmtMinutes } from '../lib/util';
 import { SIcon } from '../components/SavoraIcons';
@@ -20,6 +22,17 @@ export default function Fridge() {
   const [busy, setBusy] = useState(false);
   const [ideas, setIdeas] = useState<PantrySuggestion[] | null>(null);
   const abort = useRef<AbortController | null>(null);
+  const stock = useStock();
+  const homeNames = [...new Set(stock.map(s => cleanName(s.name) || s.name))];
+  const useHome = () => setItems(cur => [...new Set([...cur, ...homeNames])]);
+  // Start from what you have at home
+  const loaded = useRef(false);
+  useEffect(() => {
+    if (loaded.current || !homeNames.length) return;
+    loaded.current = true;
+    setItems(cur => (cur.length ? cur : homeNames));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [homeNames.join('|')]);
 
   const add = (raw: string) => {
     const parts = raw.split(/[,\n]/).map(s => s.trim().toLowerCase()).filter(Boolean);
@@ -47,6 +60,16 @@ export default function Fridge() {
 
       {!aiReady && <NeedKey what="“What can I make?”" />}
 
+      {stock.length > 0 ? (
+        <div className="home-strip">
+          <SIcon name="basket" size={20} />
+          <span className="grow">Using what you have at home ({stock.length})</span>
+          <button className="btn btn-soft btn-sm" onClick={useHome}>Add all</button>
+          <Link className="btn btn-ghost btn-sm" to="/groceries?tab=home">Edit</Link>
+        </div>
+      ) : (
+        <div className="home-strip"><SIcon name="basket" size={20} /><span className="grow">Tip: keep an <b>At home</b> list in Groceries and it fills in here.</span><Link className="btn btn-ghost btn-sm" to="/groceries?tab=home">Open</Link></div>
+      )}
       <div className="chip-row wrap">
         {QUICK.map(q => <Chip key={q} small active={items.includes(q)} onClick={() => toggleQuick(q)}>{q}</Chip>)}
       </div>

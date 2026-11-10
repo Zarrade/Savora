@@ -7,7 +7,7 @@ export const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY || 'sb
 export const supabase = createClient(SUPABASE_URL, SUPABASE_KEY, {
   auth: {
     flowType: 'pkce',          // returns ?code=… (the implicit #access_token=… would clash with hash routing)
-    detectSessionInUrl: false, // handled in lib/account.ts so it can coexist with the OpenRouter callback
+    detectSessionInUrl: false, // handled in lib/account.ts (hash routing)
     persistSession: true,
     autoRefreshToken: true,
     storageKey: 'savora-auth'

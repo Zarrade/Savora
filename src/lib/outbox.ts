@@ -7,12 +7,12 @@
  *   changes pulled from the cloud) are ignored.
  * - The outbox is persisted per user in localStorage so offline edits survive reloads.
  */
-export type Kind = 'recipe' | 'plan' | 'grocery' | 'collection' | 'settings';
+export type Kind = 'recipe' | 'plan' | 'grocery' | 'collection' | 'settings' | 'stock';
 export const TABLE_KIND: Record<string, Kind> = {
-  recipes: 'recipe', plan: 'plan', grocery: 'grocery', collections: 'collection', settings: 'settings'
+  recipes: 'recipe', plan: 'plan', grocery: 'grocery', collections: 'collection', settings: 'settings', stock: 'stock'
 };
 export const KIND_TABLE: Record<Kind, string> = {
-  recipe: 'recipes', plan: 'plan', grocery: 'grocery', collection: 'collections', settings: 'settings'
+  recipe: 'recipes', plan: 'plan', grocery: 'grocery', collection: 'collections', settings: 'settings', stock: 'stock'
 };
 
 let uid: string | null = null;
