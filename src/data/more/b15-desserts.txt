@@ -1,0 +1,531 @@
+@ Kunafa with Cheese | Levantine | dessert | 8 | 25 | 30 | pie | vegetarian
+= Crisp shredded pastry over melted cheese, soaked in orange blossom syrup.
+- 400 g kataifi pastry
+- 150 g butter, melted
+- 300 g mozzarella
+- 200 g akkawi cheese, desalted
+- 250 g sugar
+- 200 ml water
+- 1 tbsp orange blossom water
+- 30 g pistachios
+* Boil sugar and water 8 minutes, add orange blossom water and cool.
+* Toss kataifi with butter and press half into a tin.
+* Add the cheeses, cover with remaining pastry.
+* Bake at 190°C for 30 minutes, then pour over syrup and add pistachios.
+
+@ Basbousa | Egyptian | dessert | 12 | 15 | 30 | cupcake | vegetarian
+= Syrupy semolina and coconut cake with almonds.
+- 250 g semolina
+- 60 g desiccated coconut
+- 150 g sugar
+- 200 g yogurt
+- 100 g butter, melted
+- 1 tsp baking powder
+- 12 almonds
+- 200 g sugar
+- 150 ml water
+* Mix semolina, coconut, sugar, yogurt, butter and baking powder.
+* Spread in a tin, score diamonds and press in almonds.
+* Bake at 180°C for 30 minutes.
+* Boil 200 g sugar with water 6 minutes and pour over the hot cake.
+
+@ Maamoul with Dates | Lebanese | dessert,snack | 20 | 40 | 18 | cookie | vegetarian
+= Semolina shortbread filled with spiced date paste.
+- 300 g semolina
+- 100 g flour
+- 180 g butter, melted
+- 2 tbsp sugar
+- 2 tbsp orange blossom water
+- 60 ml milk
+- 300 g date paste
+- 1 tsp ground cinnamon
+* Mix semolina, flour and butter; rest 1 hour if you can.
+* Add sugar, orange blossom water and milk to form a dough.
+* Roll date paste with cinnamon into balls; wrap in dough and shape.
+* Bake at 190°C for 18 minutes.
+
+@ Halawet el Jibn | Syrian | dessert | 10 | 30 | 10 | cheese | vegetarian
+= Sweet cheese rolls filled with ashta cream and syrup.
+- 250 g mozzarella
+- 150 g semolina
+- 200 ml water
+- 100 g sugar
+- 250 g ricotta
+- 2 tbsp cream
+- 3 tbsp sugar syrup
+- 20 g pistachios
+* Heat water and sugar, add semolina, then melt in mozzarella, stirring into a dough.
+* Roll thin between baking paper and cool.
+* Mix ricotta and cream; cut dough into squares, fill and roll.
+* Drizzle with syrup and pistachios.
+
+@ Umm Ali | Egyptian | dessert | 6 | 15 | 25 | pudding | vegetarian
+= Warm puff pastry pudding with milk, nuts and raisins.
+- 320 g puff pastry, baked and broken
+- 750 ml milk
+- 200 ml cream
+- 80 g sugar
+- 60 g mixed nuts
+- 40 g raisins
+- 30 g desiccated coconut
+* Layer pastry, nuts, raisins and coconut in a dish.
+* Heat milk with sugar and pour over.
+* Top with cream and bake at 200°C for 20 minutes until golden.
+
+@ Atayef with Ashta | Levantine | dessert | 6 | 30 | 15 | pancakes | vegetarian
+= Ramadan pancakes folded around clotted cream and dipped in pistachio.
+- 200 g flour
+- 1 tsp yeast
+- 1 tsp sugar
+- 300 ml warm water
+- 250 g ricotta
+- 2 tbsp cream
+- 30 g pistachios, ground
+- 4 tbsp sugar syrup
+* Mix flour, yeast, sugar and water; rest 30 minutes.
+* Cook small pancakes on one side only until bubbly.
+* Fold half closed around ricotta-cream and dip the edge in pistachio.
+* Drizzle with syrup.
+
+@ Sfouf | Lebanese | dessert,snack | 12 | 10 | 35 | cupcake | vegetarian
+= Turmeric semolina cake with anise and pine nuts.
+- 250 g semolina
+- 125 g flour
+- 200 g sugar
+- 1 tbsp turmeric
+- 2 tsp baking powder
+- 300 ml milk
+- 150 ml vegetable oil
+- 1 tsp ground anise
+- 2 tbsp pine nuts
+* Mix dry ingredients, then add milk and oil.
+* Pour into an oiled tin and scatter pine nuts.
+* Bake at 180°C for 35 minutes.
+
+@ Mafroukeh | Lebanese | dessert | 8 | 20 | 15 | pudding | vegetarian
+= Buttery semolina layer topped with ashta cream and nuts.
+- 200 g semolina
+- 100 g butter
+- 100 ml sugar syrup
+- 500 ml milk
+- 3 tbsp cornflour
+- 2 tbsp sugar
+- 60 g pistachios
+* Toast semolina in butter 8 minutes, add syrup and press into a dish.
+* Cook milk, cornflour and sugar until thick; spread over.
+* Top with pistachios and chill.
+
+@ Kanafeh-Style Cheesecake Cups | Fusion | dessert | 6 | 20 | 10 | pudding | vegetarian
+= Crunchy kataifi base with creamy cheesecake and syrup.
+- 100 g kataifi pastry
+- 50 g butter
+- 250 g cream cheese
+- 200 ml cream
+- 60 g icing sugar
+- 4 tbsp sugar syrup
+- 20 g pistachios
+* Toast kataifi in butter until golden; press into cups.
+* Whip cream cheese, cream and sugar.
+* Fill cups, drizzle with syrup and top with pistachios.
+
+@ Date Cake with Toffee Sauce | Middle Eastern | dessert | 10 | 15 | 40 | cupcake | vegetarian
+= Moist date cake with warm caramel sauce.
+- 250 g dates
+- 250 ml boiling water
+- 1 tsp baking soda
+- 100 g butter
+- 150 g brown sugar
+- 2 eggs
+- 200 g flour
+- 200 ml cream
+- 80 g brown sugar
+* Soak dates in water with soda 10 minutes, then mash.
+* Cream butter and sugar, add eggs, flour and dates.
+* Bake at 180°C for 40 minutes.
+* Simmer cream and sugar 4 minutes and pour over.
+
+@ Saffron Rice Pudding (Firni) | Persian | dessert | 6 | 5 | 20 | pudding | vegetarian, gluten-free
+= Smooth ground-rice pudding with saffron, cardamom and rose.
+- 60 g rice flour
+- 800 ml milk
+- 100 g sugar
+- 1 pinch saffron
+- ½ tsp ground cardamom
+- 1 tbsp rose water
+- 2 tbsp pistachios
+* Whisk rice flour into cold milk.
+* Cook with sugar, saffron and cardamom, stirring, 15 minutes.
+* Add rose water, pour into bowls and chill. Top with pistachios.
+
+@ Chocolate Lava Cakes | French | dessert | 4 | 15 | 12 | chocolate | vegetarian
+= Molten-centred chocolate puddings.
+- 100 g dark chocolate
+- 100 g butter
+- 2 eggs
+- 2 egg yolks
+- 60 g sugar
+- 2 tbsp flour
+* Melt chocolate and butter.
+* Whisk eggs, yolks and sugar until thick; fold in chocolate and flour.
+* Pour into buttered ramekins.
+* Bake at 220°C for 11 minutes.
+
+@ Crème Brûlée | French | dessert | 4 | 15 | 35 | pudding | vegetarian, gluten-free
+= Vanilla custard under a crackly caramel top.
+- 500 ml cream
+- 5 egg yolks
+- 80 g sugar
+- 1 tsp vanilla extract
+- 4 tbsp sugar
+* Heat cream with vanilla.
+* Whisk yolks and sugar, add cream.
+* Bake in ramekins in a water bath at 150°C for 35 minutes. Chill.
+* Sprinkle with sugar and caramelise under a hot grill.
+
+@ Lemon Tart | French | dessert | 8 | 30 | 30 | pie | vegetarian
+= Crisp pastry with a sharp, silky lemon filling.
+- 300 g shortcrust pastry
+- 4 eggs
+- 150 g sugar
+- 3 lemons, zested and juiced
+- 150 ml cream
+* Blind bake pastry in a tart tin at 190°C for 15 minutes.
+* Whisk eggs, sugar, lemon and cream.
+* Pour in and bake at 150°C for 25 minutes. Chill.
+
+@ Chocolate Mousse | French | dessert | 6 | 20 | 0 | chocolate | vegetarian, gluten-free
+= Light, airy dark chocolate mousse.
+- 200 g dark chocolate
+- 4 eggs, separated
+- 2 tbsp sugar
+- 200 ml cream
+* Melt chocolate and cool slightly; stir in yolks.
+* Whip cream softly; whisk whites with sugar to peaks.
+* Fold cream, then whites into chocolate.
+* Chill 4 hours.
+
+@ Cheesecake (Baked) | American | dessert | 12 | 20 | 60 | pie | vegetarian
+= Creamy New York-style baked cheesecake.
+- 200 g digestive biscuits
+- 80 g butter, melted
+- 600 g cream cheese
+- 150 g sugar
+- 3 eggs
+- 200 ml sour cream
+- 1 tsp vanilla extract
+* Mix crushed biscuits and butter; press into a tin.
+* Beat cream cheese, sugar, eggs, sour cream and vanilla.
+* Bake at 160°C for 60 minutes; cool in the oven.
+* Chill overnight.
+
+@ No-Bake Lotus Cheesecake | International | dessert | 10 | 20 | 0 | pie | vegetarian
+= Biscoff cheesecake with a crunchy base and caramel spread.
+- 250 g lotus biscuits
+- 80 g butter, melted
+- 400 g cream cheese
+- 300 ml cream
+- 80 g icing sugar
+- 200 g lotus spread
+* Press crushed biscuits and butter into a tin.
+* Whip cream cheese, cream, sugar and half the spread.
+* Spread on base, top with warmed spread.
+* Chill 6 hours.
+
+@ Banana Bread with Chocolate Chips | American | dessert,snack | 10 | 15 | 55 | bread | vegetarian
+= Moist banana loaf studded with chocolate.
+- 3 bananas
+- 2 eggs
+- 100 g butter, melted
+- 120 g brown sugar
+- 220 g flour
+- 1 tsp baking soda
+- 100 g chocolate chips
+* Mash bananas and mix with eggs, butter and sugar.
+* Fold in flour, soda and chips.
+* Bake in a loaf tin at 175°C for 55 minutes.
+
+@ Lemon Drizzle Cake | British | dessert | 10 | 15 | 45 | cupcake | vegetarian
+= Zesty loaf cake with crunchy lemon sugar topping.
+- 200 g butter
+- 200 g sugar
+- 4 eggs
+- 200 g self-raising flour
+- 2 lemons
+- 100 g icing sugar
+* Cream butter and sugar, beat in eggs, zest and flour.
+* Bake in a loaf tin at 180°C for 45 minutes.
+* Mix lemon juice with icing sugar and pour over the warm cake.
+
+@ Chocolate Cake | International | dessert | 12 | 20 | 35 | chocolate | vegetarian
+= Moist, rich chocolate layer cake with fudge frosting.
+- 250 g flour
+- 300 g sugar
+- 70 g cocoa powder
+- 2 tsp baking soda
+- 2 eggs
+- 250 ml milk
+- 120 ml vegetable oil
+- 250 ml hot coffee
+- 200 g dark chocolate
+- 200 ml cream
+* Mix dry ingredients; add eggs, milk, oil and coffee.
+* Bake in two tins at 180°C for 35 minutes.
+* Melt chocolate into hot cream for frosting and layer the cakes.
+
+@ Vanilla Cupcakes | International | dessert | 12 | 20 | 20 | cupcake | vegetarian
+= Fluffy cupcakes with buttercream swirls.
+- 150 g butter
+- 150 g sugar
+- 3 eggs
+- 150 g self-raising flour
+- 2 tbsp milk
+- 1 tsp vanilla extract
+- 150 g butter
+- 300 g icing sugar
+* Cream butter and sugar; add eggs, flour, milk and vanilla.
+* Bake in cases at 180°C for 20 minutes.
+* Beat butter and icing sugar and pipe on cooled cakes.
+
+@ Oatmeal Raisin Cookies | American | dessert,snack | 18 | 15 | 12 | cookie | vegetarian
+= Chewy oat cookies with cinnamon and raisins.
+- 115 g butter
+- 150 g brown sugar
+- 1 egg
+- 120 g flour
+- 150 g rolled oats
+- 1 tsp ground cinnamon
+- 100 g raisins
+* Cream butter and sugar, add egg.
+* Mix in remaining ingredients.
+* Scoop and bake at 180°C for 12 minutes.
+
+@ Peanut Butter Cookies | American | dessert,snack | 16 | 10 | 10 | cookie | vegetarian, gluten-free
+= Three-ingredient flourless peanut butter cookies.
+- 250 g peanut butter
+- 150 g sugar
+- 1 egg
+* Mix everything.
+* Roll balls, press with a fork.
+* Bake at 180°C for 10 minutes.
+
+@ Shortbread | British | dessert,snack | 16 | 15 | 20 | cookie | vegetarian
+= Buttery melt-in-the-mouth biscuits.
+- 225 g butter
+- 100 g sugar
+- 300 g flour
+- 50 g cornflour
+* Cream butter and sugar; mix in flours.
+* Press into a tin and prick.
+* Bake at 160°C for 20 minutes; cut while warm.
+
+@ Fruit Crumble | British | dessert | 6 | 15 | 35 | pie | vegetarian
+= Apples and berries under a buttery oat crumble.
+- 4 apples, sliced
+- 200 g mixed berries
+- 3 tbsp sugar
+- 150 g flour
+- 80 g butter
+- 60 g brown sugar
+- 50 g rolled oats
+* Put fruit and sugar in a dish.
+* Rub butter into flour, add brown sugar and oats.
+* Scatter over fruit and bake at 190°C for 35 minutes.
+
+@ Pavlova with Berries | Australian | dessert | 8 | 20 | 75 | berries | vegetarian, gluten-free
+= Crisp meringue with marshmallowy centre, cream and fruit.
+- 4 egg whites
+- 220 g sugar
+- 1 tsp cornflour
+- 1 tsp vinegar
+- 300 ml cream
+- 300 g mixed berries
+* Whisk whites to peaks, add sugar gradually, then cornflour and vinegar.
+* Shape into a round on baking paper.
+* Bake at 120°C for 75 minutes; cool in the oven.
+* Top with whipped cream and berries.
+
+@ Fruit Salad with Mint & Lime | International | dessert,snack | 6 | 15 | 0 | strawberry | vegan, gluten-free, no-cook
+= Fresh fruit with a honey-lime-mint dressing.
+- 300 g strawberries
+- 2 kiwis
+- 1 mango
+- 200 g grapes
+- 1 lime
+- 1 tbsp honey
+- 1 handful mint
+* Chop the fruit.
+* Toss with lime, honey and mint.
+
+@ Mango Mousse | International | dessert | 6 | 15 | 0 | mango | vegetarian, gluten-free
+= Light, fluffy mango mousse.
+- 400 g mango purée
+- 300 ml cream
+- 3 tbsp sugar
+- 3 gelatine sheets
+* Soak gelatine; dissolve in a little warm purée.
+* Whip cream with sugar; fold in all the purée.
+* Pour into glasses and chill 4 hours.
+
+@ Rice Krispie Treats with Dates | International | dessert,snack | 12 | 10 | 5 | cookie | vegetarian
+= Chewy crispy bars sweetened with date syrup and peanut butter.
+- 100 g rice krispies
+- 150 g peanut butter
+- 120 ml date syrup
+- 50 g dark chocolate
+* Warm peanut butter and date syrup.
+* Stir in cereal and press into a tin.
+* Drizzle with melted chocolate and chill.
+
+@ Frozen Banana Bites | International | dessert,snack | 4 | 10 | 0 | banana | vegetarian, gluten-free
+= Banana slices dipped in chocolate and frozen.
+- 2 bananas
+- 100 g dark chocolate
+- 2 tbsp peanuts, chopped
+* Slice bananas and freeze 30 minutes.
+* Dip in melted chocolate and sprinkle peanuts.
+* Freeze until firm.
+
+@ Nice Cream (Banana Ice Cream) | International | dessert | 2 | 5 | 0 | banana | vegan, gluten-free, no-cook
+= One-ingredient creamy ice cream from frozen bananas.
+- 3 bananas, frozen
+- 1 tbsp cocoa powder
+- 2 tbsp almond milk
+* Blend frozen banana until creamy, adding milk as needed.
+* Blend in cocoa and serve.
+
+@ Arabic Milk Pudding with Rose Syrup | Middle Eastern | dessert | 6 | 10 | 10 | pudding | vegetarian, gluten-free
+= Cornflour milk pudding with pink rose syrup.
+- 800 ml milk
+- 5 tbsp cornflour
+- 80 g sugar
+- 3 tbsp rose syrup
+- 20 g pistachios
+* Whisk milk, cornflour and sugar and cook until thick.
+* Pour into cups and chill.
+* Drizzle with rose syrup and pistachios.
+
+@ Date & Walnut Balls | Middle Eastern | dessert,snack | 16 | 15 | 0 | nut | vegan, gluten-free, no-cook
+= Two-ingredient sweet rolled in coconut.
+- 250 g dates
+- 100 g walnuts
+- 3 tbsp desiccated coconut
+* Blend dates and walnuts into a paste.
+* Roll into balls and coat in coconut.
+
+@ Tahini Brownies | Middle Eastern | dessert | 16 | 15 | 25 | chocolate | vegetarian
+= Fudgy brownies swirled with nutty tahini.
+- 200 g dark chocolate
+- 120 g butter
+- 200 g sugar
+- 3 eggs
+- 90 g flour
+- 4 tbsp tahini
+* Melt chocolate and butter; whisk in sugar and eggs.
+* Fold in flour and pour into a tin.
+* Swirl tahini through and bake at 180°C for 25 minutes.
+
+@ Halva Ice Cream | Middle Eastern | dessert | 8 | 15 | 0 | ice | vegetarian, gluten-free
+= No-churn ice cream with crumbled halva and pistachios.
+- 400 ml cream
+- 200 g condensed milk
+- 150 g halva, crumbled
+- 30 g pistachios
+* Whip cream to soft peaks and fold in condensed milk.
+* Fold in halva and pistachios.
+* Freeze 6 hours.
+
+@ Pistachio Rose Cake | Persian | dessert | 10 | 20 | 40 | cupcake | vegetarian
+= Fragrant pistachio cake with rose water glaze.
+- 150 g butter
+- 150 g sugar
+- 3 eggs
+- 120 g ground pistachios
+- 100 g flour
+- 1 tsp baking powder
+- 100 g icing sugar
+- 1 tbsp rose water
+* Cream butter and sugar; add eggs, nuts, flour and baking powder.
+* Bake at 175°C for 40 minutes.
+* Glaze with icing sugar mixed with rose water.
+
+@ Orange & Almond Cake | Spanish | dessert | 10 | 15 | 50 | cupcake | vegetarian, gluten-free
+= Flourless cake made with whole boiled oranges and almonds.
+- 2 oranges, boiled 1 hour
+- 6 eggs
+- 200 g sugar
+- 250 g ground almonds
+- 1 tsp baking powder
+* Blend the boiled oranges.
+* Whisk with eggs and sugar; fold in almonds and baking powder.
+* Bake at 180°C for 50 minutes.
+
+@ Coconut Macaroons | International | dessert,snack | 16 | 10 | 18 | cookie | vegetarian, gluten-free
+= Chewy coconut mounds dipped in chocolate.
+- 200 g desiccated coconut
+- 200 g condensed milk
+- 2 egg whites
+- 80 g dark chocolate
+* Mix coconut and condensed milk; fold in whisked whites.
+* Scoop onto a tray and bake at 170°C for 18 minutes.
+* Dip bases in melted chocolate.
+
+@ Tiramisu Overnight Oats | Italian | breakfast,dessert | 2 | 5 | 0 | bowl | vegetarian, no-cook
+= Coffee-soaked oats layered with mascarpone yogurt.
+- 100 g rolled oats
+- 150 ml cold coffee
+- 100 ml milk
+- 150 g greek yogurt
+- 2 tbsp mascarpone
+- 1 tbsp honey
+- 1 tsp cocoa powder
+* Soak oats in coffee and milk overnight.
+* Mix yogurt, mascarpone and honey.
+* Layer and dust with cocoa.
+
+@ Baked Pears with Honey & Walnuts | International | dessert | 4 | 5 | 30 | apple | vegetarian, gluten-free
+= Soft roasted pears with cinnamon, honey and walnuts.
+- 4 pears, halved
+- 3 tbsp honey
+- 1 tsp ground cinnamon
+- 40 g walnuts
+- 100 g greek yogurt
+* Arrange pears cut side up, drizzle with honey and cinnamon.
+* Roast at 190°C for 30 minutes.
+* Serve with walnuts and yogurt.
+
+@ Molten Nutella Mug Cake | International | dessert | 1 | 2 | 1 | cupcake | vegetarian, quick
+= A two-minute microwave chocolate-hazelnut cake.
+- 3 tbsp flour
+- 2 tbsp sugar
+- 1 egg
+- 3 tbsp milk
+- 2 tbsp chocolate hazelnut spread
+* Mix everything in a large mug.
+* Microwave 70 seconds.
+
+@ Strawberry Shortcake Jars | American | dessert | 4 | 15 | 0 | strawberry | vegetarian
+= Layers of sponge, cream and fresh strawberries.
+- 200 g sponge cake
+- 300 g strawberries
+- 300 ml cream
+- 2 tbsp icing sugar
+* Whip cream with sugar.
+* Layer cubed sponge, sliced strawberries and cream in jars.
+* Chill 30 minutes.
+
+@ Cinnamon Rolls | American | dessert,breakfast | 12 | 120 | 25 | bread | vegetarian
+= Soft swirled buns with cinnamon sugar and cream cheese glaze.
+- 500 g flour
+- 7 g yeast
+- 250 ml milk
+- 80 g butter
+- 50 g sugar
+- 1 egg
+- 100 g brown sugar
+- 2 tbsp ground cinnamon
+- 100 g cream cheese
+- 100 g icing sugar
+* Make a dough with flour, yeast, warm milk, 40 g butter, sugar and egg. Rise 1 hour.
+* Roll out, spread with remaining butter, brown sugar and cinnamon; roll up and slice.
+* Rise 30 minutes and bake at 190°C for 25 minutes.
+* Beat cream cheese and icing sugar and spread over.
